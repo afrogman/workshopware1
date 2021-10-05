@@ -9,4 +9,9 @@
         'Abrir el formulario de tecnicos
         frmTecnicos.Show()
     End Sub
+
+    Private Sub Button3_Click(sender As System.Object, e As System.EventArgs) Handles Button3.Click
+        'Abrir el formulario de proveedores
+        frmProveedores.Show()
+    End Sub
 End Class
