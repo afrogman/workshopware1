@@ -1,0 +1,11 @@
+c:\users\profesorx\documents\visual studio 2010\Projects\workshopware\workshopware\bin\Debug\workshopware.exe
+c:\users\profesorx\documents\visual studio 2010\Projects\workshopware\workshopware\bin\Debug\workshopware.pdb
+c:\users\profesorx\documents\visual studio 2010\Projects\workshopware\workshopware\bin\Debug\workshopware.xml
+c:\users\profesorx\documents\visual studio 2010\Projects\workshopware\workshopware\obj\x86\Debug\workshopware.frmClientes.resources
+c:\users\profesorx\documents\visual studio 2010\Projects\workshopware\workshopware\obj\x86\Debug\workshopware.frmMenu.resources
+c:\users\profesorx\documents\visual studio 2010\Projects\workshopware\workshopware\obj\x86\Debug\workshopware.frmTecnicos.resources
+c:\users\profesorx\documents\visual studio 2010\Projects\workshopware\workshopware\obj\x86\Debug\workshopware.Resources.resources
+c:\users\profesorx\documents\visual studio 2010\Projects\workshopware\workshopware\obj\x86\Debug\workshopware.vbproj.GenerateResource.Cache
+c:\users\profesorx\documents\visual studio 2010\Projects\workshopware\workshopware\obj\x86\Debug\workshopware.exe
+c:\users\profesorx\documents\visual studio 2010\Projects\workshopware\workshopware\obj\x86\Debug\workshopware.xml
+c:\users\profesorx\documents\visual studio 2010\Projects\workshopware\workshopware\obj\x86\Debug\workshopware.pdb
