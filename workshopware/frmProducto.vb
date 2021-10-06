@@ -174,4 +174,9 @@ Public Class frmProducto
             MsgBox(ex.Message)
         End Try
     End Sub
+
+    Private Sub Button4_Click(sender As System.Object, e As System.EventArgs) Handles Button4.Click
+        'Abrir el formulario de consulta de productos
+        frmConProducto.Show()
+    End Sub
 End Class
