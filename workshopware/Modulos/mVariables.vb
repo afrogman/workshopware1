@@ -17,6 +17,6 @@ Module mVariables
     'Variable que sirve para ver la cantidad de tuplas recibidas de una consulta
     Public lista As Byte
     'Variable para guardar un codigo de proveedor temporal
-    Public codProv As Integer
+    Public codProv, IdCliente As Integer
     
 End Module

@@ -19,4 +19,9 @@
         'Abrir el formulario de los productos
         frmProducto.Show()
     End Sub
+
+    Private Sub Button5_Click(sender As System.Object, e As System.EventArgs) Handles Button5.Click
+        'Abrir el formulario de servicios
+        frmServicio.Show()
+    End Sub
 End Class
