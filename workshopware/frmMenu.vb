@@ -14,4 +14,9 @@
         'Abrir el formulario de proveedores
         frmProveedores.Show()
     End Sub
+
+    Private Sub Button4_Click(sender As System.Object, e As System.EventArgs) Handles Button4.Click
+        'Abrir el formulario de los productos
+        frmProducto.Show()
+    End Sub
 End Class
