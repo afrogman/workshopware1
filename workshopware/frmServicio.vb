@@ -167,8 +167,6 @@ Public Class frmServicio
     Private Sub Button3_Click(sender As System.Object, e As System.EventArgs) Handles Button3.Click
         'Llama al procedimiento los datos del equipo
         Call GuardarEquipo()
-        'Llama al procedimiento del servicio
-        Call GuardarServicio()
     End Sub
 
     'Procedimiento para guardar el equipo
@@ -220,11 +218,13 @@ Public Class frmServicio
 
                 'Se coloca porque no espero ningun resultado de la consulta
                 comandos.ExecuteNonQuery()
-                'Indico que se realizo exitosamente el guardado
-                MsgBox("Los datos del equipo fueron guardados exitosamente!")
 
                 'Se cierra la conexion
                 conexion.Close()
+
+                'Llama al procedimiento del servicio
+                Call GuardarServicio()
+
             Catch ex As Exception
                 'Mensaje para indicar que no se tuvo exito con la conexion
                 MsgBox(ex.Message)
@@ -245,7 +245,7 @@ Public Class frmServicio
         Dim falla, repa As String
         Dim fechaentrada, fechasalida, fechaprograma As Date
         Dim pago, saldo, total As Double
-        Dim estado As String
+        Dim est As String
 
         Try
             'Codigo del servicio
@@ -269,9 +269,9 @@ Public Class frmServicio
 
             'Estado del servicio
             If (RadioButton1.Checked = True) And (RadioButton2.Checked = False) Then
-                estado = "Pendiente"
+                est = "Pendiente"
             ElseIf (RadioButton2.Checked = True) And (RadioButton1.Checked = False) Then
-                estado = "Entregado"
+                est = "Entregado"
             End If
 
             Try
@@ -306,12 +306,12 @@ Public Class frmServicio
                 'Referencia al estado ingresado en el formulario
                 comandos.Parameters.AddWithValue("@total", total)
                 'Referencia al estado ingresado en el formulario
-                comandos.Parameters.AddWithValue("@estado", estado)
+                comandos.Parameters.AddWithValue("@estado", est)
 
                 'Se coloca porque no espero ningun resultado de la consulta
                 comandos.ExecuteNonQuery()
                 'Indico que se realizo exitosamente el guardado
-                MsgBox("Los datos del servicio fueron guardados exitosamente!")
+                MsgBox("Los datos del servicio y del equipo fueron guardados exitosamente!")
 
                 'Se cierra la conexion
                 conexion.Close()
@@ -325,5 +325,19 @@ Public Class frmServicio
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+    End Sub
+    
+    Private Sub Button5_Click(sender As System.Object, e As System.EventArgs) Handles Button5.Click
+        'Variables para el calculo de pago, saldo y total
+        Dim pago, saldo, total As Double
+
+        'Se extrae el valor del pago que deja por adelantado
+        pago = MaskedTextBox2.Text
+        'Se extrae el valor del pago total del servicio
+        total = MaskedTextBox4.Text
+        'Se actualiza la operacion del abono si hay
+        saldo = total - pago
+        'Se muestra en pantalla
+        MaskedTextBox3.Text = saldo
     End Sub
 End Class

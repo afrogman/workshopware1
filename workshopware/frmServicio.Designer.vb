@@ -42,6 +42,8 @@ Partial Class frmServicio
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.RichTextBox4 = New System.Windows.Forms.RichTextBox()
+        Me.Label24 = New System.Windows.Forms.Label()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.TextBox10 = New System.Windows.Forms.TextBox()
@@ -67,21 +69,20 @@ Partial Class frmServicio
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.TextBox14 = New System.Windows.Forms.TextBox()
         Me.TextBox15 = New System.Windows.Forms.TextBox()
         Me.Label23 = New System.Windows.Forms.Label()
-        Me.RichTextBox4 = New System.Windows.Forms.RichTextBox()
-        Me.Label24 = New System.Windows.Forms.Label()
         Me.MaskedTextBox2 = New System.Windows.Forms.MaskedTextBox()
         Me.MaskedTextBox3 = New System.Windows.Forms.MaskedTextBox()
         Me.MaskedTextBox4 = New System.Windows.Forms.MaskedTextBox()
         Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
         Me.Label25 = New System.Windows.Forms.Label()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -286,6 +287,23 @@ Partial Class frmServicio
         Me.GroupBox2.TabIndex = 4
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos del Equipo"
+        '
+        'RichTextBox4
+        '
+        Me.RichTextBox4.Location = New System.Drawing.Point(118, 125)
+        Me.RichTextBox4.Name = "RichTextBox4"
+        Me.RichTextBox4.Size = New System.Drawing.Size(205, 38)
+        Me.RichTextBox4.TabIndex = 11
+        Me.RichTextBox4.Text = ""
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(17, 128)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(62, 13)
+        Me.Label24.TabIndex = 10
+        Me.Label24.Text = "Accesorios:"
         '
         'RichTextBox1
         '
@@ -502,6 +520,17 @@ Partial Class frmServicio
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Estado del Servicio:"
         '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Location = New System.Drawing.Point(95, 23)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(74, 17)
+        Me.RadioButton2.TabIndex = 1
+        Me.RadioButton2.TabStop = True
+        Me.RadioButton2.Text = "Entregado"
+        Me.RadioButton2.UseVisualStyleBackColor = True
+        '
         'RadioButton1
         '
         Me.RadioButton1.AutoSize = True
@@ -513,17 +542,6 @@ Partial Class frmServicio
         Me.RadioButton1.TabStop = True
         Me.RadioButton1.Text = "Pendiente"
         Me.RadioButton1.UseVisualStyleBackColor = True
-        '
-        'RadioButton2
-        '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(95, 23)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(74, 17)
-        Me.RadioButton2.TabIndex = 1
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Entregado"
-        Me.RadioButton2.UseVisualStyleBackColor = True
         '
         'Button3
         '
@@ -577,23 +595,6 @@ Partial Class frmServicio
         Me.Label23.TabIndex = 23
         Me.Label23.Text = "Apellidos:"
         '
-        'RichTextBox4
-        '
-        Me.RichTextBox4.Location = New System.Drawing.Point(118, 125)
-        Me.RichTextBox4.Name = "RichTextBox4"
-        Me.RichTextBox4.Size = New System.Drawing.Size(205, 38)
-        Me.RichTextBox4.TabIndex = 11
-        Me.RichTextBox4.Text = ""
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(17, 128)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(62, 13)
-        Me.Label24.TabIndex = 10
-        Me.Label24.Text = "Accesorios:"
-        '
         'MaskedTextBox2
         '
         Me.MaskedTextBox2.Location = New System.Drawing.Point(527, 508)
@@ -604,6 +605,7 @@ Partial Class frmServicio
         '
         'MaskedTextBox3
         '
+        Me.MaskedTextBox3.Enabled = False
         Me.MaskedTextBox3.Location = New System.Drawing.Point(527, 534)
         Me.MaskedTextBox3.Mask = "99999.99"
         Me.MaskedTextBox3.Name = "MaskedTextBox3"
@@ -634,11 +636,21 @@ Partial Class frmServicio
         Me.Label25.TabIndex = 28
         Me.Label25.Text = "Mantenimiento programado:"
         '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(633, 557)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(75, 23)
+        Me.Button5.TabIndex = 30
+        Me.Button5.Text = "Calcular"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
         'frmServicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(849, 598)
+        Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.DateTimePicker3)
         Me.Controls.Add(Me.Label25)
         Me.Controls.Add(Me.MaskedTextBox4)
@@ -740,4 +752,5 @@ Partial Class frmServicio
     Friend WithEvents MaskedTextBox4 As System.Windows.Forms.MaskedTextBox
     Friend WithEvents DateTimePicker3 As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label25 As System.Windows.Forms.Label
+    Friend WithEvents Button5 As System.Windows.Forms.Button
 End Class
