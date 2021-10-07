@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-10-2021 a las 18:36:42
+-- Tiempo de generación: 07-10-2021 a las 21:37:33
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.2.29
 
@@ -20,6 +20,22 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `basedatosipi`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tblasignacionproducto`
+--
+
+CREATE TABLE `tblasignacionproducto` (
+  `idasignacion` int(11) NOT NULL,
+  `idproducto` int(11) NOT NULL,
+  `idservicio` int(11) NOT NULL,
+  `precioventa` double NOT NULL,
+  `cantidaddisponible` int(11) NOT NULL,
+  `cantidad` int(11) NOT NULL,
+  `total` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -70,7 +86,11 @@ INSERT INTO `tblequipo` (`idequipo`, `marca`, `modelo`, `serie`, `accesorios`, `
 (1, 'Compaq', 'Presario 1200', '4578965423', 'Trae un mouse, pantalla plana lcd, teclado y una impresora.', 'El equipo viene sucio, lleno de polvo y con manchas de cafe.', 2),
 (2, 'Dell', '7898', '123456789', 'Trae cargador.', 'El cargado viene quebrado y la computadora viene muy sucia.', 2),
 (3, 'Toshiba', '1996', '123456789', 'Trae un caragado sucio', 'Computadora muy golpeada', 2),
-(8, 'Centuron', '456789', '123123123', 'No trae nada solo el Case', 'Todo bien', 2);
+(4, 'Tangerine', '1998', '123', 'NO hay', 'tampoco hay', 2),
+(8, 'Centuron', '456789', '123123123', 'No trae nada solo el Case', 'Todo bien', 2),
+(21, 'Dell', '2345C', '902349', 'NO trae', 'Nnguna', 2),
+(211, 'Lenovo', '19987', '23434', 'no tienen', 'adfadfadfa', 2),
+(1236, 'adfadf', 'aadfdaf', 'adfadfa', 'adfad', 'adfdasfads', 2);
 
 -- --------------------------------------------------------
 
@@ -152,7 +172,10 @@ CREATE TABLE `tblservicio` (
 
 INSERT INTO `tblservicio` (`idservicio`, `idcliente`, `idequipo`, `falla`, `reparacion`, `fechaentrada`, `fechasalida`, `fechaprogramada`, `idtecnico`, `pago`, `saldo`, `total`, `estado`) VALUES
 (1, 2, 3, 'No enciende y parece que el disco esta dañado.', 'Chequeo de disco.', '2021-10-07', '2021-10-09', '2021-11-25', 2, 100, 25, 125, '0'),
-(5, 2, 8, 'No enciende', 'Revisar contactos', '2021-10-07', '2021-10-14', '2021-12-08', 2, 100, 125, 225, 'P');
+(5, 2, 8, 'No enciende', 'Revisar contactos', '2021-10-07', '2021-10-14', '2021-12-08', 2, 100, 125, 225, 'P'),
+(9, 2, 21, 'no jala', 'cambiarla', '2021-10-07', '2021-10-21', '2021-11-30', 2, 123.25, 12.33, 100.25, 'Pendiente'),
+(112, 2, 211, 'adfadfadfa', 'adfadfadfads', '2021-10-07', '2021-10-21', '2021-11-05', 2, 40, 100.5, 140.5, 'Pendiente'),
+(456, 2, 1236, 'qereqrqe', 'dfadfa', '2021-10-07', '2021-10-29', '2021-11-04', 2, 100, 100, 200, 'Entregado');
 
 -- --------------------------------------------------------
 
@@ -181,6 +204,14 @@ INSERT INTO `tbltecnico` (`idtecnico`, `nombres`, `apellidos`, `direccion`, `tel
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `tblasignacionproducto`
+--
+ALTER TABLE `tblasignacionproducto`
+  ADD PRIMARY KEY (`idasignacion`),
+  ADD KEY `relacionProducto` (`idproducto`),
+  ADD KEY `relacionServicio` (`idservicio`);
 
 --
 -- Indices de la tabla `tblcliente`
@@ -224,8 +255,25 @@ ALTER TABLE `tbltecnico`
   ADD PRIMARY KEY (`idtecnico`);
 
 --
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `tblasignacionproducto`
+--
+ALTER TABLE `tblasignacionproducto`
+  MODIFY `idasignacion` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `tblasignacionproducto`
+--
+ALTER TABLE `tblasignacionproducto`
+  ADD CONSTRAINT `relacionProducto` FOREIGN KEY (`idproducto`) REFERENCES `tblproducto` (`idproducto`),
+  ADD CONSTRAINT `relacionServicio` FOREIGN KEY (`idservicio`) REFERENCES `tblservicio` (`idservicio`);
 
 --
 -- Filtros para la tabla `tblequipo`
