@@ -16,7 +16,7 @@ Module mVariables
     Public datos As New DataSet
     'Variable que sirve para ver la cantidad de tuplas recibidas de una consulta
     Public lista As Byte
-    'Variable para guardar un codigo de proveedor, cliente, tecnico, equipo temporal
-    Public codProv, IdCliente, IdTecnico, CodEquipo As Integer
+    'Variable para guardar un codigo de proveedor, cliente, tecnico, equipo, servicio temporal
+    Public codProv, IdCliente, IdTecnico, CodEquipo, codServicio As Integer
     
 End Module

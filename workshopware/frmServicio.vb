@@ -225,6 +225,33 @@ Public Class frmServicio
                 'Llama al procedimiento del servicio
                 Call GuardarServicio()
 
+                'Habilitar el boton de agregar productos
+                Button7.Enabled = True
+
+                'Limpiar los controles
+                MaskedTextBox1.Clear()
+                TextBox6.Clear()
+                TextBox5.Clear()
+                TextBox1.Clear()
+                TextBox2.Clear()
+                TextBox3.Clear()
+                TextBox4.Clear()
+                TextBox7.Clear()
+                TextBox8.Clear()
+                TextBox9.Clear()
+                TextBox10.Clear()
+                RichTextBox1.Clear()
+                RichTextBox4.Clear()
+                RichTextBox2.Clear()
+                RichTextBox3.Clear()
+                TextBox14.Clear()
+                TextBox15.Clear()
+                MaskedTextBox2.Clear()
+                TextBox11.Clear()
+                MaskedTextBox4.Clear()
+                RadioButton1.Checked = True
+                MaskedTextBox1.Focus()
+
             Catch ex As Exception
                 'Mensaje para indicar que no se tuvo exito con la conexion
                 MsgBox(ex.Message)
@@ -250,6 +277,10 @@ Public Class frmServicio
         Try
             'Codigo del servicio
             idservicio = MaskedTextBox1.Text
+
+            'Guarda el codigo del servicio para aplicarlo en la tabla de asignacion de productos
+            codServicio = idservicio
+
             'Falla del equipo
             falla = RichTextBox2.Text
             'Reparacion que se le hara al equipo
@@ -263,7 +294,7 @@ Public Class frmServicio
             'Pago por el servicio
             pago = MaskedTextBox2.Text
             'Saldo pendiente de pago del servicio
-            saldo = MaskedTextBox3.Text
+            saldo = TextBox11.Text
             'Total a pagar del servicio
             total = MaskedTextBox4.Text
 
@@ -338,6 +369,42 @@ Public Class frmServicio
         'Se actualiza la operacion del abono si hay
         saldo = total - pago
         'Se muestra en pantalla
-        MaskedTextBox3.Text = saldo
+        TextBox11.Text = saldo
+    End Sub
+
+    Private Sub Button6_Click(sender As System.Object, e As System.EventArgs) Handles Button6.Click
+        'Inhabilitar el boton de agregar productos
+        Button7.Enabled = False
+
+        'Limpiar los controles
+        MaskedTextBox1.Clear()
+        TextBox6.Clear()
+        TextBox5.Clear()
+        TextBox1.Clear()
+        TextBox2.Clear()
+        TextBox3.Clear()
+        TextBox4.Clear()
+        TextBox7.Clear()
+        TextBox8.Clear()
+        TextBox9.Clear()
+        TextBox10.Clear()
+        RichTextBox1.Clear()
+        RichTextBox4.Clear()
+        RichTextBox2.Clear()
+        RichTextBox3.Clear()
+        TextBox14.Clear()
+        TextBox15.Clear()
+        MaskedTextBox2.Clear()
+        TextBox11.Clear()
+        MaskedTextBox4.Clear()
+        RadioButton1.Checked = True
+        MaskedTextBox1.Focus()
+    End Sub
+
+    Private Sub Button7_Click(sender As System.Object, e As System.EventArgs) Handles Button7.Click
+        'Asignar el codigo del servicio al formulario de productos
+        frmAsignacionProductos.TextBox1.Text = codServicio
+        'Abrir el formulario de los productos de servicio
+        frmAsignacionProductos.Show()
     End Sub
 End Class

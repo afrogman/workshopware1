@@ -78,11 +78,13 @@ Partial Class frmServicio
         Me.TextBox15 = New System.Windows.Forms.TextBox()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.MaskedTextBox2 = New System.Windows.Forms.MaskedTextBox()
-        Me.MaskedTextBox3 = New System.Windows.Forms.MaskedTextBox()
         Me.MaskedTextBox4 = New System.Windows.Forms.MaskedTextBox()
         Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.TextBox11 = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -547,7 +549,7 @@ Partial Class frmServicio
         '
         Me.Button3.Location = New System.Drawing.Point(500, 300)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.Size = New System.Drawing.Size(111, 23)
         Me.Button3.TabIndex = 19
         Me.Button3.Text = "Guardar"
         Me.Button3.UseVisualStyleBackColor = True
@@ -603,15 +605,6 @@ Partial Class frmServicio
         Me.MaskedTextBox2.Size = New System.Drawing.Size(100, 20)
         Me.MaskedTextBox2.TabIndex = 25
         '
-        'MaskedTextBox3
-        '
-        Me.MaskedTextBox3.Enabled = False
-        Me.MaskedTextBox3.Location = New System.Drawing.Point(527, 534)
-        Me.MaskedTextBox3.Mask = "99999.99"
-        Me.MaskedTextBox3.Name = "MaskedTextBox3"
-        Me.MaskedTextBox3.Size = New System.Drawing.Size(100, 20)
-        Me.MaskedTextBox3.TabIndex = 26
-        '
         'MaskedTextBox4
         '
         Me.MaskedTextBox4.Location = New System.Drawing.Point(527, 557)
@@ -645,16 +638,45 @@ Partial Class frmServicio
         Me.Button5.Text = "Calcular"
         Me.Button5.UseVisualStyleBackColor = True
         '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(500, 329)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(111, 23)
+        Me.Button6.TabIndex = 31
+        Me.Button6.Text = "Nuevo servicio"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'Button7
+        '
+        Me.Button7.Enabled = False
+        Me.Button7.Location = New System.Drawing.Point(500, 358)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(111, 23)
+        Me.Button7.TabIndex = 32
+        Me.Button7.Text = "Agregar productos"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
+        'TextBox11
+        '
+        Me.TextBox11.Enabled = False
+        Me.TextBox11.Location = New System.Drawing.Point(527, 534)
+        Me.TextBox11.Name = "TextBox11"
+        Me.TextBox11.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox11.TabIndex = 33
+        '
         'frmServicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(849, 598)
+        Me.Controls.Add(Me.TextBox11)
+        Me.Controls.Add(Me.Button7)
+        Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.DateTimePicker3)
         Me.Controls.Add(Me.Label25)
         Me.Controls.Add(Me.MaskedTextBox4)
-        Me.Controls.Add(Me.MaskedTextBox3)
         Me.Controls.Add(Me.MaskedTextBox2)
         Me.Controls.Add(Me.TextBox15)
         Me.Controls.Add(Me.Label23)
@@ -748,9 +770,11 @@ Partial Class frmServicio
     Friend WithEvents RichTextBox4 As System.Windows.Forms.RichTextBox
     Friend WithEvents Label24 As System.Windows.Forms.Label
     Friend WithEvents MaskedTextBox2 As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents MaskedTextBox3 As System.Windows.Forms.MaskedTextBox
     Friend WithEvents MaskedTextBox4 As System.Windows.Forms.MaskedTextBox
     Friend WithEvents DateTimePicker3 As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label25 As System.Windows.Forms.Label
     Friend WithEvents Button5 As System.Windows.Forms.Button
+    Friend WithEvents Button6 As System.Windows.Forms.Button
+    Friend WithEvents Button7 As System.Windows.Forms.Button
+    Friend WithEvents TextBox11 As System.Windows.Forms.TextBox
 End Class
