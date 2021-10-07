@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-10-2021 a las 22:59:42
+-- Tiempo de generación: 07-10-2021 a las 18:36:42
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.2.29
 
@@ -61,6 +61,16 @@ CREATE TABLE `tblequipo` (
   `observaciones` varchar(500) NOT NULL,
   `idcliente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `tblequipo`
+--
+
+INSERT INTO `tblequipo` (`idequipo`, `marca`, `modelo`, `serie`, `accesorios`, `observaciones`, `idcliente`) VALUES
+(1, 'Compaq', 'Presario 1200', '4578965423', 'Trae un mouse, pantalla plana lcd, teclado y una impresora.', 'El equipo viene sucio, lleno de polvo y con manchas de cafe.', 2),
+(2, 'Dell', '7898', '123456789', 'Trae cargador.', 'El cargado viene quebrado y la computadora viene muy sucia.', 2),
+(3, 'Toshiba', '1996', '123456789', 'Trae un caragado sucio', 'Computadora muy golpeada', 2),
+(8, 'Centuron', '456789', '123123123', 'No trae nada solo el Case', 'Todo bien', 2);
 
 -- --------------------------------------------------------
 
@@ -128,12 +138,21 @@ CREATE TABLE `tblservicio` (
   `reparacion` varchar(500) NOT NULL,
   `fechaentrada` date NOT NULL,
   `fechasalida` date NOT NULL,
+  `fechaprogramada` date NOT NULL,
   `idtecnico` int(11) NOT NULL,
   `pago` double NOT NULL,
   `saldo` double NOT NULL,
   `total` double NOT NULL,
-  `estado` tinyint(1) NOT NULL
+  `estado` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `tblservicio`
+--
+
+INSERT INTO `tblservicio` (`idservicio`, `idcliente`, `idequipo`, `falla`, `reparacion`, `fechaentrada`, `fechasalida`, `fechaprogramada`, `idtecnico`, `pago`, `saldo`, `total`, `estado`) VALUES
+(1, 2, 3, 'No enciende y parece que el disco esta dañado.', 'Chequeo de disco.', '2021-10-07', '2021-10-09', '2021-11-25', 2, 100, 25, 125, '0'),
+(5, 2, 8, 'No enciende', 'Revisar contactos', '2021-10-07', '2021-10-14', '2021-12-08', 2, 100, 125, 225, 'P');
 
 -- --------------------------------------------------------
 
