@@ -42,15 +42,21 @@ Partial Class frmAsignacionProductos
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(31, 31)
+        Me.Label1.Location = New System.Drawing.Point(9, 29)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(101, 13)
         Me.Label1.TabIndex = 0
@@ -59,7 +65,7 @@ Partial Class frmAsignacionProductos
         'TextBox1
         '
         Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(138, 28)
+        Me.TextBox1.Location = New System.Drawing.Point(116, 26)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(100, 20)
         Me.TextBox1.TabIndex = 1
@@ -67,7 +73,7 @@ Partial Class frmAsignacionProductos
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(13, 57)
+        Me.Label2.Location = New System.Drawing.Point(6, 23)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(119, 13)
         Me.Label2.TabIndex = 2
@@ -76,14 +82,14 @@ Partial Class frmAsignacionProductos
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(138, 54)
+        Me.ComboBox1.Location = New System.Drawing.Point(131, 20)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox1.TabIndex = 3
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(265, 52)
+        Me.Button1.Location = New System.Drawing.Point(258, 18)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 4
@@ -93,7 +99,7 @@ Partial Class frmAsignacionProductos
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(65, 316)
+        Me.Label12.Location = New System.Drawing.Point(58, 282)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(71, 13)
         Me.Label12.TabIndex = 33
@@ -102,7 +108,7 @@ Partial Class frmAsignacionProductos
         'TextBox8
         '
         Me.TextBox8.Enabled = False
-        Me.TextBox8.Location = New System.Drawing.Point(138, 287)
+        Me.TextBox8.Location = New System.Drawing.Point(131, 253)
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.Size = New System.Drawing.Size(100, 20)
         Me.TextBox8.TabIndex = 32
@@ -110,7 +116,7 @@ Partial Class frmAsignacionProductos
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(74, 290)
+        Me.Label10.Location = New System.Drawing.Point(67, 256)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(58, 13)
         Me.Label10.TabIndex = 31
@@ -119,7 +125,7 @@ Partial Class frmAsignacionProductos
         'TextBox7
         '
         Me.TextBox7.Enabled = False
-        Me.TextBox7.Location = New System.Drawing.Point(138, 261)
+        Me.TextBox7.Location = New System.Drawing.Point(131, 227)
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Size = New System.Drawing.Size(100, 20)
         Me.TextBox7.TabIndex = 30
@@ -127,7 +133,7 @@ Partial Class frmAsignacionProductos
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(99, 264)
+        Me.Label9.Location = New System.Drawing.Point(92, 230)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(34, 13)
         Me.Label9.TabIndex = 29
@@ -136,7 +142,7 @@ Partial Class frmAsignacionProductos
         'TextBox6
         '
         Me.TextBox6.Enabled = False
-        Me.TextBox6.Location = New System.Drawing.Point(138, 235)
+        Me.TextBox6.Location = New System.Drawing.Point(131, 201)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(100, 20)
         Me.TextBox6.TabIndex = 28
@@ -144,7 +150,7 @@ Partial Class frmAsignacionProductos
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(92, 238)
+        Me.Label8.Location = New System.Drawing.Point(85, 204)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(45, 13)
         Me.Label8.TabIndex = 27
@@ -153,7 +159,7 @@ Partial Class frmAsignacionProductos
         'TextBox5
         '
         Me.TextBox5.Enabled = False
-        Me.TextBox5.Location = New System.Drawing.Point(138, 209)
+        Me.TextBox5.Location = New System.Drawing.Point(131, 175)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(100, 20)
         Me.TextBox5.TabIndex = 26
@@ -161,7 +167,7 @@ Partial Class frmAsignacionProductos
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(96, 212)
+        Me.Label7.Location = New System.Drawing.Point(89, 178)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(40, 13)
         Me.Label7.TabIndex = 25
@@ -170,7 +176,7 @@ Partial Class frmAsignacionProductos
         'RichTextBox1
         '
         Me.RichTextBox1.Enabled = False
-        Me.RichTextBox1.Location = New System.Drawing.Point(138, 107)
+        Me.RichTextBox1.Location = New System.Drawing.Point(131, 73)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.Size = New System.Drawing.Size(264, 96)
         Me.RichTextBox1.TabIndex = 24
@@ -179,7 +185,7 @@ Partial Class frmAsignacionProductos
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(67, 110)
+        Me.Label6.Location = New System.Drawing.Point(60, 76)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(66, 13)
         Me.Label6.TabIndex = 23
@@ -188,7 +194,7 @@ Partial Class frmAsignacionProductos
         'TextBox4
         '
         Me.TextBox4.Enabled = False
-        Me.TextBox4.Location = New System.Drawing.Point(138, 81)
+        Me.TextBox4.Location = New System.Drawing.Point(131, 47)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(187, 20)
         Me.TextBox4.TabIndex = 22
@@ -196,7 +202,7 @@ Partial Class frmAsignacionProductos
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(85, 84)
+        Me.Label5.Location = New System.Drawing.Point(78, 50)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(47, 13)
         Me.Label5.TabIndex = 21
@@ -204,7 +210,7 @@ Partial Class frmAsignacionProductos
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(302, 209)
+        Me.TextBox2.Location = New System.Drawing.Point(295, 175)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(100, 20)
         Me.TextBox2.TabIndex = 36
@@ -212,24 +218,16 @@ Partial Class frmAsignacionProductos
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(244, 212)
+        Me.Label3.Location = New System.Drawing.Point(237, 178)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(52, 13)
         Me.Label3.TabIndex = 35
         Me.Label3.Text = "Cantidad:"
         '
-        'MaskedTextBox1
-        '
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(302, 235)
-        Me.MaskedTextBox1.Mask = "99999.99"
-        Me.MaskedTextBox1.Name = "MaskedTextBox1"
-        Me.MaskedTextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.MaskedTextBox1.TabIndex = 38
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(262, 238)
+        Me.Label4.Location = New System.Drawing.Point(255, 204)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(34, 13)
         Me.Label4.TabIndex = 37
@@ -238,41 +236,91 @@ Partial Class frmAsignacionProductos
         'TextBox3
         '
         Me.TextBox3.Enabled = False
-        Me.TextBox3.Location = New System.Drawing.Point(138, 313)
+        Me.TextBox3.Location = New System.Drawing.Point(131, 279)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(100, 20)
         Me.TextBox3.TabIndex = 39
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.TextBox9)
+        Me.GroupBox1.Controls.Add(Me.Button3)
+        Me.GroupBox1.Controls.Add(Me.Button2)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.TextBox3)
+        Me.GroupBox1.Controls.Add(Me.ComboBox1)
+        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.TextBox2)
+        Me.GroupBox1.Controls.Add(Me.TextBox4)
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.Label12)
+        Me.GroupBox1.Controls.Add(Me.RichTextBox1)
+        Me.GroupBox1.Controls.Add(Me.TextBox8)
+        Me.GroupBox1.Controls.Add(Me.Label7)
+        Me.GroupBox1.Controls.Add(Me.Label10)
+        Me.GroupBox1.Controls.Add(Me.TextBox5)
+        Me.GroupBox1.Controls.Add(Me.TextBox7)
+        Me.GroupBox1.Controls.Add(Me.Label8)
+        Me.GroupBox1.Controls.Add(Me.Label9)
+        Me.GroupBox1.Controls.Add(Me.TextBox6)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 52)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(409, 311)
+        Me.GroupBox1.TabIndex = 40
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Seleccion de producto"
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(295, 227)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(100, 23)
+        Me.Button2.TabIndex = 40
+        Me.Button2.Text = "Calcular"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(295, 256)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(100, 23)
+        Me.Button3.TabIndex = 41
+        Me.Button3.Text = "Agregar producto"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'TextBox9
+        '
+        Me.TextBox9.Enabled = False
+        Me.TextBox9.Location = New System.Drawing.Point(295, 201)
+        Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox9.TabIndex = 42
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(427, 70)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(416, 173)
+        Me.DataGridView1.TabIndex = 41
         '
         'frmAsignacionProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(444, 357)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.MaskedTextBox1)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.TextBox8)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.TextBox7)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.TextBox6)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.RichTextBox1)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(855, 379)
+        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.Label2)
         Me.Name = "frmAsignacionProductos"
         Me.Text = "Workshopware - Asignacion de productos a servicio"
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -297,7 +345,11 @@ Partial Class frmAsignacionProductos
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents MaskedTextBox1 As System.Windows.Forms.MaskedTextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
+    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
 End Class
