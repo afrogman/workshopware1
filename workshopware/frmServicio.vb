@@ -228,30 +228,6 @@ Public Class frmServicio
                 'Habilitar el boton de agregar productos
                 Button7.Enabled = True
 
-                'Limpiar los controles
-                MaskedTextBox1.Clear()
-                TextBox6.Clear()
-                TextBox5.Clear()
-                TextBox1.Clear()
-                TextBox2.Clear()
-                TextBox3.Clear()
-                TextBox4.Clear()
-                TextBox7.Clear()
-                TextBox8.Clear()
-                TextBox9.Clear()
-                TextBox10.Clear()
-                RichTextBox1.Clear()
-                RichTextBox4.Clear()
-                RichTextBox2.Clear()
-                RichTextBox3.Clear()
-                TextBox14.Clear()
-                TextBox15.Clear()
-                MaskedTextBox2.Clear()
-                TextBox11.Clear()
-                MaskedTextBox4.Clear()
-                RadioButton1.Checked = True
-                MaskedTextBox1.Focus()
-
             Catch ex As Exception
                 'Mensaje para indicar que no se tuvo exito con la conexion
                 MsgBox(ex.Message)

@@ -55,7 +55,7 @@ Public Class frmAsignacionProductos
             If (lista <> 0) Then
 
                 'Recibir el ID del producto seleccionado
-                codProv = datos.Tables("tblproducto").Rows(0).Item("idproducto")
+                codProducto = datos.Tables("tblproducto").Rows(0).Item("idproducto")
 
                 'Si encuentra algo, entonces va mostrar la primera posicion encontrada
                 TextBox4.Text = datos.Tables("tblproducto").Rows(0).Item("nombre")
@@ -120,7 +120,7 @@ Public Class frmAsignacionProductos
 
         Try
             'codigo del producto
-            idproducto = codProv
+            idproducto = codProducto
             'codigo del servicio
             idservicio = codServicio
             'precio de venta
@@ -154,6 +154,9 @@ Public Class frmAsignacionProductos
                 comandos.ExecuteNonQuery()
                 'Indico que se realizo exitosamente el guardado
                 MsgBox("Los datos del producto fueron guardados exitosamente!")
+
+                'Procedimiento que actualiza la existencia de un producto
+                Call ActualizarExistencia()
 
                 'Limpieza de controles
                 TextBox4.Clear()
@@ -211,5 +214,39 @@ Public Class frmAsignacionProductos
             MsgBox("No hay datos guardados aun")
             conexion.Close()
         End If
+    End Sub
+
+    'Procedimiento ActualizarCantidad
+    Sub ActualizarExistencia()
+        'Actualizacion de la existencia de productos
+
+        'Variables para boton de guardado
+        Dim existencia, cantidad, diferencia As Integer
+
+        Try
+            'Se obtiene la cantidad que se va despachar de producto
+            cantidad = Val(TextBox2.Text)
+            existencia = Val(TextBox8.Text)
+
+            'Se obtiene la existencia que queda
+            diferencia = existencia - cantidad
+
+            Try
+
+                'Linea de codigo que va actualizar la insercion en la tabla, pero con referencias
+                comandos = New MySqlCommand("UPDATE tblproducto SET cantidad = '" & diferencia & "'" & Chr(13) &
+                                            "WHERE idproducto = '" & codProducto & "'", conexion)
+
+                'Se coloca porque no espero ningun resultado de la consulta
+                comandos.ExecuteNonQuery()
+                
+            Catch ex As Exception
+                'Mensaje para indicar que no se tuvo exito con la conexion
+                MsgBox(ex.Message)
+            End Try
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 End Class
