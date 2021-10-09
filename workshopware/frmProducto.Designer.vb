@@ -90,7 +90,7 @@ Partial Class frmProducto
         Me.TextBox2.Location = New System.Drawing.Point(112, 50)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(246, 20)
-        Me.TextBox2.TabIndex = 48
+        Me.TextBox2.TabIndex = 4
         '
         'Label3
         '
@@ -106,7 +106,7 @@ Partial Class frmProducto
         Me.TextBox1.Location = New System.Drawing.Point(112, 24)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 46
+        Me.TextBox1.TabIndex = 3
         '
         'Label2
         '
@@ -131,7 +131,7 @@ Partial Class frmProducto
         Me.TextBox3.Location = New System.Drawing.Point(106, 160)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox3.TabIndex = 4
+        Me.TextBox3.TabIndex = 5
         '
         'Label5
         '
@@ -163,7 +163,7 @@ Partial Class frmProducto
         Me.RichTextBox1.Location = New System.Drawing.Point(106, 212)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.Size = New System.Drawing.Size(187, 96)
-        Me.RichTextBox1.TabIndex = 8
+        Me.RichTextBox1.TabIndex = 7
         Me.RichTextBox1.Text = ""
         '
         'TextBox5
@@ -171,7 +171,7 @@ Partial Class frmProducto
         Me.TextBox5.Location = New System.Drawing.Point(106, 314)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox5.TabIndex = 10
+        Me.TextBox5.TabIndex = 8
         '
         'Label7
         '
@@ -187,7 +187,7 @@ Partial Class frmProducto
         Me.TextBox6.Location = New System.Drawing.Point(106, 340)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox6.TabIndex = 12
+        Me.TextBox6.TabIndex = 9
         '
         'Label8
         '
@@ -203,7 +203,7 @@ Partial Class frmProducto
         Me.TextBox7.Location = New System.Drawing.Point(106, 366)
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox7.TabIndex = 14
+        Me.TextBox7.TabIndex = 10
         '
         'Label9
         '
@@ -219,7 +219,7 @@ Partial Class frmProducto
         Me.TextBox8.Location = New System.Drawing.Point(106, 392)
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox8.TabIndex = 16
+        Me.TextBox8.TabIndex = 11
         '
         'Label10
         '
@@ -245,7 +245,7 @@ Partial Class frmProducto
         Me.MaskedTextBox1.Mask = "99999.99"
         Me.MaskedTextBox1.Name = "MaskedTextBox1"
         Me.MaskedTextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.MaskedTextBox1.TabIndex = 18
+        Me.MaskedTextBox1.TabIndex = 12
         '
         'MaskedTextBox2
         '
@@ -253,7 +253,7 @@ Partial Class frmProducto
         Me.MaskedTextBox2.Mask = "99999.99"
         Me.MaskedTextBox2.Name = "MaskedTextBox2"
         Me.MaskedTextBox2.Size = New System.Drawing.Size(100, 20)
-        Me.MaskedTextBox2.TabIndex = 20
+        Me.MaskedTextBox2.TabIndex = 13
         '
         'Label12
         '
@@ -269,7 +269,7 @@ Partial Class frmProducto
         Me.Button1.Location = New System.Drawing.Point(143, 30)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(109, 23)
-        Me.Button1.TabIndex = 21
+        Me.Button1.TabIndex = 2
         Me.Button1.Text = "Cargar Proveedor"
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -278,7 +278,7 @@ Partial Class frmProducto
         Me.Button2.Location = New System.Drawing.Point(299, 215)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 22
+        Me.Button2.TabIndex = 14
         Me.Button2.Text = "Nuevo"
         Me.Button2.UseVisualStyleBackColor = True
         '
@@ -287,7 +287,7 @@ Partial Class frmProducto
         Me.Button3.Location = New System.Drawing.Point(299, 244)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 23
+        Me.Button3.TabIndex = 15
         Me.Button3.Text = "Guardar"
         Me.Button3.UseVisualStyleBackColor = True
         '
@@ -296,7 +296,7 @@ Partial Class frmProducto
         Me.Button4.Location = New System.Drawing.Point(299, 274)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
-        Me.Button4.TabIndex = 24
+        Me.Button4.TabIndex = 16
         Me.Button4.Text = "Mostrar"
         Me.Button4.UseVisualStyleBackColor = True
         '

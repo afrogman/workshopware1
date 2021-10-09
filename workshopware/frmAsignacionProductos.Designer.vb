@@ -72,7 +72,7 @@ Partial Class frmAsignacionProductos
         Me.TextBox1.Location = New System.Drawing.Point(116, 26)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 1
+        Me.TextBox1.TabIndex = 2
         '
         'Label2
         '
@@ -89,14 +89,14 @@ Partial Class frmAsignacionProductos
         Me.ComboBox1.Location = New System.Drawing.Point(131, 20)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox1.TabIndex = 3
+        Me.ComboBox1.TabIndex = 1
         '
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(258, 18)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 4
+        Me.Button1.TabIndex = 3
         Me.Button1.Text = "Mostrar"
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -115,7 +115,7 @@ Partial Class frmAsignacionProductos
         Me.TextBox8.Location = New System.Drawing.Point(131, 253)
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox8.TabIndex = 32
+        Me.TextBox8.TabIndex = 9
         '
         'Label10
         '
@@ -132,7 +132,7 @@ Partial Class frmAsignacionProductos
         Me.TextBox7.Location = New System.Drawing.Point(131, 227)
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox7.TabIndex = 30
+        Me.TextBox7.TabIndex = 8
         '
         'Label9
         '
@@ -149,7 +149,7 @@ Partial Class frmAsignacionProductos
         Me.TextBox6.Location = New System.Drawing.Point(131, 201)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox6.TabIndex = 28
+        Me.TextBox6.TabIndex = 7
         '
         'Label8
         '
@@ -166,7 +166,7 @@ Partial Class frmAsignacionProductos
         Me.TextBox5.Location = New System.Drawing.Point(131, 175)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox5.TabIndex = 26
+        Me.TextBox5.TabIndex = 6
         '
         'Label7
         '
@@ -183,7 +183,7 @@ Partial Class frmAsignacionProductos
         Me.RichTextBox1.Location = New System.Drawing.Point(131, 73)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.Size = New System.Drawing.Size(264, 96)
-        Me.RichTextBox1.TabIndex = 24
+        Me.RichTextBox1.TabIndex = 5
         Me.RichTextBox1.Text = ""
         '
         'Label6
@@ -201,7 +201,7 @@ Partial Class frmAsignacionProductos
         Me.TextBox4.Location = New System.Drawing.Point(131, 47)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(187, 20)
-        Me.TextBox4.TabIndex = 22
+        Me.TextBox4.TabIndex = 4
         '
         'Label5
         '
@@ -217,7 +217,7 @@ Partial Class frmAsignacionProductos
         Me.TextBox2.Location = New System.Drawing.Point(295, 175)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox2.TabIndex = 36
+        Me.TextBox2.TabIndex = 11
         '
         'Label3
         '
@@ -243,7 +243,7 @@ Partial Class frmAsignacionProductos
         Me.TextBox3.Location = New System.Drawing.Point(131, 279)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox3.TabIndex = 39
+        Me.TextBox3.TabIndex = 10
         '
         'GroupBox1
         '
@@ -283,14 +283,14 @@ Partial Class frmAsignacionProductos
         Me.TextBox9.Location = New System.Drawing.Point(295, 201)
         Me.TextBox9.Name = "TextBox9"
         Me.TextBox9.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox9.TabIndex = 42
+        Me.TextBox9.TabIndex = 12
         '
         'Button3
         '
         Me.Button3.Location = New System.Drawing.Point(295, 256)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(100, 23)
-        Me.Button3.TabIndex = 41
+        Me.Button3.TabIndex = 14
         Me.Button3.Text = "Agregar producto"
         Me.Button3.UseVisualStyleBackColor = True
         '
@@ -299,7 +299,7 @@ Partial Class frmAsignacionProductos
         Me.Button2.Location = New System.Drawing.Point(295, 227)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(100, 23)
-        Me.Button2.TabIndex = 40
+        Me.Button2.TabIndex = 13
         Me.Button2.Text = "Calcular"
         Me.Button2.UseVisualStyleBackColor = True
         '
@@ -309,7 +309,7 @@ Partial Class frmAsignacionProductos
         Me.DataGridView1.Location = New System.Drawing.Point(427, 12)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(416, 173)
-        Me.DataGridView1.TabIndex = 41
+        Me.DataGridView1.TabIndex = 15
         '
         'DataGridView2
         '
@@ -334,7 +334,7 @@ Partial Class frmAsignacionProductos
         Me.TextBox10.Location = New System.Drawing.Point(533, 199)
         Me.TextBox10.Name = "TextBox10"
         Me.TextBox10.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox10.TabIndex = 44
+        Me.TextBox10.TabIndex = 16
         '
         'frmAsignacionProductos
         '

@@ -138,7 +138,7 @@ Partial Class frmServicio
         Me.TextBox6.Location = New System.Drawing.Point(82, 60)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(160, 20)
-        Me.TextBox6.TabIndex = 14
+        Me.TextBox6.TabIndex = 5
         '
         'Label8
         '
@@ -155,7 +155,7 @@ Partial Class frmServicio
         Me.TextBox5.Location = New System.Drawing.Point(82, 86)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(160, 20)
-        Me.TextBox5.TabIndex = 12
+        Me.TextBox5.TabIndex = 6
         '
         'Label7
         '
@@ -171,7 +171,7 @@ Partial Class frmServicio
         Me.Button2.Location = New System.Drawing.Point(248, 20)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 49)
-        Me.Button2.TabIndex = 10
+        Me.Button2.TabIndex = 4
         Me.Button2.Text = "Cargar cliente"
         Me.Button2.UseVisualStyleBackColor = True
         '
@@ -181,7 +181,7 @@ Partial Class frmServicio
         Me.TextBox4.Location = New System.Drawing.Point(82, 190)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(160, 20)
-        Me.TextBox4.TabIndex = 9
+        Me.TextBox4.TabIndex = 10
         '
         'Label6
         '
@@ -198,7 +198,7 @@ Partial Class frmServicio
         Me.TextBox3.Location = New System.Drawing.Point(82, 164)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(95, 20)
-        Me.TextBox3.TabIndex = 7
+        Me.TextBox3.TabIndex = 9
         '
         'Label5
         '
@@ -215,7 +215,7 @@ Partial Class frmServicio
         Me.TextBox2.Location = New System.Drawing.Point(82, 138)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(95, 20)
-        Me.TextBox2.TabIndex = 5
+        Me.TextBox2.TabIndex = 8
         '
         'Label4
         '
@@ -232,7 +232,7 @@ Partial Class frmServicio
         Me.TextBox1.Location = New System.Drawing.Point(82, 112)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(160, 20)
-        Me.TextBox1.TabIndex = 3
+        Me.TextBox1.TabIndex = 7
         '
         'Label3
         '
@@ -249,7 +249,7 @@ Partial Class frmServicio
         Me.ComboBox1.Location = New System.Drawing.Point(102, 20)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(140, 21)
-        Me.ComboBox1.TabIndex = 1
+        Me.ComboBox1.TabIndex = 3
         '
         'Label2
         '
@@ -265,7 +265,7 @@ Partial Class frmServicio
         Me.Button1.Location = New System.Drawing.Point(227, 13)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(94, 23)
-        Me.Button1.TabIndex = 3
+        Me.Button1.TabIndex = 2
         Me.Button1.Text = "Nuevo cliente"
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -295,7 +295,7 @@ Partial Class frmServicio
         Me.RichTextBox4.Location = New System.Drawing.Point(118, 125)
         Me.RichTextBox4.Name = "RichTextBox4"
         Me.RichTextBox4.Size = New System.Drawing.Size(205, 38)
-        Me.RichTextBox4.TabIndex = 11
+        Me.RichTextBox4.TabIndex = 15
         Me.RichTextBox4.Text = ""
         '
         'Label24
@@ -312,7 +312,7 @@ Partial Class frmServicio
         Me.RichTextBox1.Location = New System.Drawing.Point(118, 169)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.Size = New System.Drawing.Size(205, 38)
-        Me.RichTextBox1.TabIndex = 9
+        Me.RichTextBox1.TabIndex = 16
         Me.RichTextBox1.Text = ""
         '
         'Label13
@@ -329,7 +329,7 @@ Partial Class frmServicio
         Me.TextBox10.Location = New System.Drawing.Point(118, 99)
         Me.TextBox10.Name = "TextBox10"
         Me.TextBox10.Size = New System.Drawing.Size(137, 20)
-        Me.TextBox10.TabIndex = 7
+        Me.TextBox10.TabIndex = 14
         '
         'Label12
         '
@@ -345,7 +345,7 @@ Partial Class frmServicio
         Me.TextBox9.Location = New System.Drawing.Point(118, 73)
         Me.TextBox9.Name = "TextBox9"
         Me.TextBox9.Size = New System.Drawing.Size(205, 20)
-        Me.TextBox9.TabIndex = 5
+        Me.TextBox9.TabIndex = 13
         '
         'Label11
         '
@@ -361,7 +361,7 @@ Partial Class frmServicio
         Me.TextBox8.Location = New System.Drawing.Point(118, 47)
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.Size = New System.Drawing.Size(205, 20)
-        Me.TextBox8.TabIndex = 3
+        Me.TextBox8.TabIndex = 12
         '
         'Label10
         '
@@ -377,7 +377,7 @@ Partial Class frmServicio
         Me.TextBox7.Location = New System.Drawing.Point(118, 21)
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox7.TabIndex = 1
+        Me.TextBox7.TabIndex = 11
         '
         'Label9
         '
@@ -406,7 +406,7 @@ Partial Class frmServicio
         Me.RichTextBox3.Location = New System.Drawing.Point(167, 106)
         Me.RichTextBox3.Name = "RichTextBox3"
         Me.RichTextBox3.Size = New System.Drawing.Size(300, 75)
-        Me.RichTextBox3.TabIndex = 16
+        Me.RichTextBox3.TabIndex = 18
         Me.RichTextBox3.Text = ""
         '
         'Label15
@@ -423,7 +423,7 @@ Partial Class frmServicio
         Me.RichTextBox2.Location = New System.Drawing.Point(167, 25)
         Me.RichTextBox2.Name = "RichTextBox2"
         Me.RichTextBox2.Size = New System.Drawing.Size(300, 75)
-        Me.RichTextBox2.TabIndex = 14
+        Me.RichTextBox2.TabIndex = 17
         Me.RichTextBox2.Text = ""
         '
         'Label14
@@ -449,14 +449,14 @@ Partial Class frmServicio
         Me.DateTimePicker1.Location = New System.Drawing.Point(121, 473)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker1.TabIndex = 7
+        Me.DateTimePicker1.TabIndex = 19
         '
         'DateTimePicker2
         '
         Me.DateTimePicker2.Location = New System.Drawing.Point(427, 473)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker2.TabIndex = 9
+        Me.DateTimePicker2.TabIndex = 20
         '
         'Label17
         '
@@ -482,7 +482,7 @@ Partial Class frmServicio
         Me.ComboBox2.Location = New System.Drawing.Point(130, 505)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox2.TabIndex = 11
+        Me.ComboBox2.TabIndex = 22
         '
         'Label19
         '
@@ -518,7 +518,7 @@ Partial Class frmServicio
         Me.GroupBox4.Location = New System.Drawing.Point(234, 534)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(200, 53)
-        Me.GroupBox4.TabIndex = 18
+        Me.GroupBox4.TabIndex = 26
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Estado del Servicio:"
         '
@@ -528,7 +528,7 @@ Partial Class frmServicio
         Me.RadioButton2.Location = New System.Drawing.Point(95, 23)
         Me.RadioButton2.Name = "RadioButton2"
         Me.RadioButton2.Size = New System.Drawing.Size(74, 17)
-        Me.RadioButton2.TabIndex = 1
+        Me.RadioButton2.TabIndex = 28
         Me.RadioButton2.TabStop = True
         Me.RadioButton2.Text = "Entregado"
         Me.RadioButton2.UseVisualStyleBackColor = True
@@ -540,7 +540,7 @@ Partial Class frmServicio
         Me.RadioButton1.Location = New System.Drawing.Point(16, 23)
         Me.RadioButton1.Name = "RadioButton1"
         Me.RadioButton1.Size = New System.Drawing.Size(73, 17)
-        Me.RadioButton1.TabIndex = 0
+        Me.RadioButton1.TabIndex = 27
         Me.RadioButton1.TabStop = True
         Me.RadioButton1.Text = "Pendiente"
         Me.RadioButton1.UseVisualStyleBackColor = True
@@ -550,7 +550,7 @@ Partial Class frmServicio
         Me.Button3.Location = New System.Drawing.Point(500, 300)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(111, 23)
-        Me.Button3.TabIndex = 19
+        Me.Button3.TabIndex = 33
         Me.Button3.Text = "Guardar"
         Me.Button3.UseVisualStyleBackColor = True
         '
@@ -559,7 +559,7 @@ Partial Class frmServicio
         Me.Button4.Location = New System.Drawing.Point(255, 503)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(95, 23)
-        Me.Button4.TabIndex = 20
+        Me.Button4.TabIndex = 23
         Me.Button4.Text = "Cargar tecnico"
         Me.Button4.UseVisualStyleBackColor = True
         '
@@ -578,7 +578,7 @@ Partial Class frmServicio
         Me.TextBox14.Location = New System.Drawing.Point(87, 538)
         Me.TextBox14.Name = "TextBox14"
         Me.TextBox14.Size = New System.Drawing.Size(141, 20)
-        Me.TextBox14.TabIndex = 22
+        Me.TextBox14.TabIndex = 24
         '
         'TextBox15
         '
@@ -586,7 +586,7 @@ Partial Class frmServicio
         Me.TextBox15.Location = New System.Drawing.Point(87, 564)
         Me.TextBox15.Name = "TextBox15"
         Me.TextBox15.Size = New System.Drawing.Size(141, 20)
-        Me.TextBox15.TabIndex = 24
+        Me.TextBox15.TabIndex = 25
         '
         'Label23
         '
@@ -603,7 +603,7 @@ Partial Class frmServicio
         Me.MaskedTextBox2.Mask = "99999.99"
         Me.MaskedTextBox2.Name = "MaskedTextBox2"
         Me.MaskedTextBox2.Size = New System.Drawing.Size(100, 20)
-        Me.MaskedTextBox2.TabIndex = 25
+        Me.MaskedTextBox2.TabIndex = 29
         '
         'MaskedTextBox4
         '
@@ -611,14 +611,14 @@ Partial Class frmServicio
         Me.MaskedTextBox4.Mask = "99999.99"
         Me.MaskedTextBox4.Name = "MaskedTextBox4"
         Me.MaskedTextBox4.Size = New System.Drawing.Size(100, 20)
-        Me.MaskedTextBox4.TabIndex = 27
+        Me.MaskedTextBox4.TabIndex = 31
         '
         'DateTimePicker3
         '
         Me.DateTimePicker3.Location = New System.Drawing.Point(633, 473)
         Me.DateTimePicker3.Name = "DateTimePicker3"
         Me.DateTimePicker3.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker3.TabIndex = 29
+        Me.DateTimePicker3.TabIndex = 21
         '
         'Label25
         '
@@ -634,7 +634,7 @@ Partial Class frmServicio
         Me.Button5.Location = New System.Drawing.Point(633, 557)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(75, 23)
-        Me.Button5.TabIndex = 30
+        Me.Button5.TabIndex = 32
         Me.Button5.Text = "Calcular"
         Me.Button5.UseVisualStyleBackColor = True
         '
@@ -643,7 +643,7 @@ Partial Class frmServicio
         Me.Button6.Location = New System.Drawing.Point(500, 329)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(111, 23)
-        Me.Button6.TabIndex = 31
+        Me.Button6.TabIndex = 35
         Me.Button6.Text = "Nuevo servicio"
         Me.Button6.UseVisualStyleBackColor = True
         '
@@ -653,7 +653,7 @@ Partial Class frmServicio
         Me.Button7.Location = New System.Drawing.Point(500, 358)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(111, 23)
-        Me.Button7.TabIndex = 32
+        Me.Button7.TabIndex = 34
         Me.Button7.Text = "Agregar productos"
         Me.Button7.UseVisualStyleBackColor = True
         '
@@ -663,7 +663,7 @@ Partial Class frmServicio
         Me.TextBox11.Location = New System.Drawing.Point(527, 534)
         Me.TextBox11.Name = "TextBox11"
         Me.TextBox11.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox11.TabIndex = 33
+        Me.TextBox11.TabIndex = 30
         '
         'frmServicio
         '
