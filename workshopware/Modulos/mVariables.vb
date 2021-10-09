@@ -18,5 +18,7 @@ Module mVariables
     Public lista As Byte
     'Variable para guardar un codigo de proveedor, cliente, tecnico, equipo, servicio, producto temporal
     Public codProv, IdCliente, IdTecnico, CodEquipo, codServicio, codProducto As Integer
+    'Variable para actualizar el total del servicio
+    Public totProd As Double
     
 End Module

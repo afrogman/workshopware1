@@ -104,10 +104,26 @@ Public Class frmAsignacionProductos
     End Sub
 
     Private Sub Button3_Click(sender As System.Object, e As System.EventArgs) Handles Button3.Click
-        'Se guarda el producto en la tabla intermedia
-        Call GuardarProducto()
-        'Se muestran los productos asignados
-        Call MostrarProductos()
+        'Variables locales para la existencia que hay en la BD y la cantidad que quieren despachar
+        Dim existencia, cantidad As Integer
+
+        'Extraer la existencia disponible del productos
+        existencia = Val(TextBox8.Text)
+        'Extraer la cantidad que quieren despachar
+        cantidad = Val(TextBox2.Text)
+
+        'Evaluar si se tienen las existencias necesarias del producto
+        If (cantidad > existencia) Then
+            'Indicar que no se puede cubrir la existencia
+            MsgBox("No se puede despachar la cantidad que se indica, no se cubren las existencias")
+        Else
+            'Se guarda el producto en la tabla intermedia
+            Call GuardarProducto()
+            'Se muestran los productos asignados
+            Call MostrarProductos()
+            'Se muestra el total a pagar
+            Call totalProducto()
+        End If
     End Sub
 
     'Procedimiento para guardar el producto
@@ -117,6 +133,7 @@ Public Class frmAsignacionProductos
         'Variables para boton de guardado
         Dim idproducto, idservicio, cantidad As Integer
         Dim precioventa, total As Double
+        Dim nombreproducto As String
 
         Try
             'codigo del producto
@@ -125,6 +142,8 @@ Public Class frmAsignacionProductos
             idservicio = codServicio
             'precio de venta
             precioventa = Val(TextBox3.Text)
+            'nombre del producto
+            nombreproducto = TextBox4.Text
             'la cantidad que quiere el cliente
             cantidad = Val(TextBox2.Text)
             'total de la seleccion de este producto
@@ -135,10 +154,12 @@ Public Class frmAsignacionProductos
                 Call ConectarDB()
 
                 'Linea de codigo que va guardar la insercion en la tabla, pero con referencias
-                comandos = New MySqlCommand("INSERT INTO tblasignacionproducto (idasignacion, idproducto, idservicio, precioventa, cantidad, total)" & Chr(13) &
-                                            "VALUES(@idasignacion,@idproducto,@idservicio,@precioventa,@cantidad,@total)", conexion)
+                comandos = New MySqlCommand("INSERT INTO tblasignacionproducto (idasignacion, idproducto, nombreproducto, idservicio, precioventa, cantidad, total)" & Chr(13) &
+                                            "VALUES(@idasignacion,@idproducto,@nombreproducto,@idservicio,@precioventa,@cantidad,@total)", conexion)
                 'Referencia al codigo ingresado en el formulario
                 comandos.Parameters.AddWithValue("@idasignacion", 0)
+                'Referencia al codigo ingresado en el formulario
+                comandos.Parameters.AddWithValue("@nombreproducto", nombreproducto)
                 'Referencia al codigo ingresado en el formulario
                 comandos.Parameters.AddWithValue("@idproducto", idproducto)
                 'Referencia al nombre ingresado en el formulario
@@ -157,6 +178,9 @@ Public Class frmAsignacionProductos
 
                 'Procedimiento que actualiza la existencia de un producto
                 Call ActualizarExistencia()
+
+                'Procedimiento para actualizar los montos
+                Call ActualizarMonto()
 
                 'Limpieza de controles
                 TextBox4.Clear()
@@ -189,7 +213,7 @@ Public Class frmAsignacionProductos
         Call ConectarDB()
 
         'Se guarda la consulta general mostrando nombres alternos para los campos
-        sql = "SELECT idproducto as 'Codigo Producto', precioventa as 'Precio Venta', cantidad as 'Cantidad', total as 'Total' FROM tblasignacionproducto WHERE idservicio =  '" & codServicio & "'"
+        sql = "SELECT idproducto as 'Codigo Producto', nombreproducto as 'Producto', precioventa as 'Precio Venta', cantidad as 'Cantidad', total as 'Total' FROM tblasignacionproducto WHERE idservicio =  '" & codServicio & "'"
 
         'Ejecuta la consulta SQL en la baes de datos con la conexion
         adaptador = New MySqlDataAdapter(sql, conexion)
@@ -240,6 +264,84 @@ Public Class frmAsignacionProductos
                 'Se coloca porque no espero ningun resultado de la consulta
                 comandos.ExecuteNonQuery()
                 
+            Catch ex As Exception
+                'Mensaje para indicar que no se tuvo exito con la conexion
+                MsgBox(ex.Message)
+            End Try
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    'Procedimiento para calcular el total de producto a pagar
+    Sub totalProducto()
+        'Procedimiento de conexion de la base de datods
+        Call ConectarDB()
+
+        'Se guarda la consulta general mostrando nombres alternos para los campos
+        sql = "SELECT sum(precioventa) as 'Total Productos' FROM tblasignacionproducto WHERE idservicio =  '" & codServicio & "'"
+
+        'Ejecuta la consulta SQL en la baes de datos con la conexion
+        adaptador = New MySqlDataAdapter(sql, conexion)
+
+        datos = New DataSet
+
+        'Va llenarse de los datos que tenga la tabla tbltecnico
+        adaptador.Fill(datos, "tblasignacionproducto")
+
+        'Va recibir las tuplas de la tabla
+        lista = datos.Tables("tblasignacionproducto").Rows.Count
+
+        'Condicional para ver si se recibe un dato en la lista
+        If (lista <> 0) Then
+            'Le indica al DataGridView que son datos que vienen de una base de datos
+            DataGridView2.DataSource = datos
+            'Le indica al DataGridView que muestre lo datos de la tabla indicada
+            DataGridView2.DataMember = "tblasignacionproducto"
+
+            'Extraer el total del DataGridView
+            totProd = DataGridView2.Rows(0).Cells(0).Value
+
+            'Se cierra la conexion
+            conexion.Close()
+
+            'Se muestra el total en pantalla
+            TextBox10.Text = totProd
+        Else
+            MsgBox("No hay datos guardados aun")
+            conexion.Close()
+        End If
+    End Sub
+
+    'Procedimiento ActualizarCantidad
+    Sub ActualizarMonto()
+        'Actualizacion del monto a pagar
+
+        'Variables para actualizar
+        Dim saldo, subtotal, total As Double
+
+        Try
+            'Se obtiene el saldo del formulario de servicios
+            saldo = Val(frmServicio.TextBox11.Text)
+
+            'Se obtiene el dato del subtotal de los productos
+            subtotal = Val(TextBox9.Text)
+
+            'Se obtiene el dato actual del total para actualizar
+            total = saldo + subtotal
+
+            Try
+                'Linea de codigo que va actualizar la insercion en la tabla, pero con referencias
+                comandos = New MySqlCommand("UPDATE tblservicio SET saldo = '" & total & "'" & Chr(13) &
+                                            "WHERE idservicio = '" & codServicio & "'", conexion)
+
+                'Se coloca porque no espero ningun resultado de la consulta
+                comandos.ExecuteNonQuery()
+
+                'Se actualiza el dato en el formulario de servicios
+                frmServicio.TextBox11.Text = total
+
             Catch ex As Exception
                 'Mensaje para indicar que no se tuvo exito con la conexion
                 MsgBox(ex.Message)
