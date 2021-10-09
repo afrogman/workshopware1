@@ -85,6 +85,7 @@ Partial Class frmServicio
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.TextBox11 = New System.Windows.Forms.TextBox()
+        Me.Button8 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -665,11 +666,21 @@ Partial Class frmServicio
         Me.TextBox11.Size = New System.Drawing.Size(100, 20)
         Me.TextBox11.TabIndex = 30
         '
+        'Button8
+        '
+        Me.Button8.Location = New System.Drawing.Point(617, 300)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(111, 23)
+        Me.Button8.TabIndex = 36
+        Me.Button8.Text = "Cargar servicio"
+        Me.Button8.UseVisualStyleBackColor = True
+        '
         'frmServicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(849, 598)
+        Me.Controls.Add(Me.Button8)
         Me.Controls.Add(Me.TextBox11)
         Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.Button6)
@@ -777,4 +788,5 @@ Partial Class frmServicio
     Friend WithEvents Button6 As System.Windows.Forms.Button
     Friend WithEvents Button7 As System.Windows.Forms.Button
     Friend WithEvents TextBox11 As System.Windows.Forms.TextBox
+    Friend WithEvents Button8 As System.Windows.Forms.Button
 End Class

@@ -16,56 +16,8 @@ Public Class frmServicio
     End Sub
 
     Private Sub Button2_Click(sender As System.Object, e As System.EventArgs) Handles Button2.Click
-        'Variable para obtener el dato seleccionado del Combobox
-        Dim nitCli As String
-
-        Try
-            'Se captura el valor del NIT del cliente que tiene seleccionado el combobox1
-            nitCli = ComboBox1.Text
-
-            'Procedimiento de conexion de la baes de datos
-            ConectarDB()
-
-            'Condicional que va verificar que no hayan dejado en blanco la solicitud del nit
-            If (nitCli <> "") Then
-                'Se guarda la consulta que quiero hacer en la base de datos
-                sql = "SELECT * FROM tblcliente WHERE nit = '" & nitCli & "'"
-                'Ejecuta la consulta SQL en la baes de datos con la conexion
-                adaptador = New MySqlDataAdapter(sql, conexion)
-                datos = New DataSet
-                'Va llenarse de los datos que tenga la tabla tblproveedor
-                adaptador.Fill(datos, "tblcliente")
-                'Va recibir las tuplas de la tabla
-                lista = datos.Tables("tblcliente").Rows.Count
-            Else
-                'Mensaje en caso se haya dejado en blanco la solicitud del codigo
-                MessageBox.Show("No hizo seleccion de cliente")
-            End If
-
-            'Condicional para ver si se recibe un dato en la lista
-            If (lista <> 0) Then
-
-                'Recibir el ID del cliente seleccionado
-                IdCliente = datos.Tables("tblcliente").Rows(0).Item("idcliente")
-
-                'Si encuentra algo, entonces va mostrar la primera posicion encontrada
-                TextBox6.Text = datos.Tables("tblcliente").Rows(0).Item("nombres")
-                TextBox5.Text = datos.Tables("tblcliente").Rows(0).Item("apellidos")
-                TextBox1.Text = datos.Tables("tblcliente").Rows(0).Item("direccion")
-                TextBox2.Text = datos.Tables("tblcliente").Rows(0).Item("telefonocasa")
-                TextBox3.Text = datos.Tables("tblcliente").Rows(0).Item("telefonocelular")
-                TextBox4.Text = datos.Tables("tblcliente").Rows(0).Item("correoelectronico")
-
-                'Se cierra la conexion
-                conexion.Close()
-            Else
-                MsgBox("No se encontro ningun cliente con ese nit")
-                conexion.Close()
-            End If
-
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+        'Llama al procedimiento que llena el comboBox
+        Call ComboCliente()
     End Sub
 
     Sub DatosCliente()
@@ -383,4 +335,213 @@ Public Class frmServicio
         'Abrir el formulario de los productos de servicio
         frmAsignacionProductos.Show()
     End Sub
+
+    Private Sub Button8_Click(sender As System.Object, e As System.EventArgs) Handles Button8.Click
+        'Variable para obtener el dato seleccionado del MaskedTextbox1
+        Dim NoServicio As String
+
+        Try
+            'Se captura el valor del numero de servicio del MasketTextbox1
+            NoServicio = Val(MaskedTextBox1.Text)
+
+            'Procedimiento de conexion de la baes de datos
+            ConectarDB()
+
+            'Condicional que va verificar que no hayan dejado en blanco la solicitud del nit
+            If (NoServicio <> "") Then
+                'Se guarda la consulta que quiero hacer en la base de datos
+                sql = "SELECT * FROM tblservicio WHERE idservicio = '" & NoServicio & "'"
+                'Ejecuta la consulta SQL en la baes de datos con la conexion
+                adaptador = New MySqlDataAdapter(sql, conexion)
+                datos = New DataSet
+                'Va llenarse de los datos que tenga la tabla tblproveedor
+                adaptador.Fill(datos, "tblservicio")
+                'Va recibir las tuplas de la tabla
+                lista = datos.Tables("tblservicio").Rows.Count
+            Else
+                'Mensaje en caso se haya dejado en blanco la solicitud del codigo
+                MessageBox.Show("No hizo seleccion de ningun servicio")
+            End If
+
+            'Condicional para ver si se recibe un dato en la lista
+            If (lista <> 0) Then
+
+                'Recibir el ID del cliente que tiene el servicio
+                IdCliente = datos.Tables("tblservicio").Rows(0).Item("idcliente")
+                'Recibir el ID del equipo que tiene el servicio
+                CodEquipo = datos.Tables("tblservicio").Rows(0).Item("idequipo")
+                'Recibir el ID del tecnico que esta viendo el equipo
+                IdTecnico = datos.Tables("tblservicio").Rows(0).Item("idtecnico")
+
+                TextBox7.Text = datos.Tables("tblservicio").Rows(0).Item("idequipo")
+
+                RichTextBox2.Text = datos.Tables("tblservicio").Rows(0).Item("falla")
+                RichTextBox3.Text = datos.Tables("tblservicio").Rows(0).Item("reparacion")
+                DateTimePicker1.Text = datos.Tables("tblservicio").Rows(0).Item("fechaentrada")
+                DateTimePicker2.Text = datos.Tables("tblservicio").Rows(0).Item("fechasalida")
+                DateTimePicker3.Text = datos.Tables("tblservicio").Rows(0).Item("fechaprogramada")
+
+                'ComboBox2.Text = datos.Tables("tblservicio").Rows(0).Item("idtecnico")
+
+                Dim estado = datos.Tables("tblservicio").Rows(0).Item("estado")
+                If (estado = "Pendiente") Then
+                    RadioButton1.Checked = True
+                    RadioButton2.Checked = False
+                ElseIf (estado = "Entregado") Then
+                    RadioButton1.Checked = False
+                    RadioButton2.Checked = True
+                End If
+
+                MaskedTextBox2.Text = datos.Tables("tblservicio").Rows(0).Item("pago")
+                TextBox11.Text = datos.Tables("tblservicio").Rows(0).Item("saldo")
+                MaskedTextBox4.Text = datos.Tables("tblservicio").Rows(0).Item("total")
+
+                'Llena los datos del cliente
+                Call ComboCliente2()
+                'Llena los datos del equipo
+                Call DatosEquipo()
+
+                'Se cierra la conexion
+                conexion.Close()
+            Else
+                MsgBox("No se encontro ningun servicio con ese numero")
+                conexion.Close()
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    'Procedimiento que llena el Combobox del Cliente
+    Sub ComboCliente()
+        'Variable para obtener el dato seleccionado del Combobox
+        Dim nitCli As String
+
+        Try
+            'Se captura el valor del NIT del cliente que tiene seleccionado el combobox1
+            nitCli = ComboBox1.Text
+
+            'Procedimiento de conexion de la baes de datos
+            ConectarDB()
+
+            'Condicional que va verificar que no hayan dejado en blanco la solicitud del nit
+            If (nitCli <> "") Then
+                'Se guarda la consulta que quiero hacer en la base de datos
+                sql = "SELECT * FROM tblcliente WHERE nit = '" & nitCli & "'"
+                'Ejecuta la consulta SQL en la baes de datos con la conexion
+                adaptador = New MySqlDataAdapter(sql, conexion)
+                datos = New DataSet
+                'Va llenarse de los datos que tenga la tabla tblproveedor
+                adaptador.Fill(datos, "tblcliente")
+                'Va recibir las tuplas de la tabla
+                lista = datos.Tables("tblcliente").Rows.Count
+            Else
+                'Mensaje en caso se haya dejado en blanco la solicitud del codigo
+                MessageBox.Show("No hizo seleccion de cliente")
+            End If
+
+            'Condicional para ver si se recibe un dato en la lista
+            If (lista <> 0) Then
+
+                'Recibir el ID del cliente seleccionado
+                IdCliente = datos.Tables("tblcliente").Rows(0).Item("idcliente")
+
+                'Si encuentra algo, entonces va mostrar la primera posicion encontrada
+                TextBox6.Text = datos.Tables("tblcliente").Rows(0).Item("nombres")
+                TextBox5.Text = datos.Tables("tblcliente").Rows(0).Item("apellidos")
+                TextBox1.Text = datos.Tables("tblcliente").Rows(0).Item("direccion")
+                TextBox2.Text = datos.Tables("tblcliente").Rows(0).Item("telefonocasa")
+                TextBox3.Text = datos.Tables("tblcliente").Rows(0).Item("telefonocelular")
+                TextBox4.Text = datos.Tables("tblcliente").Rows(0).Item("correoelectronico")
+
+                'Se cierra la conexion
+                conexion.Close()
+            Else
+                MsgBox("No se encontro ningun cliente con ese nit")
+                conexion.Close()
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    'Procedimiento que llena el Combobox del Cliente para modificar
+    Sub ComboCliente2()
+
+        Try
+            'Condicional que va verificar que no hayan dejado en blanco la solicitud del nit
+            If (IdCliente <> 0) Then
+                'Se guarda la consulta que quiero hacer en la base de datos
+                sql = "SELECT * FROM tblcliente WHERE idcliente = '" & IdCliente & "'"
+                'Ejecuta la consulta SQL en la baes de datos con la conexion
+                adaptador = New MySqlDataAdapter(sql, conexion)
+                datos = New DataSet
+                'Va llenarse de los datos que tenga la tabla tblproveedor
+                adaptador.Fill(datos, "tblcliente")
+                'Va recibir las tuplas de la tabla
+                lista = datos.Tables("tblcliente").Rows.Count
+            Else
+                'Mensaje en caso se haya dejado en blanco la solicitud del codigo
+                MessageBox.Show("No hizo seleccion de cliente")
+            End If
+
+            'Condicional para ver si se recibe un dato en la lista
+            If (lista <> 0) Then
+
+                'Si encuentra algo, entonces va mostrar la primera posicion encontrada
+                TextBox6.Text = datos.Tables("tblcliente").Rows(0).Item("nombres")
+                TextBox5.Text = datos.Tables("tblcliente").Rows(0).Item("apellidos")
+                TextBox1.Text = datos.Tables("tblcliente").Rows(0).Item("direccion")
+                TextBox2.Text = datos.Tables("tblcliente").Rows(0).Item("telefonocasa")
+                TextBox3.Text = datos.Tables("tblcliente").Rows(0).Item("telefonocelular")
+                TextBox4.Text = datos.Tables("tblcliente").Rows(0).Item("correoelectronico")
+            Else
+                MsgBox("No se encontro ningun cliente con ese nit")
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    'Procedimiento para cargar los datos del equipo
+    Sub DatosEquipo()
+        Try
+            'Condicional que va verificar que no hayan dejado en blanco la solicitud del nit
+            If (CodEquipo <> 0) Then
+                'Se guarda la consulta que quiero hacer en la base de datos
+                sql = "SELECT * FROM tblequipo WHERE idequipo = '" & CodEquipo & "'"
+                'Ejecuta la consulta SQL en la baes de datos con la conexion
+                adaptador = New MySqlDataAdapter(sql, conexion)
+                datos = New DataSet
+                'Va llenarse de los datos que tenga la tabla tblproveedor
+                adaptador.Fill(datos, "tblequipo")
+                'Va recibir las tuplas de la tabla
+                lista = datos.Tables("tblequipo").Rows.Count
+            Else
+                'Mensaje en caso se haya dejado en blanco la solicitud del codigo
+                MessageBox.Show("No hizo seleccion de equipo")
+            End If
+
+            'Condicional para ver si se recibe un dato en la lista
+            If (lista <> 0) Then
+
+                'Si encuentra algo, entonces va mostrar la primera posicion encontrada
+                TextBox7.Text = datos.Tables("tblequipo").Rows(0).Item("idequipo")
+                TextBox8.Text = datos.Tables("tblequipo").Rows(0).Item("marca")
+                TextBox9.Text = datos.Tables("tblequipo").Rows(0).Item("modelo")
+                TextBox10.Text = datos.Tables("tblequipo").Rows(0).Item("serie")
+                RichTextBox4.Text = datos.Tables("tblequipo").Rows(0).Item("accesorios")
+                RichTextBox1.Text = datos.Tables("tblequipo").Rows(0).Item("observaciones")
+            Else
+                MsgBox("No se encontro ningun equipo con ese codigo")
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
 End Class
