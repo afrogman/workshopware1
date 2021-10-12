@@ -34,7 +34,7 @@ Partial Class frmMenu
         Me.Button1.Location = New System.Drawing.Point(12, 12)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 0
+        Me.Button1.TabIndex = 1
         Me.Button1.Text = "Clientes"
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -43,7 +43,7 @@ Partial Class frmMenu
         Me.Button2.Location = New System.Drawing.Point(12, 41)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 1
+        Me.Button2.TabIndex = 2
         Me.Button2.Text = "Tecnicos"
         Me.Button2.UseVisualStyleBackColor = True
         '
@@ -52,25 +52,25 @@ Partial Class frmMenu
         Me.Button3.Location = New System.Drawing.Point(13, 71)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 2
+        Me.Button3.TabIndex = 3
         Me.Button3.Text = "Proveedores"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(13, 101)
+        Me.Button4.Location = New System.Drawing.Point(94, 71)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
-        Me.Button4.TabIndex = 3
+        Me.Button4.TabIndex = 4
         Me.Button4.Text = "Productos"
         Me.Button4.UseVisualStyleBackColor = True
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(13, 131)
+        Me.Button5.Location = New System.Drawing.Point(175, 71)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(75, 23)
-        Me.Button5.TabIndex = 4
+        Me.Button5.TabIndex = 5
         Me.Button5.Text = "Servicio"
         Me.Button5.UseVisualStyleBackColor = True
         '
@@ -78,13 +78,16 @@ Partial Class frmMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(406, 223)
+        Me.BackColor = System.Drawing.SystemColors.MenuHighlight
+        Me.ClientSize = New System.Drawing.Size(434, 187)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
+        Me.Location = New System.Drawing.Point(100, 50)
         Me.Name = "frmMenu"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Workshopware - Menu Principal"
         Me.ResumeLayout(False)
 

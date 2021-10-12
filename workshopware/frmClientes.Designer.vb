@@ -43,15 +43,21 @@ Partial Class frmClientes
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(13, 13)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(99, 13)
+        Me.Label1.Size = New System.Drawing.Size(167, 20)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Ingreso de clientes:"
         '
@@ -187,7 +193,7 @@ Partial Class frmClientes
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(366, 82)
+        Me.Button1.Location = New System.Drawing.Point(29, 19)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 9
@@ -196,7 +202,7 @@ Partial Class frmClientes
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(366, 111)
+        Me.Button2.Location = New System.Drawing.Point(29, 48)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 10
@@ -205,7 +211,7 @@ Partial Class frmClientes
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(367, 141)
+        Me.Button3.Location = New System.Drawing.Point(30, 78)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 11
@@ -217,18 +223,59 @@ Partial Class frmClientes
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(12, 270)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(536, 150)
+        Me.DataGridView1.Size = New System.Drawing.Size(555, 150)
         Me.DataGridView1.TabIndex = 12
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Button6)
+        Me.GroupBox1.Controls.Add(Me.Button5)
+        Me.GroupBox1.Controls.Add(Me.Button4)
+        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.Button2)
+        Me.GroupBox1.Controls.Add(Me.Button3)
+        Me.GroupBox1.Location = New System.Drawing.Point(366, 82)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(201, 113)
+        Me.GroupBox1.TabIndex = 16
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Opciones clientes:"
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(111, 20)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.TabIndex = 12
+        Me.Button4.Text = "Buscar"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(111, 48)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(75, 23)
+        Me.Button5.TabIndex = 13
+        Me.Button5.Text = "Modificar"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(111, 77)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(75, 23)
+        Me.Button6.TabIndex = 14
+        Me.Button6.Text = "Eliminar"
+        Me.Button6.UseVisualStyleBackColor = True
         '
         'frmClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(561, 427)
+        Me.BackColor = System.Drawing.SystemColors.MenuHighlight
+        Me.ClientSize = New System.Drawing.Size(580, 427)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TextBox6)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.TextBox5)
@@ -246,9 +293,12 @@ Partial Class frmClientes
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.Location = New System.Drawing.Point(160, 110)
         Me.Name = "frmClientes"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Workshopware - Clientes"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -274,4 +324,8 @@ Partial Class frmClientes
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents Button6 As System.Windows.Forms.Button
+    Friend WithEvents Button5 As System.Windows.Forms.Button
+    Friend WithEvents Button4 As System.Windows.Forms.Button
 End Class
