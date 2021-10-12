@@ -22,6 +22,7 @@ Partial Class frmMenu
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMenu))
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -31,16 +32,18 @@ Partial Class frmMenu
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(12, 12)
+        Me.Button1.Image = Global.workshopware.My.Resources.Resources.user3
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(13, 12)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.Size = New System.Drawing.Size(134, 52)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "Clientes"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(12, 41)
+        Me.Button2.Location = New System.Drawing.Point(12, 88)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 2
@@ -49,7 +52,7 @@ Partial Class frmMenu
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(13, 71)
+        Me.Button3.Location = New System.Drawing.Point(13, 118)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 3
@@ -58,7 +61,7 @@ Partial Class frmMenu
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(94, 71)
+        Me.Button4.Location = New System.Drawing.Point(94, 118)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
         Me.Button4.TabIndex = 4
@@ -67,7 +70,7 @@ Partial Class frmMenu
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(175, 71)
+        Me.Button5.Location = New System.Drawing.Point(175, 118)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(75, 23)
         Me.Button5.TabIndex = 5
@@ -85,6 +88,7 @@ Partial Class frmMenu
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Location = New System.Drawing.Point(100, 50)
         Me.Name = "frmMenu"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual

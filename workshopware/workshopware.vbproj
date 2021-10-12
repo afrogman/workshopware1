@@ -183,6 +183,27 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="iconos\user3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iconos\add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iconos\search.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iconos\save.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iconos\edit-tool.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iconos\first-page.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iconos\delete.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
