@@ -23,25 +23,16 @@ Partial Class frmMenu
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMenu))
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(13, 158)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 3
-        Me.Button3.Text = "Proveedores"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(94, 158)
+        Me.Button4.Location = New System.Drawing.Point(180, 186)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
         Me.Button4.TabIndex = 4
@@ -50,12 +41,23 @@ Partial Class frmMenu
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(175, 158)
+        Me.Button5.Location = New System.Drawing.Point(261, 186)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(75, 23)
         Me.Button5.TabIndex = 5
         Me.Button5.Text = "Servicio"
         Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Image = Global.workshopware.My.Resources.Resources.user_online
+        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button3.Location = New System.Drawing.Point(13, 128)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(136, 52)
+        Me.Button3.TabIndex = 3
+        Me.Button3.Text = "Proveedores"
+        Me.Button3.UseVisualStyleBackColor = True
         '
         'Button2
         '
