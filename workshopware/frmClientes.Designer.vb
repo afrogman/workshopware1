@@ -210,7 +210,7 @@ Partial Class frmClientes
         Me.GroupBox1.Controls.Add(Me.Button3)
         Me.GroupBox1.Location = New System.Drawing.Point(366, 56)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(201, 181)
+        Me.GroupBox1.Size = New System.Drawing.Size(201, 166)
         Me.GroupBox1.TabIndex = 16
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Opciones clientes:"

@@ -23,36 +23,16 @@ Partial Class frmMenu
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMenu))
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
-        '
-        'Button1
-        '
-        Me.Button1.Image = Global.workshopware.My.Resources.Resources.user3
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(13, 12)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(134, 52)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Clientes"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(12, 88)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Tecnicos"
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(13, 118)
+        Me.Button3.Location = New System.Drawing.Point(13, 158)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 3
@@ -61,7 +41,7 @@ Partial Class frmMenu
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(94, 118)
+        Me.Button4.Location = New System.Drawing.Point(94, 158)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
         Me.Button4.TabIndex = 4
@@ -70,19 +50,41 @@ Partial Class frmMenu
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(175, 118)
+        Me.Button5.Location = New System.Drawing.Point(175, 158)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(75, 23)
         Me.Button5.TabIndex = 5
         Me.Button5.Text = "Servicio"
         Me.Button5.UseVisualStyleBackColor = True
         '
+        'Button2
+        '
+        Me.Button2.Image = Global.workshopware.My.Resources.Resources.user_offline
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(13, 70)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(136, 52)
+        Me.Button2.TabIndex = 2
+        Me.Button2.Text = "Tecnicos"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Image = Global.workshopware.My.Resources.Resources.user3
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(13, 12)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(136, 52)
+        Me.Button1.TabIndex = 1
+        Me.Button1.Text = "Clientes"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'frmMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.MenuHighlight
-        Me.ClientSize = New System.Drawing.Size(434, 187)
+        Me.ClientSize = New System.Drawing.Size(434, 262)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)

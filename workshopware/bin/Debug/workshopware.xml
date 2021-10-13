@@ -39,6 +39,10 @@ workshopware
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:workshopware.My.Resources.Resources.user_offline">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:workshopware.My.Resources.Resources.user3">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

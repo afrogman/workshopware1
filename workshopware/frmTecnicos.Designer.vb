@@ -22,6 +22,7 @@ Partial Class frmTecnicos
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmTecnicos))
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
@@ -41,25 +42,36 @@ Partial Class frmTecnicos
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(365, 105)
+        Me.Button2.Image = Global.workshopware.My.Resources.Resources.save
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(6, 64)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.Size = New System.Drawing.Size(88, 39)
         Me.Button2.TabIndex = 9
         Me.Button2.Text = "Guardar"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(365, 76)
+        Me.Button1.Image = Global.workshopware.My.Resources.Resources.add
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(6, 19)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.Size = New System.Drawing.Size(88, 39)
         Me.Button1.TabIndex = 8
         Me.Button1.Text = "Nuevo"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button1.UseVisualStyleBackColor = True
         '
         'TextBox5
@@ -179,9 +191,10 @@ Partial Class frmTecnicos
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(12, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(103, 13)
+        Me.Label1.Size = New System.Drawing.Size(172, 20)
         Me.Label1.TabIndex = 19
         Me.Label1.Text = "Ingreso de tecnicos:"
         '
@@ -190,27 +203,80 @@ Partial Class frmTecnicos
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(15, 239)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(536, 150)
+        Me.DataGridView1.Size = New System.Drawing.Size(550, 150)
         Me.DataGridView1.TabIndex = 11
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(365, 135)
+        Me.Button3.Image = Global.workshopware.My.Resources.Resources.first_page
+        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button3.Location = New System.Drawing.Point(6, 109)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.Size = New System.Drawing.Size(88, 39)
         Me.Button3.TabIndex = 10
         Me.Button3.Text = "Mostrar"
+        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button3.UseVisualStyleBackColor = True
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Button6)
+        Me.GroupBox1.Controls.Add(Me.Button5)
+        Me.GroupBox1.Controls.Add(Me.Button4)
+        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.Button3)
+        Me.GroupBox1.Controls.Add(Me.Button2)
+        Me.GroupBox1.Location = New System.Drawing.Point(365, 55)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(200, 160)
+        Me.GroupBox1.TabIndex = 33
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Opciones tecnicos"
+        '
+        'Button6
+        '
+        Me.Button6.Image = Global.workshopware.My.Resources.Resources.delete
+        Me.Button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button6.Location = New System.Drawing.Point(98, 109)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(88, 39)
+        Me.Button6.TabIndex = 13
+        Me.Button6.Text = "Eliminar"
+        Me.Button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.Image = Global.workshopware.My.Resources.Resources.edit_tool
+        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button5.Location = New System.Drawing.Point(100, 65)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(86, 37)
+        Me.Button5.TabIndex = 12
+        Me.Button5.Text = "Modificar"
+        Me.Button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Image = Global.workshopware.My.Resources.Resources.search
+        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button4.Location = New System.Drawing.Point(98, 20)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(88, 37)
+        Me.Button4.TabIndex = 11
+        Me.Button4.Text = "Buscar"
+        Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button4.UseVisualStyleBackColor = True
         '
         'frmTecnicos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(560, 404)
-        Me.Controls.Add(Me.Button3)
+        Me.BackColor = System.Drawing.SystemColors.MenuHighlight
+        Me.ClientSize = New System.Drawing.Size(582, 404)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TextBox5)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
@@ -226,9 +292,13 @@ Partial Class frmTecnicos
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Location = New System.Drawing.Point(160, 130)
         Me.Name = "frmTecnicos"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Workshopware - Tecnicos"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -252,4 +322,8 @@ Partial Class frmTecnicos
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents Button5 As System.Windows.Forms.Button
+    Friend WithEvents Button6 As System.Windows.Forms.Button
 End Class
