@@ -180,7 +180,7 @@ Public Class frmProveedores
 
         Try
             'Variables locales para la actualizacion del cliente
-            Dim id, nombre, encargado, direccion, correo, nit As String
+            Dim id, nombre, encargado, direccion, correo As String
             Dim tel1, tel2 As Integer
 
             'Extrae el id del proveedor
