@@ -19,6 +19,14 @@ workshopware
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:workshopware.My.Resources.Resources.box">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:workshopware.My.Resources.Resources.calculator">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:workshopware.My.Resources.Resources.delete">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

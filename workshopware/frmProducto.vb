@@ -74,7 +74,10 @@ Public Class frmProducto
     End Sub
 
     Private Sub Button2_Click(sender As System.Object, e As System.EventArgs) Handles Button2.Click
+        'Boton de limpieza de controles
+
         'Limpieza de controles
+
         TextBox3.Clear()
         TextBox4.Clear()
         RichTextBox1.Clear()
@@ -178,5 +181,84 @@ Public Class frmProducto
     Private Sub Button4_Click(sender As System.Object, e As System.EventArgs) Handles Button4.Click
         'Abrir el formulario de consulta de productos
         frmConProducto.Show()
+    End Sub
+
+    Private Sub Button8_Click(sender As System.Object, e As System.EventArgs) Handles Button8.Click
+        'Boton para calcular el precio de venta
+        Dim pcosto, pventa, impuesto, ganancia As Double
+
+        'Extraer el precio de costo
+        pcosto = Val(MaskedTextBox1.Text)
+
+        'Se calcula primero el impuesto del 5%
+        impuesto = (pcosto * 0.05)
+        'Se calcula la ganancia
+        ganancia = (pcosto * 0.1)
+        'Se suma el impuesto, la ganancia con el precio de costo para obtener el precio de venta
+        pventa = impuesto + ganancia + pcosto
+        'Se muestra el precio de venta en pantalla
+        MaskedTextBox2.Text = pventa
+    End Sub
+
+    Private Sub Button5_Click(sender As System.Object, e As System.EventArgs) Handles Button5.Click
+        'procedimiento de busqueda de producto
+        Call buscarProducto()
+    End Sub
+
+    'Procedimiento para buscar producto
+    Sub buscarProducto()
+        'Variable para el codigo del Proveedor y asi buscarlo
+        Dim codProducto As String
+
+        Try
+            'Se captura el codigo del producto del Textbox3
+            codProducto = TextBox3.Text
+
+            'Procedimiento de conexion de la base de datos
+            ConectarDB()
+
+            'Condicional que va verificar que no hayan dejado en blanco la solicitud del codigo del producto
+            If (codProducto <> "") Then
+                'Se guarda la consulta que quiero hacer en la base de datos
+                sql = "SELECT * FROM tblproducto WHERE idproducto = '" & codProducto & "'"
+                'Ejecuta la consulta SQL en la base de datos con la conexion
+                adaptador = New MySqlDataAdapter(sql, conexion)
+                datos = New DataSet
+                'Va llenarse de los datos que tenga la tabla tblproveedor
+                adaptador.Fill(datos, "tblproducto")
+                'Va recibir las tuplas de la tabla
+                lista = datos.Tables("tblproducto").Rows.Count
+            Else
+                'Mensaje en caso se haya dejado en blanco la solicitud del codigo
+                MessageBox.Show("No se ingreso ningun codigo de busqueda para el producto")
+            End If
+
+            'Condicional para ver si se recibe un dato en la lista
+            If (lista <> 0) Then
+
+                'Guardar en variable publica el codigo del proveedor, para la consulta del proveedor en el combobox
+                codProv = datos.Tables("tblproducto").Rows(0).Item("idproveedor")
+
+                'Si encuentra algo, entonces va mostrar la primera posicion encontrada
+                TextBox3.Text = datos.Tables("tblproducto").Rows(0).Item("idproducto")
+                TextBox4.Text = datos.Tables("tblproducto").Rows(0).Item("nombre")
+                RichTextBox1.Text = datos.Tables("tblproducto").Rows(0).Item("descripcion")
+                TextBox5.Text = datos.Tables("tblproducto").Rows(0).Item("marca")
+                TextBox6.Text = datos.Tables("tblproducto").Rows(0).Item("modelo")
+                TextBox7.Text = datos.Tables("tblproducto").Rows(0).Item("serie")
+                TextBox8.Text = datos.Tables("tblproducto").Rows(0).Item("cantidad")
+                MaskedTextBox1.Text = datos.Tables("tblproducto").Rows(0).Item("pcosto")
+                MaskedTextBox2.Text = datos.Tables("tblproducto").Rows(0).Item("pventa")
+
+                'Se cierra la conexion
+                conexion.Close()
+            Else
+                MsgBox("No se encontro ningun producto con ese codigo")
+                conexion.Close()
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 End Class

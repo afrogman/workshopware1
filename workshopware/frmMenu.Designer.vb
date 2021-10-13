@@ -23,27 +23,18 @@ Partial Class frmMenu
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMenu))
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(13, 186)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
-        Me.Button4.TabIndex = 4
-        Me.Button4.Text = "Productos"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(94, 186)
+        Me.Button5.Location = New System.Drawing.Point(185, 214)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(75, 23)
         Me.Button5.TabIndex = 5
@@ -53,12 +44,23 @@ Partial Class frmMenu
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.workshopware.My.Resources.Resources.LogoIPI
-        Me.PictureBox1.Location = New System.Drawing.Point(284, 179)
+        Me.PictureBox1.Location = New System.Drawing.Point(334, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(138, 71)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 6
         Me.PictureBox1.TabStop = False
+        '
+        'Button4
+        '
+        Me.Button4.Image = Global.workshopware.My.Resources.Resources.box
+        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button4.Location = New System.Drawing.Point(155, 128)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(136, 52)
+        Me.Button4.TabIndex = 4
+        Me.Button4.Text = "Productos"
+        Me.Button4.UseVisualStyleBackColor = True
         '
         'Button3
         '
@@ -98,7 +100,7 @@ Partial Class frmMenu
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.MenuHighlight
-        Me.ClientSize = New System.Drawing.Size(434, 262)
+        Me.ClientSize = New System.Drawing.Size(484, 262)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
