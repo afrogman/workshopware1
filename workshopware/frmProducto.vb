@@ -61,6 +61,9 @@ Public Class frmProducto
                 TextBox1.Text = datos.Tables("tblproveedor").Rows(0).Item("idproveedor")
                 TextBox2.Text = datos.Tables("tblproveedor").Rows(0).Item("nombreencargado")
 
+                'Hace enfoque para que se llenen los datos del producto
+                TextBox3.Focus()
+
                 'Se cierra la conexion
                 conexion.Close()
             Else
@@ -76,6 +79,9 @@ Public Class frmProducto
     Private Sub Button2_Click(sender As System.Object, e As System.EventArgs) Handles Button2.Click
         'Boton de limpieza de controles
 
+        'Habilitar el Textbox3
+        TextBox3.Enabled = True
+
         'Limpieza de controles
 
         TextBox3.Clear()
@@ -85,8 +91,8 @@ Public Class frmProducto
         TextBox6.Clear()
         TextBox7.Clear()
         TextBox8.Clear()
-        MaskedTextBox1.Clear()
-        MaskedTextBox2.Clear()
+        TextBox9.Clear()
+        TextBox10.Clear()
         TextBox3.Focus()
     End Sub
 
@@ -114,9 +120,9 @@ Public Class frmProducto
             'Cantidad o existencia del producto
             cantidad = TextBox8.Text
             'Precio de costo
-            pcosto = MaskedTextBox1.Text
+            pcosto = Val(TextBox9.Text)
             'Precio de venta
-            pventa = MaskedTextBox2.Text
+            pventa = Val(TextBox10.Text)
             'Codigo del proveedor, obtenido de la llave foranea
             idprov = codProv
 
@@ -160,8 +166,8 @@ Public Class frmProducto
                 TextBox6.Clear()
                 TextBox7.Clear()
                 TextBox8.Clear()
-                MaskedTextBox1.Clear()
-                MaskedTextBox2.Clear()
+                TextBox9.Clear()
+                TextBox10.Clear()
                 TextBox3.Focus()
 
                 'Se cierra la conexion
@@ -188,7 +194,7 @@ Public Class frmProducto
         Dim pcosto, pventa, impuesto, ganancia As Double
 
         'Extraer el precio de costo
-        pcosto = Val(MaskedTextBox1.Text)
+        pcosto = Val(TextBox9.Text)
 
         'Se calcula primero el impuesto del 5%
         impuesto = (pcosto * 0.05)
@@ -197,12 +203,16 @@ Public Class frmProducto
         'Se suma el impuesto, la ganancia con el precio de costo para obtener el precio de venta
         pventa = impuesto + ganancia + pcosto
         'Se muestra el precio de venta en pantalla
-        MaskedTextBox2.Text = pventa
+        TextBox10.Text = pventa
     End Sub
 
     Private Sub Button5_Click(sender As System.Object, e As System.EventArgs) Handles Button5.Click
+        'Inhabilitar el Textbox3, para que no cambian la clave por ser llave primaria.
+        TextBox3.Enabled = False
         'procedimiento de busqueda de producto
         Call buscarProducto()
+        'procedimiento de busqueda del proveedor
+        Call buscarProveedor()
     End Sub
 
     'Procedimiento para buscar producto
@@ -247,8 +257,8 @@ Public Class frmProducto
                 TextBox6.Text = datos.Tables("tblproducto").Rows(0).Item("modelo")
                 TextBox7.Text = datos.Tables("tblproducto").Rows(0).Item("serie")
                 TextBox8.Text = datos.Tables("tblproducto").Rows(0).Item("cantidad")
-                MaskedTextBox1.Text = datos.Tables("tblproducto").Rows(0).Item("pcosto")
-                MaskedTextBox2.Text = datos.Tables("tblproducto").Rows(0).Item("pventa")
+                TextBox9.Text = datos.Tables("tblproducto").Rows(0).Item("pcosto")
+                TextBox10.Text = datos.Tables("tblproducto").Rows(0).Item("pventa")
 
                 'Se cierra la conexion
                 conexion.Close()
@@ -261,4 +271,174 @@ Public Class frmProducto
             MsgBox(ex.Message)
         End Try
     End Sub
+
+    'Procedimiento para llenar al proveedor en la busqueda
+    Sub buscarProveedor()
+        'Se define variable para el proveedor
+        Dim codProveedor As String
+
+        'Se asigna el valor que traemos del procedimiento buscarProducto
+        codProveedor = codProv
+
+        Try
+
+            'Procedimiento de conexion de la baes de datos
+            ConectarDB()
+
+            'Condicional que va verificar que no hayan dejado en blanco la solicitud del nombre
+            If (codProveedor <> "") Then
+                'Se guarda la consulta que quiero hacer en la base de datos
+                sql = "SELECT * FROM tblproveedor WHERE idproveedor = '" & codProveedor & "'"
+                'Ejecuta la consulta SQL en la baes de datos con la conexion
+                adaptador = New MySqlDataAdapter(sql, conexion)
+                datos = New DataSet
+                'Va llenarse de los datos que tenga la tabla tblproveedor
+                adaptador.Fill(datos, "tblproveedor")
+                'Va recibir las tuplas de la tabla
+                lista = datos.Tables("tblproveedor").Rows.Count
+            Else
+                'Mensaje en caso se haya dejado en blanco la solicitud del codigo
+                MessageBox.Show("No hizo seleccion de proveedor")
+            End If
+
+            'Condicional para ver si se recibe un dato en la lista
+            If (lista <> 0) Then
+
+                'Recibir el ID del proveedor seleccionado
+                codProv = datos.Tables("tblproveedor").Rows(0).Item("idproveedor")
+
+                'Si encuentra algo, entonces va mostrar la primera posicion encontrada
+                TextBox1.Text = datos.Tables("tblproveedor").Rows(0).Item("idproveedor")
+                TextBox2.Text = datos.Tables("tblproveedor").Rows(0).Item("nombreencargado")
+
+                'Hace enfoque para que se llenen los datos del producto
+                TextBox3.Focus()
+
+                'Se cierra la conexion
+                conexion.Close()
+            Else
+                MsgBox("No se encontro ningun proveedor con ese nombre")
+                conexion.Close()
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub Button6_Click(sender As System.Object, e As System.EventArgs) Handles Button6.Click
+        'Boton de actualizar productos        
+
+        Try
+            'Variables locales para la actualizacion de productos
+            Dim id, nombre, descripcion, marca, modelo, serie As String
+            Dim cantidad, idp As Integer
+            Dim pventa, pcosto As Double
+
+            'Id del producto
+            id = Val(TextBox3.Text)
+            'Extrae los nuevos nombres del producto
+            nombre = TextBox4.Text
+            'Extrae la nueva descripcion del producto
+            descripcion = RichTextBox1.Text
+            'Extrae la nueva marca del producto
+            marca = TextBox5.Text
+            'Extra el nuevo modelo del producto
+            modelo = TextBox6.Text
+            'Extrae el nuevo numero de serie
+            serie = TextBox7.Text
+            'Extrae la nueva cantidad o existencia de productos
+            cantidad = Val(TextBox8.Text)
+            'Extrae el nuevo precio de costo del producto
+            pcosto = Val(TextBox9.Text)
+            'Extrae el nuevo precio de venta del producto
+            pventa = Val(TextBox10.Text)
+            'Se guarda el nuevo codigo de proveedor de producto
+            idp = codProv
+
+            'Hacer la conexion con la base de datos
+            ConectarDB()
+
+            'Variable local para confirmar (Si/No) va modificar el dato
+            Dim sino As Byte
+            'Se pregunta si se quiere o no modificar el dato de la base de datos
+            sino = MsgBox("¿Esta seguro que desea cambiar el los datos del producto?", vbYesNo, "Confirmacion de Actualizacion")
+
+            'Se evalua si es si, para acutalizarlo
+            If (sino = 6) Then
+                'Guardamos el SQL del UPDATE que se correra en la base de datos
+                sql = "UPDATE tblproducto SET nombre = '" & nombre & "', descripcion = '" & descripcion & "', marca = '" & marca & "', modelo = '" & modelo & "', serie = '" & serie & "', cantidad = '" & cantidad & "' , pcosto = '" & pcosto & "', pventa = '" & pventa & "', idproveedor = '" & idp & "' WHERE idproducto = '" & id & "'"
+                'Se envia el SQL con la conexion para que se ejecute en la base de datos
+                comandos = New MySqlCommand(sql, conexion)
+                'No espero resultados
+                comandos.ExecuteNonQuery()
+                'Se le indica al usuario que ya fue realizada la actualizacion
+                MsgBox("Los datos del producto fueron actualizados")
+                'Se cierra la conexion
+                conexion.Close()
+            End If
+
+        Catch ex As Exception
+            'Muestra el mensaje de error
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub Button7_Click(sender As System.Object, e As System.EventArgs) Handles Button7.Click
+        '***REVISAR PORQUE NO DA EL BORRADO
+
+        'Boton de eliminacion de productos
+
+        'Varible para guardar el id del producto y asi borrarlo
+        Dim id As String
+
+        'Conecta con la base de datos
+        ConectarDB()
+
+        Try
+
+            'Variable local para confirmar (Si/No) va eliminar el dato
+            Dim sino As Byte
+
+            'Extrae el id del producto
+            id = TextBox3.Text
+
+            'Se pregunta si se quiere o no borrar el dato de la base de datos
+            sino = MsgBox("¿Esta seguro que desea eliminar a este producto?", vbYesNo, "Confirmacion de Eliminacion")
+            'Se evalua si es si, para eliminarlo
+
+            If (sino = 6) Then
+                'Se guarda el SQL de la eliminacion
+                sql = "DELETE FROM tblproducto WHERE idproducto = '" & id & "'"
+                'Se envia el SQL a la base de datos con el parametro de la conexion
+                comandos = New MySqlCommand(sql, conexion)
+                'Se indica que no se espera un dato de vuelta
+                comandos.BeginExecuteNonQuery()
+                'Se le indica al usuario que ya se borro la tupla
+                MsgBox("Informacion del producto eliminada")
+
+                'Limpieza de controles
+                TextBox1.Clear()
+                TextBox2.Clear()
+                TextBox3.Clear()
+                TextBox4.Clear()
+                RichTextBox1.Clear()
+                TextBox5.Clear()
+                TextBox6.Clear()
+                TextBox7.Clear()
+                TextBox8.Clear()
+                TextBox9.Clear()
+                TextBox10.Clear()
+                TextBox1.Focus()
+
+                'Se cierra la conexion
+                conexion.Close()
+            End If
+
+        Catch ex As Exception
+            'Muestra el error de la rutina
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
 End Class

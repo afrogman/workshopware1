@@ -45,19 +45,19 @@ Partial Class frmProducto
         Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
-        Me.MaskedTextBox2 = New System.Windows.Forms.MaskedTextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button8 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.TextBox10 = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -247,22 +247,6 @@ Partial Class frmProducto
         Me.Label11.TabIndex = 17
         Me.Label11.Text = "Precio Costo:"
         '
-        'MaskedTextBox1
-        '
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(107, 462)
-        Me.MaskedTextBox1.Mask = "99999.99"
-        Me.MaskedTextBox1.Name = "MaskedTextBox1"
-        Me.MaskedTextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.MaskedTextBox1.TabIndex = 12
-        '
-        'MaskedTextBox2
-        '
-        Me.MaskedTextBox2.Location = New System.Drawing.Point(107, 488)
-        Me.MaskedTextBox2.Mask = "99999.99"
-        Me.MaskedTextBox2.Name = "MaskedTextBox2"
-        Me.MaskedTextBox2.Size = New System.Drawing.Size(100, 20)
-        Me.MaskedTextBox2.TabIndex = 13
-        '
         'Label12
         '
         Me.Label12.AutoSize = True
@@ -297,6 +281,30 @@ Partial Class frmProducto
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Opciones de producto"
         '
+        'Button7
+        '
+        Me.Button7.Image = Global.workshopware.My.Resources.Resources.delete
+        Me.Button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button7.Location = New System.Drawing.Point(100, 119)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(88, 39)
+        Me.Button7.TabIndex = 20
+        Me.Button7.Text = "Eliminar"
+        Me.Button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button7.UseVisualStyleBackColor = True
+        '
+        'Button6
+        '
+        Me.Button6.Image = Global.workshopware.My.Resources.Resources.edit_tool
+        Me.Button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button6.Location = New System.Drawing.Point(100, 74)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(88, 39)
+        Me.Button6.TabIndex = 19
+        Me.Button6.Text = "Modificar"
+        Me.Button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button6.UseVisualStyleBackColor = True
+        '
         'Button5
         '
         Me.Button5.Image = Global.workshopware.My.Resources.Resources.search
@@ -304,40 +312,10 @@ Partial Class frmProducto
         Me.Button5.Location = New System.Drawing.Point(100, 29)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(88, 39)
-        Me.Button5.TabIndex = 17
+        Me.Button5.TabIndex = 18
         Me.Button5.Text = "Buscar"
         Me.Button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button5.UseVisualStyleBackColor = True
-        '
-        'Button6
-        '
-        Me.Button6.Location = New System.Drawing.Point(100, 74)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(88, 39)
-        Me.Button6.TabIndex = 18
-        Me.Button6.Text = "Modificar"
-        Me.Button6.UseVisualStyleBackColor = True
-        '
-        'Button7
-        '
-        Me.Button7.Location = New System.Drawing.Point(100, 119)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(88, 39)
-        Me.Button7.TabIndex = 22
-        Me.Button7.Text = "Eliminar"
-        Me.Button7.UseVisualStyleBackColor = True
-        '
-        'Button8
-        '
-        Me.Button8.Image = Global.workshopware.My.Resources.Resources.calculator
-        Me.Button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button8.Location = New System.Drawing.Point(213, 462)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(94, 47)
-        Me.Button8.TabIndex = 22
-        Me.Button8.Text = "Calcular"
-        Me.Button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button8.UseVisualStyleBackColor = True
         '
         'Button2
         '
@@ -346,7 +324,7 @@ Partial Class frmProducto
         Me.Button2.Location = New System.Drawing.Point(6, 29)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(88, 39)
-        Me.Button2.TabIndex = 14
+        Me.Button2.TabIndex = 15
         Me.Button2.Text = "Nuevo"
         Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button2.UseVisualStyleBackColor = True
@@ -358,7 +336,7 @@ Partial Class frmProducto
         Me.Button3.Location = New System.Drawing.Point(6, 74)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(88, 39)
-        Me.Button3.TabIndex = 15
+        Me.Button3.TabIndex = 16
         Me.Button3.Text = "Guardar"
         Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button3.UseVisualStyleBackColor = True
@@ -370,10 +348,22 @@ Partial Class frmProducto
         Me.Button4.Location = New System.Drawing.Point(6, 119)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(88, 39)
-        Me.Button4.TabIndex = 16
+        Me.Button4.TabIndex = 17
         Me.Button4.Text = "Mostrar"
         Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Button8
+        '
+        Me.Button8.Image = Global.workshopware.My.Resources.Resources.calculator
+        Me.Button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button8.Location = New System.Drawing.Point(213, 462)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(94, 47)
+        Me.Button8.TabIndex = 14
+        Me.Button8.Text = "Calcular"
+        Me.Button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button8.UseVisualStyleBackColor = True
         '
         'Button1
         '
@@ -387,19 +377,33 @@ Partial Class frmProducto
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'TextBox9
+        '
+        Me.TextBox9.Location = New System.Drawing.Point(107, 462)
+        Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox9.TabIndex = 12
+        '
+        'TextBox10
+        '
+        Me.TextBox10.Location = New System.Drawing.Point(107, 488)
+        Me.TextBox10.Name = "TextBox10"
+        Me.TextBox10.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox10.TabIndex = 13
+        '
         'frmProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.MenuHighlight
         Me.ClientSize = New System.Drawing.Size(517, 521)
+        Me.Controls.Add(Me.TextBox10)
+        Me.Controls.Add(Me.TextBox9)
         Me.Controls.Add(Me.Button8)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.MaskedTextBox2)
         Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.MaskedTextBox1)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.TextBox8)
         Me.Controls.Add(Me.Label10)
@@ -452,8 +456,6 @@ Partial Class frmProducto
     Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents MaskedTextBox1 As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents MaskedTextBox2 As System.Windows.Forms.MaskedTextBox
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
@@ -465,4 +467,6 @@ Partial Class frmProducto
     Friend WithEvents Button7 As System.Windows.Forms.Button
     Friend WithEvents Button6 As System.Windows.Forms.Button
     Friend WithEvents Button8 As System.Windows.Forms.Button
+    Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox10 As System.Windows.Forms.TextBox
 End Class
