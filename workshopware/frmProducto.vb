@@ -385,8 +385,6 @@ Public Class frmProducto
     End Sub
 
     Private Sub Button7_Click(sender As System.Object, e As System.EventArgs) Handles Button7.Click
-        '***REVISAR PORQUE NO DA EL BORRADO
-
         'Boton de eliminacion de productos
 
         'Varible para guardar el id del producto y asi borrarlo
