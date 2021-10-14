@@ -10,7 +10,9 @@ Public Class frmServicio
 
     Private Sub frmServicio_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         'Se llena el ComboBox del cliente (nit)
-        Call DatosCliente()
+        Call LlenarDatosCliente()
+        'Se llena el Combobox del equipo (idequipo)
+        Call LlenarDatosEquipo()
         'Se llena el ComboBox del tecnico (nombre)
         Call DatosTecnico()
     End Sub
@@ -20,7 +22,7 @@ Public Class frmServicio
         Call ComboCliente()
     End Sub
 
-    Sub DatosCliente()
+    Sub LlenarDatosCliente()
         'Se realiza la conexion a la base de datos
         Call ConectarDB()
 
@@ -39,6 +41,29 @@ Public Class frmServicio
         ComboBox1.DataSource = datos.Tables("tblcliente")
         'Se indica el campo que va aparecer
         ComboBox1.DisplayMember = "nit"
+        'se cierra la conexion
+        conexion.Close()
+    End Sub
+
+    Sub LlenarDatosEquipo()
+        'Se realiza la conexion a la base de datos
+        Call ConectarDB()
+
+        'Se guarda la cadena SQL que se quiere consultar
+        sql = "SELECT * FROM tblequipo"
+
+        'Se envia la consulta y la conexion
+        adaptador = New MySqlDataAdapter(sql, conexion)
+        datos = New DataSet
+        'Se selecciona la tabla que es va mostrar
+        datos.Tables.Add("tblequipo")
+        'Se indica que se va llenar con el resultado de la consulta
+        adaptador.Fill(datos.Tables("tblequipo"))
+
+        'Se le indica al combobox de que tabla se va alimentar
+        ComboBox3.DataSource = datos.Tables("tblequipo")
+        'Se indica el campo que va aparecer
+        ComboBox3.DisplayMember = "idequipo"
         'se cierra la conexion
         conexion.Close()
     End Sub
@@ -130,7 +155,7 @@ Public Class frmServicio
 
         Try
             'Codigo del equipo
-            idequipo = Val(TextBox7.Text)
+            idequipo = Val(ComboBox3.Text)
 
             'Se guarda en la variable temporal para la llave foranea
             CodEquipo = idequipo
@@ -312,7 +337,6 @@ Public Class frmServicio
         TextBox2.Clear()
         TextBox3.Clear()
         TextBox4.Clear()
-        TextBox7.Clear()
         TextBox8.Clear()
         TextBox9.Clear()
         TextBox10.Clear()
@@ -373,7 +397,7 @@ Public Class frmServicio
                 'Recibir el ID del tecnico que esta viendo el equipo
                 IdTecnico = datos.Tables("tblservicio").Rows(0).Item("idtecnico")
 
-                TextBox7.Text = datos.Tables("tblservicio").Rows(0).Item("idequipo")
+                ComboBox3.Text = datos.Tables("tblservicio").Rows(0).Item("idequipo")
 
                 RichTextBox2.Text = datos.Tables("tblservicio").Rows(0).Item("falla")
                 RichTextBox3.Text = datos.Tables("tblservicio").Rows(0).Item("reparacion")
@@ -467,6 +491,60 @@ Public Class frmServicio
         End Try
     End Sub
 
+    'Procedimiento que llena el dato seleccionado del Combobox del equipo
+
+    Sub ComboEquipo()
+        'Variable para obtener el dato seleccionado del Combobox
+        Dim idEquipo As String
+
+        Try
+            'Se captura el valor del NIT del cliente que tiene seleccionado el combobox1
+            idEquipo = ComboBox3.Text
+
+            'Procedimiento de conexion de la baes de datos
+            ConectarDB()
+
+            'Condicional que va verificar que no hayan dejado en blanco la solicitud del idequipo
+            If (idEquipo <> "") Then
+                'Se guarda la consulta que quiero hacer en la base de datos
+                sql = "SELECT * FROM tblequipo WHERE idequipo = '" & idEquipo & "'"
+                'Ejecuta la consulta SQL en la baes de datos con la conexion
+                adaptador = New MySqlDataAdapter(sql, conexion)
+                datos = New DataSet
+                'Va llenarse de los datos que tenga la tabla tblproveedor
+                adaptador.Fill(datos, "tblequipo")
+                'Va recibir las tuplas de la tabla
+                lista = datos.Tables("tblequipo").Rows.Count
+            Else
+                'Mensaje en caso se haya dejado en blanco la solicitud del codigo
+                MessageBox.Show("No hizo seleccion de equipo")
+            End If
+
+            'Condicional para ver si se recibe un dato en la lista
+            If (lista <> 0) Then
+
+                'Recibir el ID del equipo seleccionado
+                CodEquipo = datos.Tables("tblequipo").Rows(0).Item("idequipo")
+
+                'Si encuentra algo, entonces va mostrar la primera posicion encontrada
+                TextBox8.Text = datos.Tables("tblequipo").Rows(0).Item("marca")
+                TextBox9.Text = datos.Tables("tblequipo").Rows(0).Item("modelo")
+                TextBox10.Text = datos.Tables("tblequipo").Rows(0).Item("serie")
+                RichTextBox4.Text = datos.Tables("tblequipo").Rows(0).Item("accesorios")
+                RichTextBox1.Text = datos.Tables("tblequipo").Rows(0).Item("observaciones")
+
+                'Se cierra la conexion
+                conexion.Close()
+            Else
+                MsgBox("No se encontro ningun equipo con ese codigo")
+                conexion.Close()
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
     'Procedimiento que llena el Combobox del Cliente para modificar
     Sub ComboCliente2()
 
@@ -529,7 +607,7 @@ Public Class frmServicio
             If (lista <> 0) Then
 
                 'Si encuentra algo, entonces va mostrar la primera posicion encontrada
-                TextBox7.Text = datos.Tables("tblequipo").Rows(0).Item("idequipo")
+                ComboBox3.Text = datos.Tables("tblequipo").Rows(0).Item("idequipo")
                 TextBox8.Text = datos.Tables("tblequipo").Rows(0).Item("marca")
                 TextBox9.Text = datos.Tables("tblequipo").Rows(0).Item("modelo")
                 TextBox10.Text = datos.Tables("tblequipo").Rows(0).Item("serie")
@@ -544,4 +622,8 @@ Public Class frmServicio
         End Try
     End Sub
     
+    Private Sub Button9_Click(sender As System.Object, e As System.EventArgs) Handles Button9.Click
+        'Realiza el llenado de los datos del equipo seleccionado en el Combobox3
+        Call ComboEquipo()
+    End Sub
 End Class

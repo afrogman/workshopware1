@@ -22,6 +22,7 @@ Partial Class frmServicio
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmServicio))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -40,8 +41,9 @@ Partial Class frmServicio
         Me.Label3 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.Button9 = New System.Windows.Forms.Button()
         Me.RichTextBox4 = New System.Windows.Forms.RichTextBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
@@ -52,7 +54,6 @@ Partial Class frmServicio
         Me.Label11 = New System.Windows.Forms.Label()
         Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.RichTextBox3 = New System.Windows.Forms.RichTextBox()
@@ -86,6 +87,8 @@ Partial Class frmServicio
         Me.Button7 = New System.Windows.Forms.Button()
         Me.TextBox11 = New System.Windows.Forms.TextBox()
         Me.Button8 = New System.Windows.Forms.Button()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -95,7 +98,7 @@ Partial Class frmServicio
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(13, 13)
+        Me.Label1.Location = New System.Drawing.Point(21, 42)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(101, 13)
         Me.Label1.TabIndex = 0
@@ -103,7 +106,7 @@ Partial Class frmServicio
         '
         'MaskedTextBox1
         '
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(121, 13)
+        Me.MaskedTextBox1.Location = New System.Drawing.Point(129, 42)
         Me.MaskedTextBox1.Mask = "999999"
         Me.MaskedTextBox1.Name = "MaskedTextBox1"
         Me.MaskedTextBox1.Size = New System.Drawing.Size(100, 20)
@@ -126,9 +129,9 @@ Partial Class frmServicio
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.ComboBox1)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Location = New System.Drawing.Point(16, 42)
+        Me.GroupBox1.Location = New System.Drawing.Point(16, 82)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(334, 227)
+        Me.GroupBox1.Size = New System.Drawing.Size(370, 227)
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos del cliente:"
@@ -169,11 +172,14 @@ Partial Class frmServicio
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(248, 20)
+        Me.Button2.Image = Global.workshopware.My.Resources.Resources.refresh
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(248, 19)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 49)
+        Me.Button2.Size = New System.Drawing.Size(113, 49)
         Me.Button2.TabIndex = 4
         Me.Button2.Text = "Cargar cliente"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button2.UseVisualStyleBackColor = True
         '
         'TextBox4
@@ -261,17 +267,10 @@ Partial Class frmServicio
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "NIT del cliente:"
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(227, 13)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(94, 23)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Nuevo cliente"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.ComboBox3)
+        Me.GroupBox2.Controls.Add(Me.Button9)
         Me.GroupBox2.Controls.Add(Me.RichTextBox4)
         Me.GroupBox2.Controls.Add(Me.Label24)
         Me.GroupBox2.Controls.Add(Me.RichTextBox1)
@@ -282,17 +281,37 @@ Partial Class frmServicio
         Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Controls.Add(Me.TextBox8)
         Me.GroupBox2.Controls.Add(Me.Label10)
-        Me.GroupBox2.Controls.Add(Me.TextBox7)
         Me.GroupBox2.Controls.Add(Me.Label9)
-        Me.GroupBox2.Location = New System.Drawing.Point(356, 48)
+        Me.GroupBox2.Location = New System.Drawing.Point(392, 82)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(340, 221)
+        Me.GroupBox2.Size = New System.Drawing.Size(452, 227)
         Me.GroupBox2.TabIndex = 4
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos del Equipo"
         '
+        'ComboBox3
+        '
+        Me.ComboBox3.FormattingEnabled = True
+        Me.ComboBox3.Location = New System.Drawing.Point(118, 21)
+        Me.ComboBox3.Name = "ComboBox3"
+        Me.ComboBox3.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox3.TabIndex = 38
+        '
+        'Button9
+        '
+        Me.Button9.Image = Global.workshopware.My.Resources.Resources.print_preview
+        Me.Button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button9.Location = New System.Drawing.Point(329, 20)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(113, 49)
+        Me.Button9.TabIndex = 14
+        Me.Button9.Text = "Cargar equipo"
+        Me.Button9.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button9.UseVisualStyleBackColor = True
+        '
         'RichTextBox4
         '
+        Me.RichTextBox4.Enabled = False
         Me.RichTextBox4.Location = New System.Drawing.Point(118, 125)
         Me.RichTextBox4.Name = "RichTextBox4"
         Me.RichTextBox4.Size = New System.Drawing.Size(205, 38)
@@ -310,6 +329,7 @@ Partial Class frmServicio
         '
         'RichTextBox1
         '
+        Me.RichTextBox1.Enabled = False
         Me.RichTextBox1.Location = New System.Drawing.Point(118, 169)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.Size = New System.Drawing.Size(205, 38)
@@ -327,6 +347,7 @@ Partial Class frmServicio
         '
         'TextBox10
         '
+        Me.TextBox10.Enabled = False
         Me.TextBox10.Location = New System.Drawing.Point(118, 99)
         Me.TextBox10.Name = "TextBox10"
         Me.TextBox10.Size = New System.Drawing.Size(137, 20)
@@ -343,6 +364,7 @@ Partial Class frmServicio
         '
         'TextBox9
         '
+        Me.TextBox9.Enabled = False
         Me.TextBox9.Location = New System.Drawing.Point(118, 73)
         Me.TextBox9.Name = "TextBox9"
         Me.TextBox9.Size = New System.Drawing.Size(205, 20)
@@ -359,6 +381,7 @@ Partial Class frmServicio
         '
         'TextBox8
         '
+        Me.TextBox8.Enabled = False
         Me.TextBox8.Location = New System.Drawing.Point(118, 47)
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.Size = New System.Drawing.Size(205, 20)
@@ -372,13 +395,6 @@ Partial Class frmServicio
         Me.Label10.Size = New System.Drawing.Size(92, 13)
         Me.Label10.TabIndex = 2
         Me.Label10.Text = "Marca del equipo:"
-        '
-        'TextBox7
-        '
-        Me.TextBox7.Location = New System.Drawing.Point(118, 21)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox7.TabIndex = 11
         '
         'Label9
         '
@@ -395,7 +411,7 @@ Partial Class frmServicio
         Me.GroupBox3.Controls.Add(Me.Label15)
         Me.GroupBox3.Controls.Add(Me.RichTextBox2)
         Me.GroupBox3.Controls.Add(Me.Label14)
-        Me.GroupBox3.Location = New System.Drawing.Point(16, 275)
+        Me.GroupBox3.Location = New System.Drawing.Point(52, 322)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(478, 192)
         Me.GroupBox3.TabIndex = 5
@@ -439,7 +455,7 @@ Partial Class frmServicio
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(21, 479)
+        Me.Label16.Location = New System.Drawing.Point(57, 526)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(94, 13)
         Me.Label16.TabIndex = 6
@@ -447,14 +463,14 @@ Partial Class frmServicio
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(121, 473)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(157, 520)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker1.TabIndex = 19
         '
         'DateTimePicker2
         '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(427, 473)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(463, 520)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker2.TabIndex = 20
@@ -462,7 +478,7 @@ Partial Class frmServicio
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(327, 479)
+        Me.Label17.Location = New System.Drawing.Point(363, 526)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(94, 13)
         Me.Label17.TabIndex = 8
@@ -471,7 +487,7 @@ Partial Class frmServicio
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(21, 508)
+        Me.Label18.Location = New System.Drawing.Point(57, 555)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(103, 13)
         Me.Label18.TabIndex = 10
@@ -480,7 +496,7 @@ Partial Class frmServicio
         'ComboBox2
         '
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(130, 505)
+        Me.ComboBox2.Location = New System.Drawing.Point(166, 552)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox2.TabIndex = 22
@@ -488,7 +504,7 @@ Partial Class frmServicio
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(436, 511)
+        Me.Label19.Location = New System.Drawing.Point(472, 558)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(85, 13)
         Me.Label19.TabIndex = 12
@@ -497,7 +513,7 @@ Partial Class frmServicio
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(484, 537)
+        Me.Label20.Location = New System.Drawing.Point(520, 584)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(37, 13)
         Me.Label20.TabIndex = 14
@@ -506,7 +522,7 @@ Partial Class frmServicio
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(487, 563)
+        Me.Label21.Location = New System.Drawing.Point(523, 610)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(34, 13)
         Me.Label21.TabIndex = 16
@@ -516,7 +532,7 @@ Partial Class frmServicio
         '
         Me.GroupBox4.Controls.Add(Me.RadioButton2)
         Me.GroupBox4.Controls.Add(Me.RadioButton1)
-        Me.GroupBox4.Location = New System.Drawing.Point(234, 534)
+        Me.GroupBox4.Location = New System.Drawing.Point(270, 581)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(200, 53)
         Me.GroupBox4.TabIndex = 26
@@ -548,7 +564,7 @@ Partial Class frmServicio
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(500, 300)
+        Me.Button3.Location = New System.Drawing.Point(536, 347)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(111, 23)
         Me.Button3.TabIndex = 33
@@ -557,7 +573,7 @@ Partial Class frmServicio
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(255, 503)
+        Me.Button4.Location = New System.Drawing.Point(291, 550)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(95, 23)
         Me.Button4.TabIndex = 23
@@ -567,7 +583,7 @@ Partial Class frmServicio
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(29, 541)
+        Me.Label22.Location = New System.Drawing.Point(65, 588)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(52, 13)
         Me.Label22.TabIndex = 21
@@ -576,7 +592,7 @@ Partial Class frmServicio
         'TextBox14
         '
         Me.TextBox14.Enabled = False
-        Me.TextBox14.Location = New System.Drawing.Point(87, 538)
+        Me.TextBox14.Location = New System.Drawing.Point(123, 585)
         Me.TextBox14.Name = "TextBox14"
         Me.TextBox14.Size = New System.Drawing.Size(141, 20)
         Me.TextBox14.TabIndex = 24
@@ -584,7 +600,7 @@ Partial Class frmServicio
         'TextBox15
         '
         Me.TextBox15.Enabled = False
-        Me.TextBox15.Location = New System.Drawing.Point(87, 564)
+        Me.TextBox15.Location = New System.Drawing.Point(123, 611)
         Me.TextBox15.Name = "TextBox15"
         Me.TextBox15.Size = New System.Drawing.Size(141, 20)
         Me.TextBox15.TabIndex = 25
@@ -592,7 +608,7 @@ Partial Class frmServicio
         'Label23
         '
         Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(29, 567)
+        Me.Label23.Location = New System.Drawing.Point(65, 614)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(52, 13)
         Me.Label23.TabIndex = 23
@@ -600,7 +616,7 @@ Partial Class frmServicio
         '
         'MaskedTextBox2
         '
-        Me.MaskedTextBox2.Location = New System.Drawing.Point(527, 508)
+        Me.MaskedTextBox2.Location = New System.Drawing.Point(563, 555)
         Me.MaskedTextBox2.Mask = "99999.99"
         Me.MaskedTextBox2.Name = "MaskedTextBox2"
         Me.MaskedTextBox2.Size = New System.Drawing.Size(100, 20)
@@ -608,7 +624,7 @@ Partial Class frmServicio
         '
         'MaskedTextBox4
         '
-        Me.MaskedTextBox4.Location = New System.Drawing.Point(527, 557)
+        Me.MaskedTextBox4.Location = New System.Drawing.Point(563, 604)
         Me.MaskedTextBox4.Mask = "99999.99"
         Me.MaskedTextBox4.Name = "MaskedTextBox4"
         Me.MaskedTextBox4.Size = New System.Drawing.Size(100, 20)
@@ -616,7 +632,7 @@ Partial Class frmServicio
         '
         'DateTimePicker3
         '
-        Me.DateTimePicker3.Location = New System.Drawing.Point(633, 473)
+        Me.DateTimePicker3.Location = New System.Drawing.Point(669, 520)
         Me.DateTimePicker3.Name = "DateTimePicker3"
         Me.DateTimePicker3.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker3.TabIndex = 21
@@ -624,7 +640,7 @@ Partial Class frmServicio
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(630, 457)
+        Me.Label25.Location = New System.Drawing.Point(666, 504)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(138, 13)
         Me.Label25.TabIndex = 28
@@ -632,7 +648,7 @@ Partial Class frmServicio
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(633, 557)
+        Me.Button5.Location = New System.Drawing.Point(669, 604)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(75, 23)
         Me.Button5.TabIndex = 32
@@ -641,7 +657,7 @@ Partial Class frmServicio
         '
         'Button6
         '
-        Me.Button6.Location = New System.Drawing.Point(500, 329)
+        Me.Button6.Location = New System.Drawing.Point(536, 376)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(111, 23)
         Me.Button6.TabIndex = 35
@@ -651,7 +667,7 @@ Partial Class frmServicio
         'Button7
         '
         Me.Button7.Enabled = False
-        Me.Button7.Location = New System.Drawing.Point(500, 358)
+        Me.Button7.Location = New System.Drawing.Point(536, 405)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(111, 23)
         Me.Button7.TabIndex = 34
@@ -661,25 +677,49 @@ Partial Class frmServicio
         'TextBox11
         '
         Me.TextBox11.Enabled = False
-        Me.TextBox11.Location = New System.Drawing.Point(527, 534)
+        Me.TextBox11.Location = New System.Drawing.Point(563, 581)
         Me.TextBox11.Name = "TextBox11"
         Me.TextBox11.Size = New System.Drawing.Size(100, 20)
         Me.TextBox11.TabIndex = 30
         '
         'Button8
         '
-        Me.Button8.Location = New System.Drawing.Point(617, 300)
+        Me.Button8.Location = New System.Drawing.Point(653, 347)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(111, 23)
         Me.Button8.TabIndex = 36
         Me.Button8.Text = "Cargar servicio"
         Me.Button8.UseVisualStyleBackColor = True
         '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.Location = New System.Drawing.Point(12, 9)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(174, 20)
+        Me.Label26.TabIndex = 37
+        Me.Label26.Text = "Ingreso de servicios:"
+        '
+        'Button1
+        '
+        Me.Button1.Image = Global.workshopware.My.Resources.Resources.user3
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(235, 42)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(115, 40)
+        Me.Button1.TabIndex = 2
+        Me.Button1.Text = "Cliente nuevo"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'frmServicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(849, 598)
+        Me.BackColor = System.Drawing.SystemColors.MenuHighlight
+        Me.ClientSize = New System.Drawing.Size(1073, 637)
+        Me.Controls.Add(Me.Label26)
         Me.Controls.Add(Me.Button8)
         Me.Controls.Add(Me.TextBox11)
         Me.Controls.Add(Me.Button7)
@@ -711,7 +751,10 @@ Partial Class frmServicio
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.MaskedTextBox1)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Location = New System.Drawing.Point(1, 1)
         Me.Name = "frmServicio"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Workshopware - Servicios"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -754,7 +797,6 @@ Partial Class frmServicio
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents RichTextBox3 As System.Windows.Forms.RichTextBox
     Friend WithEvents Label15 As System.Windows.Forms.Label
@@ -789,4 +831,7 @@ Partial Class frmServicio
     Friend WithEvents Button7 As System.Windows.Forms.Button
     Friend WithEvents TextBox11 As System.Windows.Forms.TextBox
     Friend WithEvents Button8 As System.Windows.Forms.Button
+    Friend WithEvents Label26 As System.Windows.Forms.Label
+    Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
+    Friend WithEvents Button9 As System.Windows.Forms.Button
 End Class

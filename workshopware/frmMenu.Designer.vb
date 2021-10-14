@@ -23,23 +23,14 @@ Partial Class frmMenu
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMenu))
-        Me.Button5 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Button5
-        '
-        Me.Button5.Location = New System.Drawing.Point(185, 214)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(75, 23)
-        Me.Button5.TabIndex = 5
-        Me.Button5.Text = "Servicio"
-        Me.Button5.UseVisualStyleBackColor = True
         '
         'PictureBox1
         '
@@ -50,6 +41,17 @@ Partial Class frmMenu
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 6
         Me.PictureBox1.TabStop = False
+        '
+        'Button5
+        '
+        Me.Button5.Image = Global.workshopware.My.Resources.Resources.add_favorite
+        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button5.Location = New System.Drawing.Point(13, 186)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(136, 52)
+        Me.Button5.TabIndex = 5
+        Me.Button5.Text = "Servicio"
+        Me.Button5.UseVisualStyleBackColor = True
         '
         'Button4
         '

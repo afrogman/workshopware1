@@ -386,7 +386,7 @@ Public Class frmProducto
 
     Private Sub Button7_Click(sender As System.Object, e As System.EventArgs) Handles Button7.Click
         'Boton de eliminacion de productos
-
+        
         'Varible para guardar el id del producto y asi borrarlo
         Dim id As String
 
