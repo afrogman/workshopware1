@@ -30,6 +30,7 @@ Partial Class frmServicio
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
@@ -42,6 +43,7 @@ Partial Class frmServicio
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.Button9 = New System.Windows.Forms.Button()
         Me.RichTextBox4 = New System.Windows.Forms.RichTextBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
@@ -78,19 +80,17 @@ Partial Class frmServicio
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.TextBox11 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox12 = New System.Windows.Forms.TextBox()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.TextBox11 = New System.Windows.Forms.TextBox()
+        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.TextBox12 = New System.Windows.Forms.TextBox()
         Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button9 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -173,6 +173,18 @@ Partial Class frmServicio
         Me.Label7.Size = New System.Drawing.Size(52, 13)
         Me.Label7.TabIndex = 11
         Me.Label7.Text = "Apellidos:"
+        '
+        'Button2
+        '
+        Me.Button2.Image = Global.workshopware.My.Resources.Resources.refresh
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(248, 19)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(113, 49)
+        Me.Button2.TabIndex = 5
+        Me.Button2.Text = "Cargar cliente"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'TextBox4
         '
@@ -288,6 +300,18 @@ Partial Class frmServicio
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox3.TabIndex = 13
+        '
+        'Button9
+        '
+        Me.Button9.Image = Global.workshopware.My.Resources.Resources.print_preview
+        Me.Button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button9.Location = New System.Drawing.Point(329, 20)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(113, 49)
+        Me.Button9.TabIndex = 14
+        Me.Button9.Text = "Cargar equipo"
+        Me.Button9.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button9.UseVisualStyleBackColor = True
         '
         'RichTextBox4
         '
@@ -615,56 +639,6 @@ Partial Class frmServicio
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Opciones servicio"
         '
-        'GroupBox6
-        '
-        Me.GroupBox6.Controls.Add(Me.Label18)
-        Me.GroupBox6.Controls.Add(Me.Label23)
-        Me.GroupBox6.Controls.Add(Me.TextBox15)
-        Me.GroupBox6.Controls.Add(Me.TextBox14)
-        Me.GroupBox6.Controls.Add(Me.Label22)
-        Me.GroupBox6.Controls.Add(Me.ComboBox2)
-        Me.GroupBox6.Controls.Add(Me.Button4)
-        Me.GroupBox6.Location = New System.Drawing.Point(850, 82)
-        Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(380, 119)
-        Me.GroupBox6.TabIndex = 20
-        Me.GroupBox6.TabStop = False
-        Me.GroupBox6.Text = "Tecnico reparador"
-        '
-        'TextBox11
-        '
-        Me.TextBox11.Location = New System.Drawing.Point(963, 437)
-        Me.TextBox11.Name = "TextBox11"
-        Me.TextBox11.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox11.TabIndex = 34
-        '
-        'TextBox7
-        '
-        Me.TextBox7.Location = New System.Drawing.Point(963, 411)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox7.TabIndex = 33
-        '
-        'TextBox12
-        '
-        Me.TextBox12.Enabled = False
-        Me.TextBox12.Location = New System.Drawing.Point(963, 463)
-        Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox12.TabIndex = 35
-        '
-        'Button4
-        '
-        Me.Button4.Image = Global.workshopware.My.Resources.Resources.html
-        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button4.Location = New System.Drawing.Point(242, 58)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(127, 40)
-        Me.Button4.TabIndex = 22
-        Me.Button4.Text = "Cargar tecnico"
-        Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button4.UseVisualStyleBackColor = True
-        '
         'Button3
         '
         Me.Button3.Image = Global.workshopware.My.Resources.Resources.folder_open
@@ -714,6 +688,56 @@ Partial Class frmServicio
         Me.Button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button7.UseVisualStyleBackColor = True
         '
+        'GroupBox6
+        '
+        Me.GroupBox6.Controls.Add(Me.Label18)
+        Me.GroupBox6.Controls.Add(Me.Label23)
+        Me.GroupBox6.Controls.Add(Me.TextBox15)
+        Me.GroupBox6.Controls.Add(Me.TextBox14)
+        Me.GroupBox6.Controls.Add(Me.Label22)
+        Me.GroupBox6.Controls.Add(Me.ComboBox2)
+        Me.GroupBox6.Controls.Add(Me.Button4)
+        Me.GroupBox6.Location = New System.Drawing.Point(850, 82)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(380, 119)
+        Me.GroupBox6.TabIndex = 20
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Tecnico reparador"
+        '
+        'Button4
+        '
+        Me.Button4.Image = Global.workshopware.My.Resources.Resources.html
+        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button4.Location = New System.Drawing.Point(242, 58)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(127, 40)
+        Me.Button4.TabIndex = 22
+        Me.Button4.Text = "Cargar tecnico"
+        Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'TextBox11
+        '
+        Me.TextBox11.Location = New System.Drawing.Point(963, 437)
+        Me.TextBox11.Name = "TextBox11"
+        Me.TextBox11.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox11.TabIndex = 34
+        '
+        'TextBox7
+        '
+        Me.TextBox7.Location = New System.Drawing.Point(963, 411)
+        Me.TextBox7.Name = "TextBox7"
+        Me.TextBox7.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox7.TabIndex = 33
+        '
+        'TextBox12
+        '
+        Me.TextBox12.Enabled = False
+        Me.TextBox12.Location = New System.Drawing.Point(963, 463)
+        Me.TextBox12.Name = "TextBox12"
+        Me.TextBox12.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox12.TabIndex = 35
+        '
         'Button5
         '
         Me.Button5.Image = Global.workshopware.My.Resources.Resources.full_basket
@@ -726,18 +750,6 @@ Partial Class frmServicio
         Me.Button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button5.UseVisualStyleBackColor = True
         '
-        'Button9
-        '
-        Me.Button9.Image = Global.workshopware.My.Resources.Resources.print_preview
-        Me.Button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button9.Location = New System.Drawing.Point(329, 20)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(113, 49)
-        Me.Button9.TabIndex = 14
-        Me.Button9.Text = "Cargar equipo"
-        Me.Button9.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button9.UseVisualStyleBackColor = True
-        '
         'Button1
         '
         Me.Button1.Image = Global.workshopware.My.Resources.Resources.user3
@@ -749,18 +761,6 @@ Partial Class frmServicio
         Me.Button1.Text = "Cliente nuevo"
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Image = Global.workshopware.My.Resources.Resources.refresh
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(248, 19)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(113, 49)
-        Me.Button2.TabIndex = 5
-        Me.Button2.Text = "Cargar cliente"
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'frmServicio
         '

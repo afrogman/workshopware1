@@ -14,3 +14,4 @@ C:\Users\ProfesorX\Documents\Visual Studio 2010\Projects\workshopware\workshopwa
 C:\Users\ProfesorX\Documents\Visual Studio 2010\Projects\workshopware\workshopware\obj\x86\Debug\workshopware.frmConProducto.resources
 C:\Users\ProfesorX\documents\visual studio 2010\Projects\workshopware\workshopware\obj\x86\Debug\workshopware.frmServicio.resources
 C:\Users\ProfesorX\Documents\Visual Studio 2010\Projects\workshopware\workshopware\obj\x86\Debug\workshopware.frmAsignacionProductos.resources
+C:\Users\ProfesorX\documents\visual studio 2010\Projects\workshopware\workshopware\obj\x86\Debug\workshopware.frmEquipos.resources

@@ -24,4 +24,9 @@
         'Abrir el formulario de servicios
         frmServicio.Show()
     End Sub
+
+    Private Sub Button6_Click(sender As System.Object, e As System.EventArgs) Handles Button6.Click
+        'Abrir el formulario de equipos a reparar
+        frmEquipos.Show()
+    End Sub
 End Class
