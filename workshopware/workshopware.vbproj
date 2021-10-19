@@ -228,6 +228,24 @@
   <ItemGroup>
     <None Include="iconos\print-preview.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="iconos\folder-open.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iconos\html.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iconos\add-printer.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iconos\paste.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iconos\full-basket.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iconos\monitor.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

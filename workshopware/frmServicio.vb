@@ -9,6 +9,8 @@ Public Class frmServicio
     End Sub
 
     Private Sub frmServicio_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+        Me.HorizontalScroll.Maximum = 0
+        Me.AutoScroll = True
         'Se llena el ComboBox del cliente (nit)
         Call LlenarDatosCliente()
         'Se llena el Combobox del equipo (idequipo)
@@ -142,86 +144,15 @@ Public Class frmServicio
     End Sub
 
     Private Sub Button3_Click(sender As System.Object, e As System.EventArgs) Handles Button3.Click
-        'Llama al procedimiento los datos del equipo
-        Call GuardarEquipo()
-    End Sub
-
-    'Procedimiento para guardar el equipo
-    Sub GuardarEquipo()
-
-        'Variables para procedimiento de guardado de equipo
-        Dim idequipo As Integer
-        Dim marca, modelo, serie, accesorios, observaciones As String
-
-        Try
-            'Codigo del equipo
-            idequipo = Val(ComboBox3.Text)
-
-            'Se guarda en la variable temporal para la llave foranea
-            CodEquipo = idequipo
-
-            'Marca del equipo
-            marca = TextBox8.Text
-            'Modelo del equipo
-            modelo = TextBox9.Text
-            'Serie del equipo
-            serie = TextBox10.Text
-            'Accesorios del equipo
-            accesorios = RichTextBox4.Text
-            'Observaciones del equipo
-            observaciones = RichTextBox1.Text
-
-            Try
-                'Se llama al procedimiento que hace y abre la conexion
-                Call ConectarDB()
-
-                'Linea de codigo que va guardar la insercion en la tabla, pero con referencias
-                comandos = New MySqlCommand("INSERT INTO tblequipo (idequipo, marca, modelo, serie, accesorios, observaciones, idcliente)" & Chr(13) &
-                                            "VALUES(@idequipo,@marca,@modelo,@serie,@accesorios,@observaciones,@idcliente)", conexion)
-                'Referencia al codigo ingresado en el formulario
-                comandos.Parameters.AddWithValue("@idequipo", idequipo)
-                'Referencia al nombre ingresado en el formulario
-                comandos.Parameters.AddWithValue("@marca", marca)
-                'Referencia al precio ingresado en el formulario
-                comandos.Parameters.AddWithValue("@modelo", modelo)
-                'Referencia al precio ingresado en el formulario
-                comandos.Parameters.AddWithValue("@serie", serie)
-                'Referencia al precio ingresado en el formulario
-                comandos.Parameters.AddWithValue("@accesorios", accesorios)
-                'Referencia al precio ingresado en el formulario
-                comandos.Parameters.AddWithValue("@observaciones", observaciones)
-                'Referencia al estado ingresado en el formulario
-                comandos.Parameters.AddWithValue("@idcliente", IdCliente)
-
-                'Se coloca porque no espero ningun resultado de la consulta
-                comandos.ExecuteNonQuery()
-
-                'Se cierra la conexion
-                conexion.Close()
-
-                'Llama al procedimiento del servicio
-                Call GuardarServicio()
-
-                'Habilitar el boton de agregar productos
-                Button7.Enabled = True
-
-            Catch ex As Exception
-                'Mensaje para indicar que no se tuvo exito con la conexion
-                MsgBox(ex.Message)
-                'Se cierra la conexion
-                conexion.Close()
-            End Try
-
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+        'Llama al procedimiento que guarda el servicio ingresado
+        Call GuardarServicio()
     End Sub
 
     'Procedimiento para guardar la orden de servicio
     Sub GuardarServicio()
 
         'Variables para procedimiento de guardado de servicio
-        Dim idservicio As Integer
+        Dim idservicio, idequipo As Integer
         Dim falla, repa As String
         Dim fechaentrada, fechasalida, fechaprograma As Date
         Dim pago, saldo, total As Double
@@ -234,6 +165,9 @@ Public Class frmServicio
             'Guarda el codigo del servicio para aplicarlo en la tabla de asignacion de productos
             codServicio = idservicio
 
+            'Se extrae el codigo del equipo que se selecciono en el combobox
+            idequipo = CodEquipo
+
             'Falla del equipo
             falla = RichTextBox2.Text
             'Reparacion que se le hara al equipo
@@ -245,11 +179,13 @@ Public Class frmServicio
             'Fecha de mantenimiento programado
             fechaprograma = Format(DateTimePicker3.Value, "Short Date")
             'Pago por el servicio
-            pago = MaskedTextBox2.Text
+            pago = TextBox11.Text
             'Saldo pendiente de pago del servicio
-            saldo = TextBox11.Text
+            saldo = TextBox12.Text
             'Total a pagar del servicio
-            total = MaskedTextBox4.Text
+            total = TextBox7.Text
+            'Asignacion temporal para est
+            est = ""
 
             'Estado del servicio
             If (RadioButton1.Checked = True) And (RadioButton2.Checked = False) Then
@@ -270,7 +206,7 @@ Public Class frmServicio
                 'Referencia al nombre ingresado en el formulario
                 comandos.Parameters.AddWithValue("@idcliente", IdCliente)
                 'Referencia al nombre ingresado en el formulario
-                comandos.Parameters.AddWithValue("@idequipo", CodEquipo)
+                comandos.Parameters.AddWithValue("@idequipo", idequipo)
                 'Referencia al nombre ingresado en el formulario
                 comandos.Parameters.AddWithValue("@falla", falla)
                 'Referencia al precio ingresado en el formulario
@@ -295,7 +231,10 @@ Public Class frmServicio
                 'Se coloca porque no espero ningun resultado de la consulta
                 comandos.ExecuteNonQuery()
                 'Indico que se realizo exitosamente el guardado
-                MsgBox("Los datos del servicio y del equipo fueron guardados exitosamente!")
+                MsgBox("Los datos del servicio fueron guardados exitosamente!")
+
+                'Habilitar el boton de agregar productos
+                Button7.Enabled = True
 
                 'Se cierra la conexion
                 conexion.Close()
@@ -315,14 +254,14 @@ Public Class frmServicio
         'Variables para el calculo de pago, saldo y total
         Dim pago, saldo, total As Double
 
-        'Se extrae el valor del pago que deja por adelantado
-        pago = MaskedTextBox2.Text
         'Se extrae el valor del pago total del servicio
-        total = MaskedTextBox4.Text
+        total = TextBox7.Text
+        'Se extrae el valor del pago que deja por adelantado
+        pago = TextBox11.Text
         'Se actualiza la operacion del abono si hay
         saldo = total - pago
         'Se muestra en pantalla
-        TextBox11.Text = saldo
+        TextBox12.Text = saldo
     End Sub
 
     Private Sub Button6_Click(sender As System.Object, e As System.EventArgs) Handles Button6.Click
@@ -346,9 +285,9 @@ Public Class frmServicio
         RichTextBox3.Clear()
         TextBox14.Clear()
         TextBox15.Clear()
-        MaskedTextBox2.Clear()
         TextBox11.Clear()
-        MaskedTextBox4.Clear()
+        TextBox12.Clear()
+        TextBox7.Clear()
         RadioButton1.Checked = True
         MaskedTextBox1.Focus()
     End Sub
@@ -416,9 +355,9 @@ Public Class frmServicio
                     RadioButton2.Checked = True
                 End If
 
-                MaskedTextBox2.Text = datos.Tables("tblservicio").Rows(0).Item("pago")
-                TextBox11.Text = datos.Tables("tblservicio").Rows(0).Item("saldo")
-                MaskedTextBox4.Text = datos.Tables("tblservicio").Rows(0).Item("total")
+                TextBox11.Text = datos.Tables("tblservicio").Rows(0).Item("pago")
+                TextBox12.Text = datos.Tables("tblservicio").Rows(0).Item("saldo")
+                TextBox7.Text = datos.Tables("tblservicio").Rows(0).Item("total")
 
                 'Llena los datos del cliente
                 Call ComboCliente2()
@@ -523,7 +462,7 @@ Public Class frmServicio
             'Condicional para ver si se recibe un dato en la lista
             If (lista <> 0) Then
 
-                'Recibir el ID del equipo seleccionado
+                'Recibir el ID del equipo seleccionado para la variable publica
                 CodEquipo = datos.Tables("tblequipo").Rows(0).Item("idequipo")
 
                 'Si encuentra algo, entonces va mostrar la primera posicion encontrada
@@ -626,4 +565,5 @@ Public Class frmServicio
         'Realiza el llenado de los datos del equipo seleccionado en el Combobox3
         Call ComboEquipo()
     End Sub
+    
 End Class

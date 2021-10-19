@@ -23,6 +23,7 @@ Partial Class frmMenu
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMenu))
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
@@ -31,6 +32,18 @@ Partial Class frmMenu
         Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'Button6
+        '
+        Me.Button6.Image = Global.workshopware.My.Resources.Resources.monitor
+        Me.Button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button6.Location = New System.Drawing.Point(297, 128)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(142, 52)
+        Me.Button6.TabIndex = 7
+        Me.Button6.Text = "Equipos reparacion" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button6.UseVisualStyleBackColor = True
         '
         'PictureBox1
         '
@@ -50,7 +63,7 @@ Partial Class frmMenu
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(136, 52)
         Me.Button5.TabIndex = 5
-        Me.Button5.Text = "Servicio"
+        Me.Button5.Text = "Servicios"
         Me.Button5.UseVisualStyleBackColor = True
         '
         'Button4
@@ -103,6 +116,7 @@ Partial Class frmMenu
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.MenuHighlight
         Me.ClientSize = New System.Drawing.Size(484, 262)
+        Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
@@ -124,5 +138,6 @@ Partial Class frmMenu
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents Button6 As System.Windows.Forms.Button
 
 End Class

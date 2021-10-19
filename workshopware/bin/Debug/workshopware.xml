@@ -23,6 +23,10 @@ workshopware
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:workshopware.My.Resources.Resources.add_printer">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:workshopware.My.Resources.Resources.box">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -43,7 +47,23 @@ workshopware
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:workshopware.My.Resources.Resources.folder_open">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:workshopware.My.Resources.Resources.full_basket">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:workshopware.My.Resources.Resources.html">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:workshopware.My.Resources.Resources.LogoIPI">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:workshopware.My.Resources.Resources.paste">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
