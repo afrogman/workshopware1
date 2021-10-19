@@ -94,4 +94,75 @@ Public Class frmEquipos
         RichTextBox4.Clear()
         TextBox7.Focus()
     End Sub
+
+    Private Sub Button3_Click(sender As System.Object, e As System.EventArgs) Handles Button3.Click
+        'Boton de guardado de equipos
+
+        'Variables para boton de guardado
+        Dim codigoequipo As Integer
+        Dim marca, modelo, serie, accesorios, observaciones As String
+
+        Try
+            'Codigo del equipo
+            codigoequipo = Val(TextBox7.Text)
+            'Marca del equipo
+            marca = TextBox8.Text
+            'Model del equipo
+            modelo = TextBox9.Text
+            'No. de serie del equipo
+            serie = TextBox10.Text
+            'Accesorios del equipo
+            accesorios = RichTextBox4.Text
+            'Observaciones del equipo
+            observaciones = RichTextBox1.Text
+
+            Try
+                'Se llama al procedimiento que hace y abre la conexion
+                Call ConectarDB()
+
+                'Linea de codigo que va guardar la insercion en la tabla, pero con referencias
+                comandos = New MySqlCommand("INSERT INTO tblequipo (idequipo, marca, modelo, serie, accesorios, observaciones, idcliente)" & Chr(13) &
+                                            "VALUES(@codigo,@marca,@modelo,@serie,@accesorios,@observaciones,@idcliente)", conexion)
+                'Referencia al codigo ingresado en el formulario
+                comandos.Parameters.AddWithValue("@codigo", codigoequipo)
+                'Referencia al nombre ingresado en el formulario
+                comandos.Parameters.AddWithValue("@marca", marca)
+                'Referencia al precio ingresado en el formulario
+                comandos.Parameters.AddWithValue("@modelo", modelo)
+                'Referencia al precio ingresado en el formulario
+                comandos.Parameters.AddWithValue("@serie", serie)
+                'Referencia al precio ingresado en el formulario
+                comandos.Parameters.AddWithValue("@accesorios", accesorios)
+                'Referencia al precio ingresado en el formulario
+                comandos.Parameters.AddWithValue("@observaciones", observaciones)
+                'Referencia al estado ingresado en el formulario
+                comandos.Parameters.AddWithValue("@idcliente", IdCliente)
+
+                'Se coloca porque no espero ningun resultado de la consulta
+                comandos.ExecuteNonQuery()
+                'Indico que se realizo exitosamente el guardado
+                MsgBox("Los datos del equipo fueron guardados exitosamente!")
+
+                'Limpieza de controles
+                TextBox7.Clear()
+                TextBox8.Clear()
+                TextBox9.Clear()
+                TextBox10.Clear()
+                RichTextBox1.Clear()
+                RichTextBox4.Clear()
+                TextBox7.Focus()
+
+                'Se cierra la conexion
+                conexion.Close()
+            Catch ex As Exception
+                'Mensaje para indicar que no se tuvo exito con la conexion
+                MsgBox(ex.Message)
+                'Se cierra la conexion
+                conexion.Close()
+            End Try
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 End Class
