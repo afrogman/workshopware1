@@ -85,6 +85,9 @@ Public Class frmEquipos
     Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
         'Boton de limpieza para equipos
 
+        'Habilitar el codigo
+        TextBox7.Enabled = True
+
         'Limpieza de controles
         TextBox7.Clear()
         TextBox8.Clear()
@@ -196,5 +199,61 @@ Public Class frmEquipos
             MsgBox("No hay datos guardados aun")
             conexion.Close()
         End If
+    End Sub
+
+    Private Sub Button7_Click(sender As System.Object, e As System.EventArgs) Handles Button7.Click
+        'Variable para el codigo del equipoy buscarlo
+        Dim CodigoEquipo As String
+
+        Try
+            'Se captura el codigo del proveedor del Textbox1
+            CodigoEquipo = TextBox7.Text
+
+            'Procedimiento de conexion de la baes de datos
+            ConectarDB()
+
+            'Condicional que va verificar que no hayan dejado en blanco la solicitud del nombre
+            If (CodigoEquipo <> "") Then
+                'Se guarda la consulta que quiero hacer en la base de datos
+                sql = "SELECT * FROM tblequipo WHERE idequipo = '" & CodigoEquipo & "'"
+                'Ejecuta la consulta SQL en la base de datos con la conexion
+                adaptador = New MySqlDataAdapter(sql, conexion)
+                datos = New DataSet
+                'Va llenarse de los datos que tenga la tabla tblproveedor
+                adaptador.Fill(datos, "tblequipo")
+                'Va recibir las tuplas de la tabla
+                lista = datos.Tables("tblequipo").Rows.Count
+            Else
+                'Mensaje en caso se haya dejado en blanco la solicitud del codigo
+                MessageBox.Show("No se ingreso ningun codigo de busqueda para el equipo")
+            End If
+
+            'Condicional para ver si se recibe un dato en la lista
+            If (lista <> 0) Then
+
+                'Si encuentra algo, entonces va mostrar la primera posicion encontrada
+                TextBox7.Text = datos.Tables("tblequipo").Rows(0).Item("idequipo")
+                'Inhabilitar el codigo, ya que por ser llave principal no se puede modificar
+                TextBox7.Enabled = False
+
+                TextBox8.Text = datos.Tables("tblequipo").Rows(0).Item("marca")
+                TextBox9.Text = datos.Tables("tblequipo").Rows(0).Item("modelo")
+                TextBox10.Text = datos.Tables("tblequipo").Rows(0).Item("serie")
+                RichTextBox4.Text = datos.Tables("tblequipo").Rows(0).Item("accesorios")
+                RichTextBox1.Text = datos.Tables("tblequipo").Rows(0).Item("observaciones")
+
+                'Capturar el codigo del equipo para modificarlo o eliminarlo
+                CodEquipo = CodigoEquipo
+
+                'Se cierra la conexion
+                conexion.Close()
+            Else
+                MsgBox("No se encontro ningun proveedor con ese codigo")
+                conexion.Close()
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 End Class
