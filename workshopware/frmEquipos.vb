@@ -256,4 +256,53 @@ Public Class frmEquipos
             MsgBox(ex.Message)
         End Try
     End Sub
+
+    Private Sub Button5_Click(sender As System.Object, e As System.EventArgs) Handles Button5.Click
+        'Boton de actualizar proveedores
+
+        'Variables para boton de guardado
+        Dim codigoequipo As Integer
+        Dim marca, modelo, serie, accesorios, observaciones As String
+
+        Try
+            'Extrae el id del equipo
+            codigoequipo = TextBox7.Text
+            'Extrae la nueva marca del equipo
+            marca = TextBox8.Text
+            'Extrae el nuevo modelo del equipo
+            modelo = TextBox9.Text
+            'Extrae la nueva serie del equipo
+            serie = TextBox10.Text
+            'Extrae los nuevos accesorios para el equipo
+            accesorios = RichTextBox4.Text
+            'Extrae las nuevas observaciones para el equipo
+            observaciones = RichTextBox1.Text
+
+            'Hacer la conexion con la base de datos
+            ConectarDB()
+
+            'Variable local para confirmar (Si/No) va modificar el dato
+            Dim sino As Byte
+            'Se pregunta si se quiere o no modificar el dato de la base de datos
+            sino = MsgBox("¿Esta seguro que desea cambiar el los datos del equipo?", vbYesNo, "Confirmacion de Actualizacion")
+
+            'Se evalua si es si, para acutalizarlo
+            If (sino = 6) Then
+                'Guardamos el SQL del UPDATE que se correra en la base de datos
+                sql = "UPDATE tblequipo SET marca = '" & marca & "', modelo = '" & modelo & "', serie = '" & serie & "', accesorios = '" & accesorios & "', observaciones = '" & observaciones & "', idcliente = '" & IdCliente & "' WHERE idequipo = '" & codigoequipo & "'"
+                'Se envia el SQL con la conexion para que se ejecute en la base de datos
+                comandos = New MySqlCommand(sql, conexion)
+                'No espero resultados
+                comandos.ExecuteNonQuery()
+                'Se le indica al usuario que ya fue realizada la actualizacion
+                MsgBox("Los datos del equipo fueron actualizados")
+                'Se cierra la conexion
+                conexion.Close()
+            End If
+
+        Catch ex As Exception
+            'Muestra el mensaje de error
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 End Class
