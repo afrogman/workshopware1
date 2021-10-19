@@ -305,4 +305,54 @@ Public Class frmEquipos
             MsgBox(ex.Message)
         End Try
     End Sub
+
+    Private Sub Button6_Click(sender As System.Object, e As System.EventArgs) Handles Button6.Click
+        'Boton de eliminacion de equipos
+
+        'Varible para guardar el id del equipo y asi borrarlo
+        Dim CodigoEquipo As String
+
+        'Conecta con la base de datos
+        ConectarDB()
+
+        Try
+
+            'Variable local para confirmar (Si/No) va eliminar el dato
+            Dim sino As Byte
+
+            'Extrae el id del cliente
+            CodigoEquipo = TextBox7.Text
+
+            'Se pregunta si se quiere o no borrar el dato de la base de datos
+            sino = MsgBox("¿Esta seguro que desea eliminar a este equipo?", vbYesNo, "Confirmacion de Eliminacion")
+            'Se evalua si es si, para eliminarlo
+
+            If (sino = 6) Then
+                'Se guarda el SQL de la eliminacion
+                sql = "DELETE FROM tblequipo WHERE idequipo = '" & CodigoEquipo & "'"
+                'Se envia el SQL a la base de datos con el parametro de la conexion
+                comandos = New MySqlCommand(sql, conexion)
+                'Se indica que no se espera un dato de vuelta
+                comandos.BeginExecuteNonQuery()
+                'Se le indica al usuario que ya se borro la tupla
+                MsgBox("Informacion del equipo eliminada")
+
+                'Limpieza de controles
+                TextBox7.Clear()
+                TextBox8.Clear()
+                TextBox9.Clear()
+                TextBox10.Clear()
+                RichTextBox1.Clear()
+                RichTextBox4.Clear()
+                TextBox7.Focus()
+
+                'Se cierra la conexion
+                conexion.Close()
+            End If
+
+        Catch ex As Exception
+            'Muestra el error de la rutina
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 End Class
