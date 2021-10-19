@@ -165,4 +165,36 @@ Public Class frmEquipos
             MsgBox(ex.Message)
         End Try
     End Sub
+
+    Private Sub Button4_Click(sender As System.Object, e As System.EventArgs) Handles Button4.Click
+        'Procedimiento de conexion de la base de datods
+        Call ConectarDB()
+
+        'Se guarda la consulta general mostrando nombres alternos para los campos
+        sql = "SELECT tblequipo.idequipo as 'Codigo equipo', tblequipo.marca as 'Marca equipo', tblequipo.modelo as 'Modelo equipo', tblequipo.serie as 'Serie equipo', tblequipo.accesorios as 'Accesorios equipo', tblequipo.observaciones as 'Observaciones equipo', tblcliente.nombres as 'Nombre cliente', tblcliente.apellidos as 'Apellidos cliente' FROM tblequipo INNER JOIN tblcliente ON tblequipo.idcliente = tblcliente.idcliente"
+
+        'Ejecuta la consulta SQL en la baes de datos con la conexion
+        adaptador = New MySqlDataAdapter(sql, conexion)
+
+        datos = New DataSet
+
+        'Va llenarse de los datos que tenga la tabla tbltecnico
+        adaptador.Fill(datos, "tblequipo")
+
+        'Va recibir las tuplas de la tabla
+        lista = datos.Tables("tblequipo").Rows.Count
+
+        'Condicional para ver si se recibe un dato en la lista
+        If (lista <> 0) Then
+            'Le indica al DataGridView que son datos que vienen de una base de datos
+            DataGridView1.DataSource = datos
+            'Le indica al DataGridView que muestre lo datos de la tabla indicada
+            DataGridView1.DataMember = "tblequipo"
+            'Se cierra la conexion
+            conexion.Close()
+        Else
+            MsgBox("No hay datos guardados aun")
+            conexion.Close()
+        End If
+    End Sub
 End Class
