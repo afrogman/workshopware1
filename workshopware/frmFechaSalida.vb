@@ -19,7 +19,7 @@ Public Class frmFechaSalida
         Call ConectarDB()
 
         'Se guarda la consulta general mostrando nombres alternos para los campos
-        sql = "SELECT tblservicio.fechasalida as 'Fecha Salida', tblcliente.nombres as 'Nombre cliente', tblcliente.apellidos as 'Apellidos cliente', tblequipo.marca as 'Marca equipo', tblequipo.modelo as 'Modelo equipo', tblequipo.serie as 'Serie equipo', tblservicio.total as 'Monto del servicio', tblservicio.estado as 'Estado del servicio' FROM tblservicio INNER JOIN tblcliente ON tblservicio.idcliente = tblcliente.idcliente INNER JOIN tblequipo ON tblservicio.idequipo = tblequipo.idequipo WHERE tblservicio.fechasalida > '" & fechaI & "' AND tblservicio.fechasalida < '" & fechaF & "'"
+        sql = "SELECT tblservicio.fechasalida as 'Fecha Salida', tblcliente.nombres as 'Nombre cliente', tblcliente.apellidos as 'Apellidos cliente', tblequipo.marca as 'Marca equipo', tblequipo.modelo as 'Modelo equipo', tblequipo.serie as 'Serie equipo', tblservicio.saldo as 'Saldo del servicio', tblservicio.estado as 'Estado del servicio' FROM tblservicio INNER JOIN tblcliente ON tblservicio.idcliente = tblcliente.idcliente INNER JOIN tblequipo ON tblservicio.idequipo = tblequipo.idequipo WHERE tblservicio.fechasalida > '" & fechaI & "' AND tblservicio.fechasalida < '" & fechaF & "'"
 
         'Ejecuta la consulta SQL en la baes de datos con la conexion
         adaptador = New MySqlDataAdapter(sql, conexion)

@@ -1,7 +1,7 @@
 ﻿'Importe de la libreria de referencia a MySQL
 Imports MySql.Data.MySqlClient
 
-Public Class frmFechaEntrada
+Public Class frmFechaProgramada
 
     Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
         'Boton para mostrar el rango de fechas de salida
@@ -19,7 +19,7 @@ Public Class frmFechaEntrada
         Call ConectarDB()
 
         'Se guarda la consulta general mostrando nombres alternos para los campos
-        sql = "SELECT tblservicio.fechaentrada as 'Fecha Entrada', tblcliente.nombres as 'Nombre cliente', tblcliente.apellidos as 'Apellidos cliente', tblequipo.marca as 'Marca equipo', tblequipo.modelo as 'Modelo equipo', tblequipo.serie as 'Serie equipo', tblservicio.saldo as 'Saldo del servicio', tblservicio.estado as 'Estado del servicio' FROM tblservicio INNER JOIN tblcliente ON tblservicio.idcliente = tblcliente.idcliente INNER JOIN tblequipo ON tblservicio.idequipo = tblequipo.idequipo WHERE tblservicio.fechaentrada > '" & fechaI & "' AND tblservicio.fechaentrada < '" & fechaF & "'"
+        sql = "SELECT tblservicio.fechaprogramada as 'Fecha programada', tblcliente.nombres as 'Nombre cliente', tblcliente.apellidos as 'Apellidos cliente', tblequipo.marca as 'Marca equipo', tblequipo.modelo as 'Modelo equipo', tblequipo.serie as 'Serie equipo', tblservicio.saldo as 'Saldo del servicio', tblservicio.estado as 'Estado del servicio' FROM tblservicio INNER JOIN tblcliente ON tblservicio.idcliente = tblcliente.idcliente INNER JOIN tblequipo ON tblservicio.idequipo = tblequipo.idequipo WHERE tblservicio.fechaprogramada > '" & fechaI & "' AND tblservicio.fechaprogramada < '" & fechaF & "'"
 
         'Ejecuta la consulta SQL en la baes de datos con la conexion
         adaptador = New MySqlDataAdapter(sql, conexion)
