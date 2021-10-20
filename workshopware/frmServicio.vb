@@ -236,6 +236,9 @@ Public Class frmServicio
                 'Habilitar el boton de agregar productos
                 Button7.Enabled = True
 
+                'Inhabilitar el boton de generacion de comprobante impreso
+                Button11.Enabled = True
+
                 'Se cierra la conexion
                 conexion.Close()
             Catch ex As Exception
@@ -282,6 +285,9 @@ Public Class frmServicio
 
         'Habilitar el boton de guardado
         Button3.Enabled = True
+
+        'Inhabilitar el boton de guardado
+        Button11.Enabled = False
 
         'Limpiar los controles
         MaskedTextBox1.Clear()
@@ -386,6 +392,9 @@ Public Class frmServicio
 
                 'Se habilita la opcion de modificar el servicio
                 Button10.Enabled = True
+
+                'Se habilita la opcion de imprimir comprobante
+                Button11.Enabled = True
 
                 'Se inhabilita la opcion de guardar productos
                 Button3.Enabled = False

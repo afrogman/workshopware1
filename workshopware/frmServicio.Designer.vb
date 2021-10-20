@@ -80,6 +80,7 @@ Partial Class frmServicio
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.Button10 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
@@ -91,7 +92,7 @@ Partial Class frmServicio
         Me.TextBox12 = New System.Windows.Forms.TextBox()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button10 = New System.Windows.Forms.Button()
+        Me.Button11 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -629,6 +630,7 @@ Partial Class frmServicio
         '
         'GroupBox5
         '
+        Me.GroupBox5.Controls.Add(Me.Button11)
         Me.GroupBox5.Controls.Add(Me.Button10)
         Me.GroupBox5.Controls.Add(Me.Button3)
         Me.GroupBox5.Controls.Add(Me.Button6)
@@ -640,6 +642,19 @@ Partial Class frmServicio
         Me.GroupBox5.TabIndex = 37
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Opciones servicio"
+        '
+        'Button10
+        '
+        Me.Button10.Enabled = False
+        Me.Button10.Image = Global.workshopware.My.Resources.Resources.edit_tool
+        Me.Button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button10.Location = New System.Drawing.Point(153, 70)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(96, 39)
+        Me.Button10.TabIndex = 42
+        Me.Button10.Text = "Modificar"
+        Me.Button10.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button10.UseVisualStyleBackColor = True
         '
         'Button3
         '
@@ -669,7 +684,7 @@ Partial Class frmServicio
         '
         Me.Button8.Image = Global.workshopware.My.Resources.Resources.paste
         Me.Button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button8.Location = New System.Drawing.Point(144, 25)
+        Me.Button8.Location = New System.Drawing.Point(153, 25)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(119, 39)
         Me.Button8.TabIndex = 41
@@ -764,18 +779,18 @@ Partial Class frmServicio
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Button10
+        'Button11
         '
-        Me.Button10.Enabled = False
-        Me.Button10.Image = Global.workshopware.My.Resources.Resources.edit_tool
-        Me.Button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button10.Location = New System.Drawing.Point(144, 70)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(96, 39)
-        Me.Button10.TabIndex = 42
-        Me.Button10.Text = "Modificar"
-        Me.Button10.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button10.UseVisualStyleBackColor = True
+        Me.Button11.Enabled = False
+        Me.Button11.Image = Global.workshopware.My.Resources.Resources.cash_register
+        Me.Button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button11.Location = New System.Drawing.Point(153, 115)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(119, 39)
+        Me.Button11.TabIndex = 43
+        Me.Button11.Text = "Comprobante"
+        Me.Button11.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button11.UseVisualStyleBackColor = True
         '
         'frmServicio
         '
@@ -895,4 +910,5 @@ Partial Class frmServicio
     Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox12 As System.Windows.Forms.TextBox
     Friend WithEvents Button10 As System.Windows.Forms.Button
+    Friend WithEvents Button11 As System.Windows.Forms.Button
 End Class
