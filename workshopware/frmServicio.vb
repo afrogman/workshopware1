@@ -268,6 +268,12 @@ Public Class frmServicio
         'Inhabilitar el boton de agregar productos
         Button7.Enabled = False
 
+        'Inhabilitar el boton de modificar
+        Button10.Enabled = False
+
+        'Habilitar el boton de guardado
+        Button3.Enabled = True
+
         'Limpiar los controles
         MaskedTextBox1.Clear()
         TextBox6.Clear()
@@ -366,8 +372,14 @@ Public Class frmServicio
                 'Llena los datos del tecnico
                 Call TecnicoDatos()
 
-                'Se habilita la opcion de productos
+                'Se habilita la opcion de detallar los productos para el servicio
                 Button7.Enabled = True
+
+                'Se habilita la opcion de modificar el servicio
+                Button10.Enabled = True
+
+                'Se inhabilita la opcion de guardar productos
+                Button3.Enabled = False
 
                 'Se cierra la conexion
                 conexion.Close()
@@ -606,4 +618,71 @@ Public Class frmServicio
         End Try
     End Sub
 
+    Private Sub Button10_Click(sender As System.Object, e As System.EventArgs) Handles Button10.Click
+        'Boton de actualizar servicios
+
+        'Variables locales para la actualizacion del servicio
+        Dim idservicio As Integer
+        Dim falla, repa As String
+        Dim fechaentrada, fechasalida, fechaprograma As String
+        Dim pago, saldo, total As Double
+        Dim est As String
+
+        Try
+            'Extrae el id del servicio
+            idservicio = MaskedTextBox1.Text
+            'Extrae la nueva falla
+            falla = RichTextBox2.Text
+            'Extrae la nueva reparacion
+            repa = RichTextBox3.Text
+            'Extrae la nueva fecha de entrada del equipo
+            fechaentrada = DateTimePicker1.Value.ToString("yyyy/MM/dd")
+            'Extrae la nueva fecha de salida o entrega del equipo
+            fechasalida = DateTimePicker2.Value.ToString("yyyy/MM/dd")
+            'Extraer la nueva fecha de mantenimiento programado
+            fechaprograma = DateTimePicker3.Value.ToString("yyyy/MM/dd")
+            'Nueva Asignacion temporal para estado
+            est = ""
+
+            'Nuevo estado del servicio
+            If (RadioButton1.Checked = True) And (RadioButton2.Checked = False) Then
+                est = "Pendiente"
+            ElseIf (RadioButton2.Checked = True) And (RadioButton1.Checked = False) Then
+                est = "Entregado"
+            End If
+
+            'Pago por el servicio
+            pago = TextBox11.Text
+            'Saldo pendiente de pago del servicio
+            saldo = TextBox12.Text
+            'Total a pagar del servicio
+            total = TextBox7.Text
+
+            'Hacer la conexion con la base de datos
+            ConectarDB()
+
+            'Variable local para confirmar (Si/No) va modificar el dato
+            Dim sino As Byte
+            'Se pregunta si se quiere o no modificar el dato de la base de datos
+            sino = MsgBox("¿Esta seguro que desea cambiar el los datos del servicio?", vbYesNo, "Confirmacion de Actualizacion")
+
+            'Se evalua si es si, para acutalizarlo
+            If (sino = 6) Then
+                'Guardamos el SQL del UPDATE que se correra en la base de datos
+                sql = "UPDATE tblservicio SET idcliente = '" & IdCliente & "', idequipo = '" & CodEquipo & "', falla = '" & falla & "', reparacion = '" & repa & "', fechaentrada = '" & fechaentrada & "', fechasalida = '" & fechasalida & "', fechaprogramada = '" & fechaprograma & "', idtecnico = '" & IdTecnico & "', pago = '" & pago & "', saldo = '" & saldo & "', total = '" & total & "', estado = '" & est & "' WHERE idservicio = '" & idservicio & "'"
+                'Se envia el SQL con la conexion para que se ejecute en la base de datos
+                comandos = New MySqlCommand(sql, conexion)
+                'No espero resultados
+                comandos.ExecuteNonQuery()
+                'Se le indica al usuario que ya fue realizada la actualizacion
+                MsgBox("Los datos del servicio fueron actualizados")
+                'Se cierra la conexion
+                conexion.Close()
+            End If
+
+        Catch ex As Exception
+            'Muestra el mensaje de error
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 End Class

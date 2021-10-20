@@ -766,6 +766,7 @@ Partial Class frmServicio
         '
         'Button10
         '
+        Me.Button10.Enabled = False
         Me.Button10.Image = Global.workshopware.My.Resources.Resources.edit_tool
         Me.Button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button10.Location = New System.Drawing.Point(144, 70)
