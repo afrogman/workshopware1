@@ -23,6 +23,7 @@ Partial Class frmMenu
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMenu))
+        Me.Button7 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button5 = New System.Windows.Forms.Button()
@@ -32,6 +33,17 @@ Partial Class frmMenu
         Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'Button7
+        '
+        Me.Button7.Image = Global.workshopware.My.Resources.Resources.book
+        Me.Button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button7.Location = New System.Drawing.Point(155, 186)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(136, 52)
+        Me.Button7.TabIndex = 8
+        Me.Button7.Text = "Reportes"
+        Me.Button7.UseVisualStyleBackColor = True
         '
         'Button6
         '
@@ -116,6 +128,7 @@ Partial Class frmMenu
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.MenuHighlight
         Me.ClientSize = New System.Drawing.Size(484, 262)
+        Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Button5)
@@ -139,5 +152,6 @@ Partial Class frmMenu
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Button6 As System.Windows.Forms.Button
+    Friend WithEvents Button7 As System.Windows.Forms.Button
 
 End Class

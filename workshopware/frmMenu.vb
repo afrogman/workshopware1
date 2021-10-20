@@ -29,4 +29,9 @@
         'Abrir el formulario de equipos a reparar
         frmEquipos.Show()
     End Sub
+
+    Private Sub Button7_Click(sender As System.Object, e As System.EventArgs) Handles Button7.Click
+        'Abrir el formulario que tiene los reportes
+        frmReportes.Show()
+    End Sub
 End Class

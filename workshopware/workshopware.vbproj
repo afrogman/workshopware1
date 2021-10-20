@@ -116,6 +116,12 @@
     <Compile Include="frmProveedores.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmReportes.Designer.vb">
+      <DependentUpon>frmReportes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmServicio.Designer.vb">
       <DependentUpon>frmServicio.vb</DependentUpon>
     </Compile>
@@ -126,6 +132,12 @@
       <DependentUpon>frmTecnicos.vb</DependentUpon>
     </Compile>
     <Compile Include="frmTecnicos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFechaSalida.Designer.vb">
+      <DependentUpon>frmFechaSalida.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFechaSalida.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modulos\mConexionBD.vb" />
@@ -168,11 +180,17 @@
     <EmbeddedResource Include="frmProveedores.resx">
       <DependentUpon>frmProveedores.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReportes.resx">
+      <DependentUpon>frmReportes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmServicio.resx">
       <DependentUpon>frmServicio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTecnicos.resx">
       <DependentUpon>frmTecnicos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFechaSalida.resx">
+      <DependentUpon>frmFechaSalida.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -254,6 +272,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="iconos\monitor.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iconos\book.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iconos\cal.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iconos\view.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
