@@ -123,6 +123,8 @@ Public Class frmAsignacionProductos
             Call MostrarProductos()
             'Se muestra el total a pagar
             Call totalProducto()
+            'Habilitar el boton de edicion
+            frmServicio.Button10.Enabled = True
         End If
     End Sub
 
@@ -323,7 +325,7 @@ Public Class frmAsignacionProductos
 
         Try
             'Se obtiene el saldo del formulario de servicios
-            saldo = Val(frmServicio.TextBox11.Text)
+            saldo = Val(frmServicio.TextBox7.Text)
 
             'Se obtiene el dato del subtotal de los productos
             subtotal = Val(TextBox9.Text)
@@ -333,14 +335,14 @@ Public Class frmAsignacionProductos
 
             Try
                 'Linea de codigo que va actualizar la insercion en la tabla, pero con referencias
-                comandos = New MySqlCommand("UPDATE tblservicio SET saldo = '" & total & "'" & Chr(13) &
+                comandos = New MySqlCommand("UPDATE tblservicio SET total = '" & total & "'" & Chr(13) &
                                             "WHERE idservicio = '" & codServicio & "'", conexion)
 
                 'Se coloca porque no espero ningun resultado de la consulta
                 comandos.ExecuteNonQuery()
 
                 'Se actualiza el dato en el formulario de servicios
-                frmServicio.TextBox11.Text = total
+                frmServicio.TextBox7.Text = total
 
             Catch ex As Exception
                 'Mensaje para indicar que no se tuvo exito con la conexion
