@@ -335,6 +335,8 @@ Public Class frmServicio
                 CodEquipo = datos.Tables("tblservicio").Rows(0).Item("idequipo")
                 'Recibir el ID del tecnico que esta viendo el equipo
                 IdTecnico = datos.Tables("tblservicio").Rows(0).Item("idtecnico")
+                'Recibir el Codigo del servicio
+                codServicio = datos.Tables("tblservicio").Rows(0).Item("idservicio")
 
                 ComboBox3.Text = datos.Tables("tblservicio").Rows(0).Item("idequipo")
 
@@ -363,6 +365,9 @@ Public Class frmServicio
                 Call DatosEquipo()
                 'Llena los datos del tecnico
                 Call TecnicoDatos()
+
+                'Se habilita la opcion de productos
+                Button7.Enabled = True
 
                 'Se cierra la conexion
                 conexion.Close()
