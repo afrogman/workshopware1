@@ -344,8 +344,6 @@ Public Class frmServicio
                 DateTimePicker2.Text = datos.Tables("tblservicio").Rows(0).Item("fechasalida")
                 DateTimePicker3.Text = datos.Tables("tblservicio").Rows(0).Item("fechaprogramada")
 
-                'ComboBox2.Text = datos.Tables("tblservicio").Rows(0).Item("idtecnico")
-
                 Dim estado = datos.Tables("tblservicio").Rows(0).Item("estado")
                 If (estado = "Pendiente") Then
                     RadioButton1.Checked = True
@@ -363,6 +361,8 @@ Public Class frmServicio
                 Call ComboCliente2()
                 'Llena los datos del equipo
                 Call DatosEquipo()
+                'Llena los datos del tecnico
+                Call TecnicoDatos()
 
                 'Se cierra la conexion
                 conexion.Close()
@@ -565,5 +565,40 @@ Public Class frmServicio
         'Realiza el llenado de los datos del equipo seleccionado en el Combobox3
         Call ComboEquipo()
     End Sub
-    
+
+    'Procedmiento para llenar los datos del tecnico
+    Sub TecnicoDatos()
+        Try
+            'Condicional que va verificar que no hayan dejado en blanco la solicitud del nit
+            If (IdTecnico <> 0) Then
+                'Se guarda la consulta que quiero hacer en la base de datos
+                sql = "SELECT * FROM tbltecnico WHERE idtecnico = '" & IdTecnico & "'"
+                'Ejecuta la consulta SQL en la baes de datos con la conexion
+                adaptador = New MySqlDataAdapter(sql, conexion)
+                datos = New DataSet
+                'Va llenarse de los datos que tenga la tabla tblproveedor
+                adaptador.Fill(datos, "tbltecnico")
+                'Va recibir las tuplas de la tabla
+                lista = datos.Tables("tbltecnico").Rows.Count
+            Else
+                'Mensaje en caso se haya dejado en blanco la solicitud del codigo
+                MessageBox.Show("No hizo seleccion de tecnico")
+            End If
+
+            'Condicional para ver si se recibe un dato en la lista
+            If (lista <> 0) Then
+
+                'Si encuentra algo, entonces va mostrar la primera posicion encontrada
+                TextBox14.Text = datos.Tables("tbltecnico").Rows(0).Item("nombres")
+                TextBox15.Text = datos.Tables("tbltecnico").Rows(0).Item("apellidos")
+
+            Else
+                MsgBox("No se encontro ningun tecnico con ese codigo")
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
 End Class
