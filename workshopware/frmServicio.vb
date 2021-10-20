@@ -258,10 +258,19 @@ Public Class frmServicio
         total = TextBox7.Text
         'Se extrae el valor del pago que deja por adelantado
         pago = TextBox11.Text
-        'Se actualiza la operacion del abono si hay
-        saldo = total - pago
-        'Se muestra en pantalla
-        TextBox12.Text = saldo
+
+        'Evalua que el anticipo o pago no sea mayor al valor total del servicio
+        If (pago > total) Then
+            'Indica en pantalla que no es posible
+            MsgBox("No es posible realizar la transaccion, el valor del pago u abono es mayor al valor del servicio")
+            'Posiciona el cursor en el anticipo para que lo arregle
+            TextBox11.Focus()
+        Else
+            'Se actualiza la operacion del abono si hay
+            saldo = total - pago
+            'Se muestra en pantalla
+            TextBox12.Text = saldo
+        End If
     End Sub
 
     Private Sub Button6_Click(sender As System.Object, e As System.EventArgs) Handles Button6.Click

@@ -636,7 +636,7 @@ Partial Class frmServicio
         Me.GroupBox5.Controls.Add(Me.Button7)
         Me.GroupBox5.Location = New System.Drawing.Point(500, 315)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(273, 168)
+        Me.GroupBox5.Size = New System.Drawing.Size(344, 168)
         Me.GroupBox5.TabIndex = 37
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Opciones servicio"
