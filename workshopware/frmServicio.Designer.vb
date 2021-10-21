@@ -80,6 +80,7 @@ Partial Class frmServicio
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.Button11 = New System.Windows.Forms.Button()
         Me.Button10 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
@@ -92,7 +93,6 @@ Partial Class frmServicio
         Me.TextBox12 = New System.Windows.Forms.TextBox()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button11 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -643,6 +643,18 @@ Partial Class frmServicio
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Opciones servicio"
         '
+        'Button11
+        '
+        Me.Button11.Image = Global.workshopware.My.Resources.Resources.cash_register
+        Me.Button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button11.Location = New System.Drawing.Point(153, 115)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(119, 39)
+        Me.Button11.TabIndex = 43
+        Me.Button11.Text = "Comprobante"
+        Me.Button11.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button11.UseVisualStyleBackColor = True
+        '
         'Button10
         '
         Me.Button10.Enabled = False
@@ -778,19 +790,6 @@ Partial Class frmServicio
         Me.Button1.Text = "Cliente nuevo"
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button11
-        '
-        Me.Button11.Enabled = False
-        Me.Button11.Image = Global.workshopware.My.Resources.Resources.cash_register
-        Me.Button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button11.Location = New System.Drawing.Point(153, 115)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(119, 39)
-        Me.Button11.TabIndex = 43
-        Me.Button11.Text = "Comprobante"
-        Me.Button11.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button11.UseVisualStyleBackColor = True
         '
         'frmServicio
         '

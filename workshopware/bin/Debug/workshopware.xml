@@ -6,7 +6,59 @@ workshopware
 </name>
 </assembly>
 <members>
-<member name="P:workshopware.My.Resources.Resources.ResourceManager">
+<member name="T:workshopware.DataSetComprobante.tblclienteDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:workshopware.DataSetComprobante.tblequipoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:workshopware.DataSetComprobante.tblservicioDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:workshopware.DataSetComprobante.tbltecnicoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:workshopware.DataSetComprobante.tblclienteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:workshopware.DataSetComprobante.tblequipoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:workshopware.DataSetComprobante.tblservicioRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:workshopware.DataSetComprobante.tbltecnicoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:workshopware.DataSetComprobante.tblclienteRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:workshopware.DataSetComprobante.tblequipoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:workshopware.DataSetComprobante.tblservicioRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:workshopware.DataSetComprobante.tbltecnicoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:workshopware.DataSetComprobante">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="P:workshopware.My.Resources.Resources.ResourceManager">
 	<summary>
   Returns the cached ResourceManager instance used by this class.
 </summary>

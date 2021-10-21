@@ -19,3 +19,7 @@ C:\Users\ProfesorX\documents\visual studio 2010\Projects\workshopware\workshopwa
 C:\Users\ProfesorX\Documents\Visual Studio 2010\Projects\workshopware\workshopware\obj\x86\Debug\workshopware.frmFechaSalida.resources
 C:\Users\ProfesorX\Documents\Visual Studio 2010\Projects\workshopware\workshopware\obj\x86\Debug\workshopware.frmFechaEntrada.resources
 C:\Users\ProfesorX\Documents\Visual Studio 2010\Projects\workshopware\workshopware\obj\x86\Debug\workshopware.frmFechaProgramada.resources
+C:\Users\ProfesorX\Documents\Visual Studio 2010\Projects\workshopware\workshopware\obj\x86\Debug\workshopware.frmComprobante.resources
+C:\Users\ProfesorX\Documents\Visual Studio 2010\Projects\workshopware\workshopware\obj\x86\Debug\workshopware.vbprojResolveAssemblyReference.cache
+C:\Users\ProfesorX\Documents\Visual Studio 2010\Projects\workshopware\workshopware\obj\x86\Debug\RdlCompile.cache
+C:\Users\ProfesorX\Documents\Visual Studio 2010\Projects\workshopware\workshopware\obj\x86\Debug\RdlCompile.compiled

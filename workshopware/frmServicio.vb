@@ -703,4 +703,9 @@ Public Class frmServicio
             MsgBox(ex.Message)
         End Try
     End Sub
+
+    Private Sub Button11_Click(sender As System.Object, e As System.EventArgs) Handles Button11.Click
+        'Abrir el comprombante de impresion
+        frmComprobante.Show()
+    End Sub
 End Class
