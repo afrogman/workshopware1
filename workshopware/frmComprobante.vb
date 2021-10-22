@@ -13,7 +13,7 @@ Public Class frmComprobante
             'Refresca el reporte y lo carga con los nuevos datos
             Me.ReportViewer1.RefreshReport()
             'Se asigna la consulta que queremos ver en el reporte
-            sql = "SELECT tblservicio.idservicio, tblcliente.nombres, tblcliente.apellidos, tblequipo.marca, tblequipo.modelo, tblequipo.serie, tblequipo.accesorios, tblequipo.observaciones, tblservicio.falla, tblservicio.reparacion, tblservicio.fechaentrada, tblservicio.fechasalida, tblservicio.pago, tblservicio.saldo, tblservicio.total, tbltecnico.nombres, tbltecnico.apellidos FROM tblcliente INNER JOIN tblequipo ON tblcliente.idcliente = tblequipo.idcliente INNER JOIN tblservicio ON tblcliente.idcliente = tblservicio.idcliente INNER JOIN tbltecnico ON tblservicio.idtecnico = tbltecnico.idtecnico WHERE tblservicio.idservicio = '" & codServicio & "'"
+            sql = "SELECT tblcliente.nombres, tblcliente.apellidos, tblequipo.marca, tblequipo.modelo, tblequipo.serie, tblequipo.accesorios, tblequipo.observaciones, tblservicio.falla, tblservicio.reparacion, tblservicio.fechaentrada, tblservicio.fechasalida, tblservicio.pago, tblservicio.saldo, tblservicio.total, tbltecnico.nombres, tbltecnico.apellidos, tblservicio.idservicio FROM tblcliente INNER JOIN tblequipo ON tblcliente.idcliente = tblequipo.idcliente INNER JOIN tblservicio ON tblcliente.idcliente = tblservicio.idcliente INNER JOIN tbltecnico ON tblservicio.idtecnico = tbltecnico.idtecnico WHERE tblservicio.idservicio = '" & codServicio & "'"
 
 
             'Realiza la conexion a la base de datos
@@ -33,4 +33,5 @@ Public Class frmComprobante
             MsgBox(ex.Message)
         End Try
     End Sub
+    
 End Class

@@ -12,7 +12,7 @@
   <xs:element name="DataSetComprobante" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetComprobante" msprop:Generator_UserDSName="DataSetComprobante">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="tblcliente" msprop:Generator_TableClassName="tblclienteDataTable" msprop:Generator_TableVarName="tabletblcliente" msprop:Generator_TablePropName="tblcliente" msprop:Generator_RowDeletingName="tblclienteRowDeleting" msprop:Generator_RowChangingName="tblclienteRowChanging" msprop:Generator_RowEvHandlerName="tblclienteRowChangeEventHandler" msprop:Generator_RowDeletedName="tblclienteRowDeleted" msprop:Generator_UserTableName="tblcliente" msprop:Generator_RowChangedName="tblclienteRowChanged" msprop:Generator_RowEvArgName="tblclienteRowChangeEvent" msprop:Generator_RowClassName="tblclienteRow">
+        <xs:element name="tblcliente" msprop:Generator_TableClassName="tblclienteDataTable" msprop:Generator_TableVarName="tabletblcliente" msprop:Generator_RowChangedName="tblclienteRowChanged" msprop:Generator_TablePropName="tblcliente" msprop:Generator_RowDeletingName="tblclienteRowDeleting" msprop:Generator_RowChangingName="tblclienteRowChanging" msprop:Generator_RowEvHandlerName="tblclienteRowChangeEventHandler" msprop:Generator_RowDeletedName="tblclienteRowDeleted" msprop:Generator_RowClassName="tblclienteRow" msprop:Generator_UserTableName="tblcliente" msprop:Generator_RowEvArgName="tblclienteRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idcliente" msprop:Generator_ColumnVarNameInTable="columnidcliente" msprop:Generator_ColumnPropNameInRow="idcliente" msprop:Generator_ColumnPropNameInTable="idclienteColumn" msprop:Generator_UserColumnName="idcliente" type="xs:string" minOccurs="0" />
@@ -26,7 +26,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tblequipo" msprop:Generator_TableClassName="tblequipoDataTable" msprop:Generator_TableVarName="tabletblequipo" msprop:Generator_TablePropName="tblequipo" msprop:Generator_RowDeletingName="tblequipoRowDeleting" msprop:Generator_RowChangingName="tblequipoRowChanging" msprop:Generator_RowEvHandlerName="tblequipoRowChangeEventHandler" msprop:Generator_RowDeletedName="tblequipoRowDeleted" msprop:Generator_UserTableName="tblequipo" msprop:Generator_RowChangedName="tblequipoRowChanged" msprop:Generator_RowEvArgName="tblequipoRowChangeEvent" msprop:Generator_RowClassName="tblequipoRow">
+        <xs:element name="tblequipo" msprop:Generator_TableClassName="tblequipoDataTable" msprop:Generator_TableVarName="tabletblequipo" msprop:Generator_RowChangedName="tblequipoRowChanged" msprop:Generator_TablePropName="tblequipo" msprop:Generator_RowDeletingName="tblequipoRowDeleting" msprop:Generator_RowChangingName="tblequipoRowChanging" msprop:Generator_RowEvHandlerName="tblequipoRowChangeEventHandler" msprop:Generator_RowDeletedName="tblequipoRowDeleted" msprop:Generator_RowClassName="tblequipoRow" msprop:Generator_UserTableName="tblequipo" msprop:Generator_RowEvArgName="tblequipoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idequipo" msprop:Generator_ColumnVarNameInTable="columnidequipo" msprop:Generator_ColumnPropNameInRow="idequipo" msprop:Generator_ColumnPropNameInTable="idequipoColumn" msprop:Generator_UserColumnName="idequipo" type="xs:string" minOccurs="0" />
@@ -39,7 +39,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tblservicio" msprop:Generator_TableClassName="tblservicioDataTable" msprop:Generator_TableVarName="tabletblservicio" msprop:Generator_TablePropName="tblservicio" msprop:Generator_RowDeletingName="tblservicioRowDeleting" msprop:Generator_RowChangingName="tblservicioRowChanging" msprop:Generator_RowEvHandlerName="tblservicioRowChangeEventHandler" msprop:Generator_RowDeletedName="tblservicioRowDeleted" msprop:Generator_UserTableName="tblservicio" msprop:Generator_RowChangedName="tblservicioRowChanged" msprop:Generator_RowEvArgName="tblservicioRowChangeEvent" msprop:Generator_RowClassName="tblservicioRow">
+        <xs:element name="tblservicio" msprop:Generator_TableClassName="tblservicioDataTable" msprop:Generator_TableVarName="tabletblservicio" msprop:Generator_RowChangedName="tblservicioRowChanged" msprop:Generator_TablePropName="tblservicio" msprop:Generator_RowDeletingName="tblservicioRowDeleting" msprop:Generator_RowChangingName="tblservicioRowChanging" msprop:Generator_RowEvHandlerName="tblservicioRowChangeEventHandler" msprop:Generator_RowDeletedName="tblservicioRowDeleted" msprop:Generator_RowClassName="tblservicioRow" msprop:Generator_UserTableName="tblservicio" msprop:Generator_RowEvArgName="tblservicioRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idservicio" msprop:Generator_ColumnVarNameInTable="columnidservicio" msprop:Generator_ColumnPropNameInRow="idservicio" msprop:Generator_ColumnPropNameInTable="idservicioColumn" msprop:Generator_UserColumnName="idservicio" type="xs:string" minOccurs="0" />
@@ -58,7 +58,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbltecnico" msprop:Generator_TableClassName="tbltecnicoDataTable" msprop:Generator_TableVarName="tabletbltecnico" msprop:Generator_TablePropName="tbltecnico" msprop:Generator_RowDeletingName="tbltecnicoRowDeleting" msprop:Generator_RowChangingName="tbltecnicoRowChanging" msprop:Generator_RowEvHandlerName="tbltecnicoRowChangeEventHandler" msprop:Generator_RowDeletedName="tbltecnicoRowDeleted" msprop:Generator_UserTableName="tbltecnico" msprop:Generator_RowChangedName="tbltecnicoRowChanged" msprop:Generator_RowEvArgName="tbltecnicoRowChangeEvent" msprop:Generator_RowClassName="tbltecnicoRow">
+        <xs:element name="tbltecnico" msprop:Generator_TableClassName="tbltecnicoDataTable" msprop:Generator_TableVarName="tabletbltecnico" msprop:Generator_RowChangedName="tbltecnicoRowChanged" msprop:Generator_TablePropName="tbltecnico" msprop:Generator_RowDeletingName="tbltecnicoRowDeleting" msprop:Generator_RowChangingName="tbltecnicoRowChanging" msprop:Generator_RowEvHandlerName="tbltecnicoRowChangeEventHandler" msprop:Generator_RowDeletedName="tbltecnicoRowDeleted" msprop:Generator_RowClassName="tbltecnicoRow" msprop:Generator_UserTableName="tbltecnico" msprop:Generator_RowEvArgName="tbltecnicoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idtecnico" msprop:Generator_ColumnVarNameInTable="columnidtecnico" msprop:Generator_ColumnPropNameInRow="idtecnico" msprop:Generator_ColumnPropNameInTable="idtecnicoColumn" msprop:Generator_UserColumnName="idtecnico" type="xs:string" minOccurs="0" />
@@ -93,19 +93,19 @@
       <xs:selector xpath=".//mstns:tbltecnico" />
       <xs:field xpath="mstns:idtecnico" />
     </xs:unique>
-    <xs:keyref name="tblequipo_tblservicio" refer="tblequipoKey1" msdata:ConstraintOnly="true" msdata:UpdateRule="None" msdata:DeleteRule="None">
-      <xs:selector xpath=".//mstns:tblservicio" />
-      <xs:field xpath="mstns:idequipo" />
-    </xs:keyref>
-    <xs:keyref name="tbltecnico_tblservicio" refer="tbltecnicoKey1" msdata:ConstraintOnly="true" msdata:UpdateRule="None" msdata:DeleteRule="None">
+    <xs:keyref name="tbltecnico_tblservicio" refer="tbltecnicoKey1" msprop:rel_Generator_UserChildTable="tblservicio" msprop:rel_Generator_ChildPropName="GettblservicioRows" msprop:rel_Generator_UserRelationName="tbltecnico_tblservicio" msprop:rel_Generator_RelationVarName="relationtbltecnico_tblservicio" msprop:rel_Generator_UserParentTable="tbltecnico" msprop:rel_Generator_ParentPropName="tbltecnicoRow" msdata:UpdateRule="None" msdata:DeleteRule="None">
       <xs:selector xpath=".//mstns:tblservicio" />
       <xs:field xpath="mstns:idtecnico" />
     </xs:keyref>
-    <xs:keyref name="tblcliente_tblservicio" refer="tblclienteKey1" msdata:ConstraintOnly="true" msdata:UpdateRule="None" msdata:DeleteRule="None">
+    <xs:keyref name="tblcliente_tblservicio" refer="tblclienteKey1" msprop:rel_Generator_UserChildTable="tblservicio" msprop:rel_Generator_ChildPropName="GettblservicioRows" msprop:rel_Generator_UserRelationName="tblcliente_tblservicio" msprop:rel_Generator_ParentPropName="tblclienteRow" msprop:rel_Generator_RelationVarName="relationtblcliente_tblservicio" msprop:rel_Generator_UserParentTable="tblcliente" msdata:UpdateRule="None" msdata:DeleteRule="None">
       <xs:selector xpath=".//mstns:tblservicio" />
       <xs:field xpath="mstns:idcliente" />
     </xs:keyref>
-    <xs:keyref name="tblequipo_tblcliente" refer="Constraint1" msdata:ConstraintOnly="true" msdata:UpdateRule="None" msdata:DeleteRule="None">
+    <xs:keyref name="tblequipo_tblservicio" refer="tblequipoKey1" msprop:rel_Generator_UserChildTable="tblservicio" msprop:rel_Generator_ChildPropName="GettblservicioRows" msprop:rel_Generator_UserRelationName="tblequipo_tblservicio" msprop:rel_Generator_ParentPropName="tblequipoRow" msprop:rel_Generator_RelationVarName="relationtblequipo_tblservicio" msprop:rel_Generator_UserParentTable="tblequipo" msdata:UpdateRule="None" msdata:DeleteRule="None">
+      <xs:selector xpath=".//mstns:tblservicio" />
+      <xs:field xpath="mstns:idequipo" />
+    </xs:keyref>
+    <xs:keyref name="tblequipo_tblcliente" refer="Constraint1" msprop:rel_Generator_UserChildTable="tblcliente" msprop:rel_Generator_ChildPropName="GettblclienteRows" msprop:rel_Generator_UserRelationName="tblequipo_tblcliente" msprop:rel_Generator_RelationVarName="relationtblequipo_tblcliente" msprop:rel_Generator_UserParentTable="tblequipo" msprop:rel_Generator_ParentPropName="tblequipoRow" msdata:UpdateRule="None" msdata:DeleteRule="None">
       <xs:selector xpath=".//mstns:tblcliente" />
       <xs:field xpath="mstns:idcliente" />
     </xs:keyref>
