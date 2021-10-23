@@ -12,7 +12,7 @@ Public Class frmConstancia
             'Refresca el reporte
             Me.ReportViewer1.RefreshReport()
             'Se asigna la consulta que se quiere visualizar
-            sql = "SELECT tblcliente.nombres, tblcliente.apellidos, tblequipo.marca, tblequipo.modelo, tblequipo.serie, tblequipo.accesorios, tblequipo.observaciones, tblservicio.falla, tblservicio.reparacion, tblservicio.fechaentrada, tblservicio.fechasalida, tblservicio.pago, tblservicio.saldo, tblservicio.total, tbltecnico.nombres as 'nombrest', tbltecnico.apellidos as 'apellidost', tblservicio.idservicio FROM tblcliente INNER JOIN tblequipo ON tblcliente.idcliente = tblequipo.idcliente INNER JOIN tblservicio ON tblcliente.idcliente = tblservicio.idcliente INNER JOIN tbltecnico ON tblservicio.idtecnico = tbltecnico.idtecnico WHERE tblservicio.idservicio = '" & codServicio & "'"
+            sql = "SELECT tblservicio.idservicio, tblcliente.nombres, tblcliente.apellidos, tblequipo.marca, tblequipo.modelo, tblequipo.serie, tblequipo.accesorios, tblequipo.observaciones, tblservicio.falla, tblservicio.reparacion,  DATE_FORMAT(tblservicio.fechaentrada, '%y-%m-%d') as 'fechaentrada', DATE_FORMAT(tblservicio.fechasalida, '%y-%m-%d') as 'fechasalida', tblservicio.pago, tblservicio.saldo, tblservicio.total, tbltecnico.nombres as 'nombrest', tbltecnico.apellidos as 'apellidost' FROM tblcliente  INNER JOIN tblequipo ON tblcliente.idcliente = tblequipo.idcliente INNER JOIN tblservicio ON tblcliente.idcliente = tblservicio.idcliente INNER JOIN tbltecnico ON tblservicio.idtecnico = tbltecnico.idtecnico WHERE tblservicio.idservicio = '" & codServicio & "'"
 
             'Se hace la conexion a la base de datos
             Call ConectarDB()

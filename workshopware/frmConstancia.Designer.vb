@@ -25,12 +25,22 @@ Partial Class frmConstancia
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmConstancia))
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.DataSetConstancia = New workshopware.DataSetConstancia()
         Me.TablaConsultaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        CType(Me.DataSetConstancia, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DataSetConstancia = New workshopware.DataSetConstancia()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         CType(Me.TablaConsultaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetConstancia, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'TablaConsultaBindingSource
+        '
+        Me.TablaConsultaBindingSource.DataMember = "TablaConsulta"
+        Me.TablaConsultaBindingSource.DataSource = Me.DataSetConstancia
+        '
+        'DataSetConstancia
+        '
+        Me.DataSetConstancia.DataSetName = "DataSetConstancia"
+        Me.DataSetConstancia.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
@@ -40,33 +50,23 @@ Partial Class frmConstancia
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "workshopware.Report1.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(12, 12)
         Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Size = New System.Drawing.Size(680, 368)
+        Me.ReportViewer1.Size = New System.Drawing.Size(813, 566)
         Me.ReportViewer1.TabIndex = 0
-        '
-        'DataSetConstancia
-        '
-        Me.DataSetConstancia.DataSetName = "DataSetConstancia"
-        Me.DataSetConstancia.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'TablaConsultaBindingSource
-        '
-        Me.TablaConsultaBindingSource.DataMember = "TablaConsulta"
-        Me.TablaConsultaBindingSource.DataSource = Me.DataSetConstancia
         '
         'frmConstancia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.MenuHighlight
-        Me.ClientSize = New System.Drawing.Size(704, 383)
+        Me.ClientSize = New System.Drawing.Size(837, 590)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Location = New System.Drawing.Point(1, 1)
         Me.Name = "frmConstancia"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Workshopware - Constancia de entrega de equipo"
-        CType(Me.DataSetConstancia, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TablaConsultaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSetConstancia, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
