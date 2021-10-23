@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-10-2021 a las 06:57:17
+-- Tiempo de generación: 23-10-2021 a las 06:01:00
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.2.29
 
@@ -37,14 +37,6 @@ CREATE TABLE `tblasignacionproducto` (
   `total` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `tblasignacionproducto`
---
-
-INSERT INTO `tblasignacionproducto` (`idasignacion`, `idproducto`, `nombreproducto`, `idservicio`, `precioventa`, `cantidad`, `total`) VALUES
-(42, 1, 'Teclado', 1, 121, 2, 121),
-(43, 2, 'Case XT', 1, 230, 1, 230);
-
 -- --------------------------------------------------------
 
 --
@@ -62,14 +54,6 @@ CREATE TABLE `tblcliente` (
   `nit` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `tblcliente`
---
-
-INSERT INTO `tblcliente` (`idcliente`, `nombres`, `apellidos`, `direccion`, `telefonocasa`, `telefonocelular`, `correoelectronico`, `nit`) VALUES
-(1, 'Jose Antonio', 'Rojas de Leon', '11 Avenida 7-80 Zona 2', 77615689, 56897412, 'jrojas@gmail.com', '258974-5'),
-(2, 'Julio Eduardo', 'Xicará Castañeda', 'Diagonal 11 7-40 Zona 1', 77600339, 59452313, 'ranaxtg@gmail.com', '2055900-3');
-
 -- --------------------------------------------------------
 
 --
@@ -85,13 +69,6 @@ CREATE TABLE `tblequipo` (
   `observaciones` varchar(500) NOT NULL,
   `idcliente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `tblequipo`
---
-
-INSERT INTO `tblequipo` (`idequipo`, `marca`, `modelo`, `serie`, `accesorios`, `observaciones`, `idcliente`) VALUES
-(1, 'Toshiba', 'Tecra', '456789', 'Cargador', 'Viene sucia, quebrada, el cargador viene con cita de aislar, no enciende', 2);
 
 -- --------------------------------------------------------
 
@@ -112,14 +89,6 @@ CREATE TABLE `tblproducto` (
   `idproveedor` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `tblproducto`
---
-
-INSERT INTO `tblproducto` (`idproducto`, `nombre`, `descripcion`, `marca`, `modelo`, `serie`, `cantidad`, `pcosto`, `pventa`, `idproveedor`) VALUES
-(1, 'Teclado', 'USB/BlueTu', 'Genius', '123456', '45678', 8, 100, 121, 3),
-(2, 'Case XT', 'Color negro, neon, bien chilero', 'Neon', '45678', '123132465', 1, 200, 230, 2);
-
 -- --------------------------------------------------------
 
 --
@@ -135,15 +104,6 @@ CREATE TABLE `tblproveedor` (
   `telefonocelular` int(11) NOT NULL,
   `correoelectronico` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `tblproveedor`
---
-
-INSERT INTO `tblproveedor` (`idproveedor`, `nombre`, `nombreencargado`, `direccion`, `telefonooficina`, `telefonocelular`, `correoelectronico`) VALUES
-(1, 'MTI', 'Ulices Sajquim', 'Xela', 77661033, 67896546, 'ulces@gmail.com'),
-(2, 'Access', 'Fernando Yac', 'Xeal', 45678912, 45678965, 'jajaja@gmail.com'),
-(3, 'Tecnologia S.A.', 'Gerson', 'xela', 45678912, 45678998, 'jajaja@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -167,13 +127,6 @@ CREATE TABLE `tblservicio` (
   `estado` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `tblservicio`
---
-
-INSERT INTO `tblservicio` (`idservicio`, `idcliente`, `idequipo`, `falla`, `reparacion`, `fechaentrada`, `fechasalida`, `fechaprogramada`, `idtecnico`, `pago`, `saldo`, `total`, `estado`) VALUES
-(1, 2, 1, 'No enciende y el disco duro hace ruido', 'Revision, mantenimiento y cambiar disco duro', '2021-10-09', '2021-10-23', '2021-12-24', 2, 100, 451, 200, 'Pendiente');
-
 -- --------------------------------------------------------
 
 --
@@ -189,14 +142,6 @@ CREATE TABLE `tbltecnico` (
   `telefonocelular` int(11) NOT NULL,
   `correoelectronico` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `tbltecnico`
---
-
-INSERT INTO `tbltecnico` (`idtecnico`, `nombres`, `apellidos`, `direccion`, `telefonocasa`, `telefonocelular`, `correoelectronico`) VALUES
-(1, 'Luis', 'Perez', 'Xela', 1234568, 45678965, 'tecnico1@gmail.com'),
-(2, 'Hernesto', 'Gomez', 'Salcaja', 78945623, 45678912, 'tecnico2@gmail.com');
 
 --
 -- Índices para tablas volcadas
@@ -259,7 +204,7 @@ ALTER TABLE `tbltecnico`
 -- AUTO_INCREMENT de la tabla `tblasignacionproducto`
 --
 ALTER TABLE `tblasignacionproducto`
-  MODIFY `idasignacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `idasignacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- Restricciones para tablas volcadas
