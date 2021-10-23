@@ -705,7 +705,7 @@ Public Class frmServicio
     End Sub
 
     Private Sub Button11_Click(sender As System.Object, e As System.EventArgs) Handles Button11.Click
-        'Abrir el comprombante de impresion
-        frmComprobante.Show()
+        'Abrir el formulario de la constancia
+        frmConstancia.Show()
     End Sub
 End Class
