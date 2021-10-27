@@ -22,3 +22,4 @@ C:\Users\ProfesorX\documents\visual studio 2010\Projects\workshopware\workshopwa
 C:\Users\ProfesorX\documents\visual studio 2010\Projects\workshopware\workshopware\obj\x86\Debug\workshopware.exe
 C:\Users\ProfesorX\documents\visual studio 2010\Projects\workshopware\workshopware\obj\x86\Debug\workshopware.xml
 C:\Users\ProfesorX\documents\visual studio 2010\Projects\workshopware\workshopware\obj\x86\Debug\workshopware.pdb
+C:\Users\ProfesorX\documents\visual studio 2010\Projects\workshopware\workshopware\obj\x86\Debug\workshopware.vbprojResolveAssemblyReference.cache

@@ -6,6 +6,12 @@ Public Class frmProveedores
     Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
         'Boton de nueva opcion
 
+        'Se inhabilita el boton de modificacion
+        Button5.Enabled = False
+        'Se inhabilita el boton de eliminacion
+        Button6.Enabled = False
+        'Se habilita el boton de guardado
+        Button2.Enabled = True
         'Limpieza de controles
         TextBox1.Clear()
         TextBox2.Clear()
@@ -23,7 +29,6 @@ Public Class frmProveedores
         'Variables para boton de guardado
         Dim codigopro, telofi, telcel As Integer
         Dim nombrepro, nombrerep, direccionpro, email As String
-
         Try
             'Codigo del proveedor
             codigopro = Val(TextBox1.Text)
@@ -39,11 +44,9 @@ Public Class frmProveedores
             telcel = MaskedTextBox2.Text
             'Correo electronico
             email = TextBox5.Text
-
             Try
                 'Se llama al procedimiento que hace y abre la conexion
                 Call ConectarDB()
-
                 'Linea de codigo que va guardar la insercion en la tabla, pero con referencias
                 comandos = New MySqlCommand("INSERT INTO tblproveedor (idproveedor, nombre, nombreencargado, direccion, telefonooficina, telefonocelular, correoelectronico)" & Chr(13) &
                                             "VALUES(@codigo,@nombrepro,@nombrerep,@direccion,@telefonooficina,@telefonocelular,@email)", conexion)
@@ -61,12 +64,10 @@ Public Class frmProveedores
                 comandos.Parameters.AddWithValue("@telefonocelular", telcel)
                 'Referencia al estado ingresado en el formulario
                 comandos.Parameters.AddWithValue("@email", email)
-
                 'Se coloca porque no espero ningun resultado de la consulta
                 comandos.ExecuteNonQuery()
                 'Indico que se realizo exitosamente el guardado
                 MsgBox("Los datos del proveedor fueron guardados exitosamente!")
-
                 'Limpieza de controles
                 TextBox1.Clear()
                 TextBox2.Clear()
@@ -76,7 +77,6 @@ Public Class frmProveedores
                 MaskedTextBox1.Clear()
                 MaskedTextBox2.Clear()
                 TextBox1.Focus()
-
                 'Se cierra la conexion
                 conexion.Close()
             Catch ex As Exception
@@ -85,31 +85,24 @@ Public Class frmProveedores
                 'Se cierra la conexion
                 conexion.Close()
             End Try
-
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
 
     Private Sub Button3_Click(sender As System.Object, e As System.EventArgs) Handles Button3.Click
-
         'Procedimiento de conexion de la base de datods
         Call ConectarDB()
-
         'Se guarda la consulta general mostrando nombres alternos para los campos
         sql = "SELECT idproveedor as 'Codigo', nombre as 'Nombre', nombreencargado as 'Encargado', direccion as 'Direccion', telefonooficina 'Telefono Oficina', telefonocelular as 'Telefono Celular', correoelectronico as 'Email' FROM tblproveedor"
-
         'Ejecuta la consulta SQL en la baes de datos con la conexion
         adaptador = New MySqlDataAdapter(sql, conexion)
-
+        'Recibe los datos que se van a mostrar en el datagridview
         datos = New DataSet
-
         'Va llenarse de los datos que tenga la tabla tbltecnico
         adaptador.Fill(datos, "tblproveedor")
-
         'Va recibir las tuplas de la tabla
         lista = datos.Tables("tblproveedor").Rows.Count
-
         'Condicional para ver si se recibe un dato en la lista
         If (lista <> 0) Then
             'Le indica al DataGridView que son datos que vienen de una base de datos
@@ -127,14 +120,11 @@ Public Class frmProveedores
     Private Sub Button4_Click(sender As System.Object, e As System.EventArgs) Handles Button4.Click
         'Variable para el codigo del Proveedor y asi buscarlo
         Dim codProveedor As String
-
         Try
             'Se captura el codigo del proveedor del Textbox1
             codProveedor = TextBox1.Text
-
             'Procedimiento de conexion de la baes de datos
             ConectarDB()
-
             'Condicional que va verificar que no hayan dejado en blanco la solicitud del nombre
             If (codProveedor <> "") Then
                 'Se guarda la consulta que quiero hacer en la base de datos
@@ -150,10 +140,8 @@ Public Class frmProveedores
                 'Mensaje en caso se haya dejado en blanco la solicitud del codigo
                 MessageBox.Show("No se ingreso ningun codigo de busqueda para el proveedor")
             End If
-
             'Condicional para ver si se recibe un dato en la lista
             If (lista <> 0) Then
-
                 'Si encuentra algo, entonces va mostrar la primera posicion encontrada
                 TextBox1.Text = datos.Tables("tblproveedor").Rows(0).Item("idproveedor")
                 TextBox2.Text = datos.Tables("tblproveedor").Rows(0).Item("nombre")
@@ -162,15 +150,22 @@ Public Class frmProveedores
                 MaskedTextBox1.Text = datos.Tables("tblproveedor").Rows(0).Item("telefonooficina")
                 MaskedTextBox2.Text = datos.Tables("tblproveedor").Rows(0).Item("telefonocelular")
                 TextBox5.Text = datos.Tables("tblproveedor").Rows(0).Item("correoelectronico")
-
+                'Se habilita el boton de modificacion
+                Button5.Enabled = True
+                'Se habilita el boton de eliminacion
+                Button6.Enabled = True
+                'Se inhabilita el boton de guardado
+                Button2.Enabled = False
                 'Se cierra la conexion
                 conexion.Close()
             Else
+                'Confirma que no encontro el dato buscado
                 MsgBox("No se encontro ningun proveedor con ese codigo")
+                'Cierra la conexion a la bd
                 conexion.Close()
             End If
-
         Catch ex As Exception
+            'Indica en pantalla si hay algun error
             MsgBox(ex.Message)
         End Try
     End Sub
@@ -182,7 +177,6 @@ Public Class frmProveedores
             'Variables locales para la actualizacion del cliente
             Dim id, nombre, encargado, direccion, correo As String
             Dim tel1, tel2 As Integer
-
             'Extrae el id del proveedor
             id = TextBox1.Text
             'Extrae los nuevos nombres del proveedor
@@ -197,15 +191,12 @@ Public Class frmProveedores
             tel2 = MaskedTextBox2.Text
             'Extrae el nuevo correo electronico del cliente
             correo = TextBox5.Text
-
             'Hacer la conexion con la base de datos
             ConectarDB()
-
             'Variable local para confirmar (Si/No) va modificar el dato
             Dim sino As Byte
             'Se pregunta si se quiere o no modificar el dato de la base de datos
             sino = MsgBox("¿Esta seguro que desea cambiar el los datos del proveedor?", vbYesNo, "Confirmacion de Actualizacion")
-
             'Se evalua si es si, para acutalizarlo
             If (sino = 6) Then
                 'Guardamos el SQL del UPDATE que se correra en la base de datos
@@ -219,7 +210,6 @@ Public Class frmProveedores
                 'Se cierra la conexion
                 conexion.Close()
             End If
-
         Catch ex As Exception
             'Muestra el mensaje de error
             MsgBox(ex.Message)
@@ -231,22 +221,16 @@ Public Class frmProveedores
 
         'Varible para guardar el id del proveedor y asi borrarlo
         Dim id As String
-
         'Conecta con la base de datos
         ConectarDB()
-
         Try
-
             'Variable local para confirmar (Si/No) va eliminar el dato
             Dim sino As Byte
-
             'Extrae el id del cliente
             id = TextBox1.Text
-
             'Se pregunta si se quiere o no borrar el dato de la base de datos
             sino = MsgBox("¿Esta seguro que desea eliminar a este proveedor?", vbYesNo, "Confirmacion de Eliminacion")
             'Se evalua si es si, para eliminarlo
-
             If (sino = 6) Then
                 'Se guarda el SQL de la eliminacion
                 sql = "DELETE FROM tblproveedor WHERE idproveedor = '" & id & "'"
@@ -256,7 +240,6 @@ Public Class frmProveedores
                 comandos.BeginExecuteNonQuery()
                 'Se le indica al usuario que ya se borro la tupla
                 MsgBox("Informacion del proveedor eliminada")
-
                 'Limpieza de controles
                 TextBox1.Clear()
                 TextBox2.Clear()
@@ -266,11 +249,9 @@ Public Class frmProveedores
                 MaskedTextBox1.Clear()
                 MaskedTextBox2.Clear()
                 TextBox1.Focus()
-
                 'Se cierra la conexion
                 conexion.Close()
             End If
-
         Catch ex As Exception
             'Muestra el error de la rutina
             MsgBox(ex.Message)
