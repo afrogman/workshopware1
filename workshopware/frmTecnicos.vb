@@ -6,6 +6,15 @@ Public Class frmTecnicos
     Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
         'Boton de nueva opcion
 
+        'Se inhabilitan el boton de modificar
+        Button5.Enabled = False
+        'Se inhabilita el boton de eliminar
+        Button6.Enabled = False
+        'Se habilita el boton de guardar
+        Button2.Enabled = True
+        'Se habilita el Textbox1 del codigo
+        TextBox1.Enabled = True
+
         'Limpieza de controles
         TextBox1.Clear()
         TextBox2.Clear()
@@ -65,7 +74,6 @@ Public Class frmTecnicos
                 comandos.ExecuteNonQuery()
                 'Indico que se realizo exitosamente el guardado
                 MsgBox("Los datos del tecnico fueron guardados exitosamente!")
-
                 'Limpieza de controles
                 TextBox1.Clear()
                 TextBox2.Clear()
@@ -75,7 +83,6 @@ Public Class frmTecnicos
                 MaskedTextBox1.Clear()
                 MaskedTextBox2.Clear()
                 TextBox1.Focus()
-
                 'Se cierra la conexion
                 conexion.Close()
             Catch ex As Exception
@@ -84,31 +91,24 @@ Public Class frmTecnicos
                 'Se cierra la conexion
                 conexion.Close()
             End Try
-
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-        
     End Sub
 
     Private Sub Button3_Click(sender As System.Object, e As System.EventArgs) Handles Button3.Click
         'Procedimiento de conexion de la base de datods
         Call ConectarDB()
-
         'Se guarda la consulta general mostrando nombres alternos para los campos
         sql = "SELECT idtecnico as 'Codigo', nombres as 'Nombres', apellidos as 'Apellidos', direccion as 'Direccion', telefonocasa as 'Telefono Casa', telefonocelular as 'Telefono Celular', correoelectronico as 'Email' FROM tbltecnico"
-
         'Ejecuta la consulta SQL en la baes de datos con la conexion
         adaptador = New MySqlDataAdapter(sql, conexion)
-
+        'Guarda los datos que se van a mostrar en el datagridview
         datos = New DataSet
-
         'Va llenarse de los datos que tenga la tabla tbltecnico
         adaptador.Fill(datos, "tbltecnico")
-
         'Va recibir las tuplas de la tabla
         lista = datos.Tables("tbltecnico").Rows.Count
-
         'Condicional para ver si se recibe un dato en la lista
         If (lista <> 0) Then
             'Le indica al DataGridView que son datos que vienen de una base de datos
@@ -130,10 +130,8 @@ Public Class frmTecnicos
         Try
             'Se captura el codigo del tecnico del Textbox1
             codTecnico = TextBox1.Text
-
             'Procedimiento de conexion de la baes de datos
             ConectarDB()
-
             'Condicional que va verificar que no hayan dejado en blanco la solicitud del codigo
             If (codTecnico <> "") Then
                 'Se guarda la consulta que quiero hacer en la base de datos
@@ -152,8 +150,7 @@ Public Class frmTecnicos
 
             'Condicional para ver si se recibe un dato en la lista
             If (lista <> 0) Then
-
-                'Si encuentra algo, entonces va mostrar la primera posicion encontrada
+                'Si encuentra algo, lo va mostrar en los respectivos controles
                 TextBox1.Text = datos.Tables("tbltecnico").Rows(0).Item("idtecnico")
                 TextBox2.Text = datos.Tables("tbltecnico").Rows(0).Item("nombres")
                 TextBox3.Text = datos.Tables("tbltecnico").Rows(0).Item("apellidos")
@@ -161,14 +158,20 @@ Public Class frmTecnicos
                 MaskedTextBox1.Text = datos.Tables("tbltecnico").Rows(0).Item("telefonocasa")
                 MaskedTextBox2.Text = datos.Tables("tbltecnico").Rows(0).Item("telefonocelular")
                 TextBox5.Text = datos.Tables("tbltecnico").Rows(0).Item("correoelectronico")
-
+                'Se inhabilita el Textbox1 del codigo
+                TextBox1.Enabled = False
+                'Se habilitan el boton de modificar
+                Button5.Enabled = True
+                'Se habilita el boton de eliminar
+                Button6.Enabled = True
+                'Se inhabilita el boton de guardar
+                Button2.Enabled = False
                 'Se cierra la conexion
                 conexion.Close()
             Else
                 MsgBox("No se encontro ningun tecnico con ese codigo")
                 conexion.Close()
             End If
-
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -181,7 +184,6 @@ Public Class frmTecnicos
             'Variables locales para la actualizacion del tecnico
             Dim id, nombres, apellidos, direccion, correo As String
             Dim tel1, tel2 As Integer
-
             'Extrae el id del tecnico
             id = TextBox1.Text
             'Extrae los nuevos nombres del tecnico
@@ -196,15 +198,12 @@ Public Class frmTecnicos
             tel2 = MaskedTextBox2.Text
             'Extrae el nuevo correo electronico del tecnico
             correo = TextBox5.Text
-
             'Hacer la conexion con la base de datos
             ConectarDB()
-
             'Variable local para confirmar (Si/No) va modificar el dato
             Dim sino As Byte
             'Se pregunta si se quiere o no modificar el dato de la base de datos
             sino = MsgBox("¿Esta seguro que desea cambiar el los datos del tecnico?", vbYesNo, "Confirmacion de Actualizacion")
-
             'Se evalua si es si, para acutalizarlo
             If (sino = 6) Then
                 'Guardamos el SQL del UPDATE que se correra en la base de datos
@@ -218,7 +217,6 @@ Public Class frmTecnicos
                 'Se cierra la conexion
                 conexion.Close()
             End If
-
         Catch ex As Exception
             'Muestra el mensaje de error
             MsgBox(ex.Message)
@@ -230,22 +228,16 @@ Public Class frmTecnicos
 
         'Varible para guardar el id del tecnico y asi borrarlo
         Dim id As String
-
         'Conecta con la base de datos
         ConectarDB()
-
         Try
-
             'Variable local para confirmar (Si/No) va eliminar el dato
             Dim sino As Byte
-
             'Extrae el id del tecnico
             id = TextBox1.Text
-
             'Se pregunta si se quiere o no borrar el dato de la base de datos
             sino = MsgBox("¿Esta seguro que desea eliminar a este tecnico?", vbYesNo, "Confirmacion de Eliminacion")
             'Se evalua si es si, para eliminarlo
-
             If (sino = 6) Then
                 'Se guarda el SQL de la eliminacion
                 sql = "DELETE FROM tbltecnico WHERE idtecnico = '" & id & "'"
@@ -255,7 +247,6 @@ Public Class frmTecnicos
                 comandos.BeginExecuteNonQuery()
                 'Se le indica al usuario que ya se borro la tupla
                 MsgBox("Informacion del tecnico eliminada")
-
                 'Limpieza de controles
                 TextBox1.Clear()
                 TextBox2.Clear()
@@ -265,11 +256,9 @@ Public Class frmTecnicos
                 MaskedTextBox1.Clear()
                 MaskedTextBox2.Clear()
                 TextBox1.Focus()
-
                 'Se cierra la conexion
                 conexion.Close()
             End If
-
         Catch ex As Exception
             'Muestra el error de la rutina
             MsgBox(ex.Message)

@@ -46,15 +46,17 @@ Partial Class frmTecnicos
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button2
         '
         Me.Button2.Image = Global.workshopware.My.Resources.Resources.save
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(6, 64)
+        Me.Button2.Location = New System.Drawing.Point(11, 64)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(88, 39)
         Me.Button2.TabIndex = 9
@@ -66,7 +68,7 @@ Partial Class frmTecnicos
         '
         Me.Button1.Image = Global.workshopware.My.Resources.Resources.add
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(6, 19)
+        Me.Button1.Location = New System.Drawing.Point(11, 19)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(88, 39)
         Me.Button1.TabIndex = 8
@@ -78,7 +80,7 @@ Partial Class frmTecnicos
         '
         Me.TextBox5.Location = New System.Drawing.Point(113, 213)
         Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(246, 20)
+        Me.TextBox5.Size = New System.Drawing.Size(256, 20)
         Me.TextBox5.TabIndex = 7
         '
         'Label8
@@ -104,7 +106,7 @@ Partial Class frmTecnicos
         Me.MaskedTextBox2.Location = New System.Drawing.Point(113, 186)
         Me.MaskedTextBox2.Mask = "9999999999"
         Me.MaskedTextBox2.Name = "MaskedTextBox2"
-        Me.MaskedTextBox2.Size = New System.Drawing.Size(100, 20)
+        Me.MaskedTextBox2.Size = New System.Drawing.Size(110, 20)
         Me.MaskedTextBox2.TabIndex = 6
         '
         'Label6
@@ -121,7 +123,7 @@ Partial Class frmTecnicos
         Me.MaskedTextBox1.Location = New System.Drawing.Point(113, 159)
         Me.MaskedTextBox1.Mask = "9999999999"
         Me.MaskedTextBox1.Name = "MaskedTextBox1"
-        Me.MaskedTextBox1.Size = New System.Drawing.Size(100, 20)
+        Me.MaskedTextBox1.Size = New System.Drawing.Size(110, 20)
         Me.MaskedTextBox1.TabIndex = 5
         '
         'Label5
@@ -137,7 +139,7 @@ Partial Class frmTecnicos
         '
         Me.TextBox4.Location = New System.Drawing.Point(113, 132)
         Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(246, 20)
+        Me.TextBox4.Size = New System.Drawing.Size(256, 20)
         Me.TextBox4.TabIndex = 4
         '
         'Label4
@@ -153,14 +155,14 @@ Partial Class frmTecnicos
         '
         Me.TextBox3.Location = New System.Drawing.Point(113, 105)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(246, 20)
+        Me.TextBox3.Size = New System.Drawing.Size(256, 20)
         Me.TextBox3.TabIndex = 3
         '
         'TextBox2
         '
         Me.TextBox2.Location = New System.Drawing.Point(113, 78)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(246, 20)
+        Me.TextBox2.Size = New System.Drawing.Size(256, 20)
         Me.TextBox2.TabIndex = 2
         '
         'Label3
@@ -176,7 +178,7 @@ Partial Class frmTecnicos
         '
         Me.TextBox1.Location = New System.Drawing.Point(113, 52)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(110, 20)
         Me.TextBox1.TabIndex = 1
         '
         'Label2
@@ -203,14 +205,14 @@ Partial Class frmTecnicos
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(15, 239)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(550, 150)
+        Me.DataGridView1.Size = New System.Drawing.Size(750, 200)
         Me.DataGridView1.TabIndex = 11
         '
         'Button3
         '
         Me.Button3.Image = Global.workshopware.My.Resources.Resources.first_page
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(6, 109)
+        Me.Button3.Location = New System.Drawing.Point(11, 109)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(88, 39)
         Me.Button3.TabIndex = 10
@@ -226,18 +228,19 @@ Partial Class frmTecnicos
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.Button3)
         Me.GroupBox1.Controls.Add(Me.Button2)
-        Me.GroupBox1.Location = New System.Drawing.Point(365, 55)
+        Me.GroupBox1.Location = New System.Drawing.Point(375, 73)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(200, 160)
+        Me.GroupBox1.Size = New System.Drawing.Size(213, 160)
         Me.GroupBox1.TabIndex = 33
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Opciones tecnicos"
         '
         'Button6
         '
+        Me.Button6.Enabled = False
         Me.Button6.Image = Global.workshopware.My.Resources.Resources.delete
         Me.Button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button6.Location = New System.Drawing.Point(98, 109)
+        Me.Button6.Location = New System.Drawing.Point(110, 109)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(88, 39)
         Me.Button6.TabIndex = 13
@@ -247,11 +250,12 @@ Partial Class frmTecnicos
         '
         'Button5
         '
+        Me.Button5.Enabled = False
         Me.Button5.Image = Global.workshopware.My.Resources.Resources.edit_tool
         Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button5.Location = New System.Drawing.Point(100, 65)
+        Me.Button5.Location = New System.Drawing.Point(112, 64)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(86, 37)
+        Me.Button5.Size = New System.Drawing.Size(86, 38)
         Me.Button5.TabIndex = 12
         Me.Button5.Text = "Modificar"
         Me.Button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -261,20 +265,31 @@ Partial Class frmTecnicos
         '
         Me.Button4.Image = Global.workshopware.My.Resources.Resources.search
         Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button4.Location = New System.Drawing.Point(98, 20)
+        Me.Button4.Location = New System.Drawing.Point(110, 19)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(88, 37)
+        Me.Button4.Size = New System.Drawing.Size(88, 39)
         Me.Button4.TabIndex = 11
         Me.Button4.Text = "Buscar"
         Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button4.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.workshopware.My.Resources.Resources.LogoIPI
+        Me.PictureBox1.Location = New System.Drawing.Point(594, 11)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(171, 87)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 34
+        Me.PictureBox1.TabStop = False
         '
         'frmTecnicos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.MenuHighlight
-        Me.ClientSize = New System.Drawing.Size(582, 404)
+        Me.ClientSize = New System.Drawing.Size(776, 451)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.TextBox5)
@@ -293,12 +308,13 @@ Partial Class frmTecnicos
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Location = New System.Drawing.Point(160, 130)
+        Me.Location = New System.Drawing.Point(160, 90)
         Me.Name = "frmTecnicos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Workshopware - Tecnicos"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -326,4 +342,5 @@ Partial Class frmTecnicos
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents Button6 As System.Windows.Forms.Button
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
 End Class

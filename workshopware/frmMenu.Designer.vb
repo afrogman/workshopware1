@@ -31,6 +31,7 @@ Partial Class frmMenu
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -38,7 +39,7 @@ Partial Class frmMenu
         '
         Me.Button7.Image = Global.workshopware.My.Resources.Resources.book
         Me.Button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button7.Location = New System.Drawing.Point(155, 186)
+        Me.Button7.Location = New System.Drawing.Point(172, 200)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(136, 52)
         Me.Button7.TabIndex = 8
@@ -49,20 +50,20 @@ Partial Class frmMenu
         '
         Me.Button6.Image = Global.workshopware.My.Resources.Resources.monitor
         Me.Button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button6.Location = New System.Drawing.Point(297, 128)
+        Me.Button6.Location = New System.Drawing.Point(172, 142)
         Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(142, 52)
+        Me.Button6.Size = New System.Drawing.Size(136, 52)
         Me.Button6.TabIndex = 7
-        Me.Button6.Text = "Equipos reparacion" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Button6.Text = "Ingreso equipos" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.Button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button6.UseVisualStyleBackColor = True
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.workshopware.My.Resources.Resources.LogoIPI
-        Me.PictureBox1.Location = New System.Drawing.Point(334, 12)
+        Me.PictureBox1.Location = New System.Drawing.Point(416, 234)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(138, 71)
+        Me.PictureBox1.Size = New System.Drawing.Size(182, 92)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 6
         Me.PictureBox1.TabStop = False
@@ -71,7 +72,7 @@ Partial Class frmMenu
         '
         Me.Button5.Image = Global.workshopware.My.Resources.Resources.add_favorite
         Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button5.Location = New System.Drawing.Point(13, 186)
+        Me.Button5.Location = New System.Drawing.Point(314, 142)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(136, 52)
         Me.Button5.TabIndex = 5
@@ -82,7 +83,7 @@ Partial Class frmMenu
         '
         Me.Button4.Image = Global.workshopware.My.Resources.Resources.box
         Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button4.Location = New System.Drawing.Point(155, 128)
+        Me.Button4.Location = New System.Drawing.Point(30, 142)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(136, 52)
         Me.Button4.TabIndex = 4
@@ -93,7 +94,7 @@ Partial Class frmMenu
         '
         Me.Button3.Image = Global.workshopware.My.Resources.Resources.user_online
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(13, 128)
+        Me.Button3.Location = New System.Drawing.Point(314, 84)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(136, 52)
         Me.Button3.TabIndex = 3
@@ -104,7 +105,7 @@ Partial Class frmMenu
         '
         Me.Button2.Image = Global.workshopware.My.Resources.Resources.user_offline
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(13, 70)
+        Me.Button2.Location = New System.Drawing.Point(172, 84)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(136, 52)
         Me.Button2.TabIndex = 2
@@ -115,19 +116,30 @@ Partial Class frmMenu
         '
         Me.Button1.Image = Global.workshopware.My.Resources.Resources.user3
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(13, 12)
+        Me.Button1.Location = New System.Drawing.Point(30, 84)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(136, 52)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "Clientes"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(189, 24)
+        Me.Label1.TabIndex = 9
+        Me.Label1.Text = "Menu de Opciones"
+        '
         'frmMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.MenuHighlight
-        Me.ClientSize = New System.Drawing.Size(484, 262)
+        Me.ClientSize = New System.Drawing.Size(623, 338)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.PictureBox1)
@@ -143,6 +155,7 @@ Partial Class frmMenu
         Me.Text = "Workshopware - Menu Principal"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents Button1 As System.Windows.Forms.Button
@@ -153,5 +166,6 @@ Partial Class frmMenu
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Button6 As System.Windows.Forms.Button
     Friend WithEvents Button7 As System.Windows.Forms.Button
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 
 End Class

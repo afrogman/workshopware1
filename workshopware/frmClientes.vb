@@ -113,6 +113,8 @@ Public Class frmClientes
     Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
         'Boton de nueva opcion
 
+        'Se habilita el Textbox1 del codigo
+        TextBox1.Enabled = True
         'Se inhabilita el boton de modificar
         Button5.Enabled = False
         'Se inhabilita el boton de eliminar
@@ -170,6 +172,8 @@ Public Class frmClientes
                 MaskedTextBox2.Text = datos.Tables("tblcliente").Rows(0).Item("telefonocelular")
                 TextBox5.Text = datos.Tables("tblcliente").Rows(0).Item("correoelectronico")
                 TextBox6.Text = datos.Tables("tblcliente").Rows(0).Item("nit")
+                'Se inhabilita el Textbox1 del codigo
+                TextBox1.Enabled = False
                 'Se habilita el boton de modificar
                 Button5.Enabled = True
                 'Se habilita el boton de eliminar
