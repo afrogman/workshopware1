@@ -9,18 +9,14 @@ Public Class frmClientes
 
         'Se guarda la consulta general mostrando nombres alternos para los campos
         sql = "SELECT idcliente as 'Codigo', nombres as 'Nombres', apellidos as 'Apellidos', direccion as 'Direccion', telefonocasa as 'Telefono Casa', telefonocelular as 'Telefono Celular', correoelectronico as 'Email', nit as 'NIT' FROM tblcliente"
-
         'Ejecuta la consulta SQL en la baes de datos con la conexion
         adaptador = New MySqlDataAdapter(sql, conexion)
-
+        'Recibe los datos que se van a mostrar en el Datagridview
         datos = New DataSet
-
         'Va llenarse de los datos que tenga la tabla tbltecnico
         adaptador.Fill(datos, "tblcliente")
-
         'Va recibir las tuplas de la tabla
         lista = datos.Tables("tblcliente").Rows.Count
-
         'Condicional para ver si se recibe un dato en la lista
         If (lista <> 0) Then
             'Le indica al DataGridView que son datos que vienen de una base de datos
@@ -99,7 +95,6 @@ Public Class frmClientes
                 MaskedTextBox1.Clear()
                 MaskedTextBox2.Clear()
                 TextBox1.Focus()
-
                 'Se cierra la conexion
                 conexion.Close()
             Catch ex As Exception
@@ -110,6 +105,7 @@ Public Class frmClientes
             End Try
 
         Catch ex As Exception
+            'Muestra algun mensaje de error
             MsgBox(ex.Message)
         End Try
     End Sub
@@ -117,6 +113,12 @@ Public Class frmClientes
     Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
         'Boton de nueva opcion
 
+        'Se inhabilita el boton de modificar
+        Button5.Enabled = False
+        'Se inhabilita el boton de eliminar
+        Button6.Enabled = False
+        'Se habilita el boton de guardar
+        Button2.Enabled = True
         'Limpieza de controles
         TextBox1.Clear()
         TextBox2.Clear()
@@ -136,7 +138,6 @@ Public Class frmClientes
         Try
             'Se captura el codigo del cliente del Textbox1
             codCliente = TextBox1.Text
-
             'Procedimiento de conexion de la baes de datos
             ConectarDB()
 
@@ -146,6 +147,7 @@ Public Class frmClientes
                 sql = "SELECT * FROM tblcliente WHERE idcliente = '" & codCliente & "'"
                 'Ejecuta la consulta SQL en la base de datos con la conexion
                 adaptador = New MySqlDataAdapter(sql, conexion)
+                'Se mustran los datos que se van a mostrar en los controles
                 datos = New DataSet
                 'Va llenarse de los datos que tenga la tabla tblproveedor
                 adaptador.Fill(datos, "tblcliente")
@@ -159,7 +161,7 @@ Public Class frmClientes
             'Condicional para ver si se recibe un dato en la lista
             If (lista <> 0) Then
 
-                'Si encuentra algo, entonces va mostrar la primera posicion encontrada
+                'Si encuentra los datos del cliente se van a mostrar en los controles
                 TextBox1.Text = datos.Tables("tblcliente").Rows(0).Item("idcliente")
                 TextBox2.Text = datos.Tables("tblcliente").Rows(0).Item("nombres")
                 TextBox3.Text = datos.Tables("tblcliente").Rows(0).Item("apellidos")
@@ -168,16 +170,22 @@ Public Class frmClientes
                 MaskedTextBox2.Text = datos.Tables("tblcliente").Rows(0).Item("telefonocelular")
                 TextBox5.Text = datos.Tables("tblcliente").Rows(0).Item("correoelectronico")
                 TextBox6.Text = datos.Tables("tblcliente").Rows(0).Item("nit")
-
-
+                'Se habilita el boton de modificar
+                Button5.Enabled = True
+                'Se habilita el boton de eliminar
+                Button6.Enabled = True
+                'Se inhabilita el boton de guardado
+                Button2.Enabled = False
                 'Se cierra la conexion
                 conexion.Close()
             Else
+                'Notifica que no se encontro ningun cliente
                 MsgBox("No se encontro ningun cliente con ese codigo")
+                'Se cierra la conexion
                 conexion.Close()
             End If
-
         Catch ex As Exception
+            'Notifica si hay algun error
             MsgBox(ex.Message)
         End Try
     End Sub
@@ -241,22 +249,17 @@ Public Class frmClientes
 
         'Varible para guardar el id del cliente y asi borrarlo
         Dim id As String
-
         'Conecta con la base de datos
         ConectarDB()
 
         Try
-
             'Variable local para confirmar (Si/No) va eliminar el dato
             Dim sino As Byte
-
             'Extrae el id del cliente
             id = TextBox1.Text
-
             'Se pregunta si se quiere o no borrar el dato de la base de datos
             sino = MsgBox("¿Esta seguro que desea eliminar a este cliente?", vbYesNo, "Confirmacion de Eliminacion")
             'Se evalua si es si, para eliminarlo
-
             If (sino = 6) Then
                 'Se guarda el SQL de la eliminacion
                 sql = "DELETE FROM tblcliente WHERE idcliente = '" & id & "'"
@@ -266,7 +269,10 @@ Public Class frmClientes
                 comandos.BeginExecuteNonQuery()
                 'Se le indica al usuario que ya se borro la tupla
                 MsgBox("Informacion del cliente eliminada")
-
+                'Se inhabilita el boton de modificar
+                Button5.Enabled = False
+                'Se inhabilita el boton de eliminar
+                Button6.Enabled = False
                 'Limpieza de controles
                 TextBox1.Clear()
                 TextBox2.Clear()
@@ -277,15 +283,12 @@ Public Class frmClientes
                 MaskedTextBox1.Clear()
                 MaskedTextBox2.Clear()
                 TextBox1.Focus()
-
                 'Se cierra la conexion
                 conexion.Close()
             End If
-
         Catch ex As Exception
             'Muestra el error de la rutina
             MsgBox(ex.Message)
         End Try
-
     End Sub
 End Class
