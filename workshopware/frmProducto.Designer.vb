@@ -58,8 +58,10 @@ Partial Class frmProducto
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TextBox9 = New System.Windows.Forms.TextBox()
         Me.TextBox10 = New System.Windows.Forms.TextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -76,7 +78,7 @@ Partial Class frmProducto
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(17, 66)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(160, 21)
         Me.ComboBox1.TabIndex = 1
         '
         'GroupBox1
@@ -138,7 +140,7 @@ Partial Class frmProducto
         '
         Me.TextBox3.Location = New System.Drawing.Point(107, 204)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox3.Size = New System.Drawing.Size(117, 20)
         Me.TextBox3.TabIndex = 5
         '
         'Label5
@@ -178,7 +180,7 @@ Partial Class frmProducto
         '
         Me.TextBox5.Location = New System.Drawing.Point(107, 358)
         Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox5.Size = New System.Drawing.Size(117, 20)
         Me.TextBox5.TabIndex = 8
         '
         'Label7
@@ -194,7 +196,7 @@ Partial Class frmProducto
         '
         Me.TextBox6.Location = New System.Drawing.Point(107, 384)
         Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox6.Size = New System.Drawing.Size(117, 20)
         Me.TextBox6.TabIndex = 9
         '
         'Label8
@@ -210,7 +212,7 @@ Partial Class frmProducto
         '
         Me.TextBox7.Location = New System.Drawing.Point(107, 410)
         Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox7.Size = New System.Drawing.Size(117, 20)
         Me.TextBox7.TabIndex = 10
         '
         'Label9
@@ -226,7 +228,7 @@ Partial Class frmProducto
         '
         Me.TextBox8.Location = New System.Drawing.Point(107, 436)
         Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox8.Size = New System.Drawing.Size(117, 20)
         Me.TextBox8.TabIndex = 11
         '
         'Label10
@@ -283,6 +285,7 @@ Partial Class frmProducto
         '
         'Button7
         '
+        Me.Button7.Enabled = False
         Me.Button7.Image = Global.workshopware.My.Resources.Resources.delete
         Me.Button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button7.Location = New System.Drawing.Point(100, 119)
@@ -295,6 +298,7 @@ Partial Class frmProducto
         '
         'Button6
         '
+        Me.Button6.Enabled = False
         Me.Button6.Image = Global.workshopware.My.Resources.Resources.edit_tool
         Me.Button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button6.Location = New System.Drawing.Point(100, 74)
@@ -357,7 +361,7 @@ Partial Class frmProducto
         '
         Me.Button8.Image = Global.workshopware.My.Resources.Resources.calculator
         Me.Button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button8.Location = New System.Drawing.Point(213, 462)
+        Me.Button8.Location = New System.Drawing.Point(230, 462)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(94, 47)
         Me.Button8.TabIndex = 14
@@ -369,7 +373,7 @@ Partial Class frmProducto
         '
         Me.Button1.Image = Global.workshopware.My.Resources.Resources.user_online
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(144, 45)
+        Me.Button1.Location = New System.Drawing.Point(183, 49)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(135, 42)
         Me.Button1.TabIndex = 2
@@ -381,22 +385,33 @@ Partial Class frmProducto
         '
         Me.TextBox9.Location = New System.Drawing.Point(107, 462)
         Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox9.Size = New System.Drawing.Size(117, 20)
         Me.TextBox9.TabIndex = 12
         '
         'TextBox10
         '
         Me.TextBox10.Location = New System.Drawing.Point(107, 488)
         Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox10.Size = New System.Drawing.Size(117, 20)
         Me.TextBox10.TabIndex = 13
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.workshopware.My.Resources.Resources.LogoIPI
+        Me.PictureBox1.Location = New System.Drawing.Point(400, 13)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(171, 87)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 56
+        Me.PictureBox1.TabStop = False
         '
         'frmProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.MenuHighlight
-        Me.ClientSize = New System.Drawing.Size(517, 521)
+        Me.ClientSize = New System.Drawing.Size(578, 521)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.TextBox10)
         Me.Controls.Add(Me.TextBox9)
         Me.Controls.Add(Me.Button8)
@@ -430,6 +445,7 @@ Partial Class frmProducto
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -469,4 +485,5 @@ Partial Class frmProducto
     Friend WithEvents Button8 As System.Windows.Forms.Button
     Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox10 As System.Windows.Forms.TextBox
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
 End Class
