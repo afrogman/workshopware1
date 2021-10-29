@@ -61,10 +61,12 @@ Partial Class frmEquipos
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -79,6 +81,7 @@ Partial Class frmEquipos
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.PictureBox1)
         Me.GroupBox1.Controls.Add(Me.TextBox6)
         Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.TextBox5)
@@ -141,7 +144,7 @@ Partial Class frmEquipos
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button2.Location = New System.Drawing.Point(248, 19)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(113, 49)
+        Me.Button2.Size = New System.Drawing.Size(108, 44)
         Me.Button2.TabIndex = 2
         Me.Button2.Text = "Cargar cliente"
         Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -264,16 +267,17 @@ Partial Class frmEquipos
         Me.GroupBox3.Controls.Add(Me.Button3)
         Me.GroupBox3.Location = New System.Drawing.Point(329, 47)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(203, 149)
+        Me.GroupBox3.Size = New System.Drawing.Size(204, 149)
         Me.GroupBox3.TabIndex = 15
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Opciones equipo"
         '
         'Button6
         '
+        Me.Button6.Enabled = False
         Me.Button6.Image = Global.workshopware.My.Resources.Resources.delete
         Me.Button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button6.Location = New System.Drawing.Point(100, 105)
+        Me.Button6.Location = New System.Drawing.Point(107, 105)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(88, 39)
         Me.Button6.TabIndex = 21
@@ -283,9 +287,10 @@ Partial Class frmEquipos
         '
         'Button5
         '
+        Me.Button5.Enabled = False
         Me.Button5.Image = Global.workshopware.My.Resources.Resources.edit_tool
         Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button5.Location = New System.Drawing.Point(100, 63)
+        Me.Button5.Location = New System.Drawing.Point(107, 60)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(88, 39)
         Me.Button5.TabIndex = 20
@@ -297,7 +302,7 @@ Partial Class frmEquipos
         '
         Me.Button7.Image = Global.workshopware.My.Resources.Resources.search
         Me.Button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button7.Location = New System.Drawing.Point(100, 16)
+        Me.Button7.Location = New System.Drawing.Point(107, 16)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(88, 39)
         Me.Button7.TabIndex = 19
@@ -309,7 +314,7 @@ Partial Class frmEquipos
         '
         Me.Button4.Image = Global.workshopware.My.Resources.Resources.first_page
         Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button4.Location = New System.Drawing.Point(6, 105)
+        Me.Button4.Location = New System.Drawing.Point(10, 105)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(88, 39)
         Me.Button4.TabIndex = 18
@@ -321,7 +326,7 @@ Partial Class frmEquipos
         '
         Me.Button1.Image = Global.workshopware.My.Resources.Resources.add
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(6, 16)
+        Me.Button1.Location = New System.Drawing.Point(10, 16)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(88, 39)
         Me.Button1.TabIndex = 16
@@ -333,7 +338,7 @@ Partial Class frmEquipos
         '
         Me.Button3.Image = Global.workshopware.My.Resources.Resources.save
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(6, 63)
+        Me.Button3.Location = New System.Drawing.Point(10, 60)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(88, 39)
         Me.Button3.TabIndex = 17
@@ -447,12 +452,22 @@ Partial Class frmEquipos
         Me.DataGridView1.Size = New System.Drawing.Size(924, 150)
         Me.DataGridView1.TabIndex = 14
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.workshopware.My.Resources.Resources.LogoIPI
+        Me.PictureBox1.Location = New System.Drawing.Point(248, 69)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(108, 59)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 18
+        Me.PictureBox1.TabStop = False
+        '
         'frmEquipos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.MenuHighlight
-        Me.ClientSize = New System.Drawing.Size(948, 445)
+        Me.ClientSize = New System.Drawing.Size(953, 445)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -468,6 +483,7 @@ Partial Class frmEquipos
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -510,4 +526,5 @@ Partial Class frmEquipos
     Friend WithEvents Button6 As System.Windows.Forms.Button
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents Button7 As System.Windows.Forms.Button
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
 End Class
