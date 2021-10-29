@@ -8,30 +8,22 @@ Public Class frmFechaSalida
 
         'Variables locales para las fechas
         Dim fechaI, fechaF As String
-
         'Se extrae la fecha de inicio de rango
         fechaI = DateTimePicker1.Value.ToString("yyyy/MM/dd")
-
         'Se extrae la fecha de limite de rango
         fechaF = DateTimePicker2.Value.ToString("yyyy/MM/dd")
-
         'Procedimiento de conexion de la base de datods
         Call ConectarDB()
-
         'Se guarda la consulta general mostrando nombres alternos para los campos
         sql = "SELECT tblservicio.fechasalida as 'Fecha Salida', tblcliente.nombres as 'Nombre cliente', tblcliente.apellidos as 'Apellidos cliente', tblequipo.marca as 'Marca equipo', tblequipo.modelo as 'Modelo equipo', tblequipo.serie as 'Serie equipo', tblservicio.saldo as 'Saldo del servicio', tblservicio.estado as 'Estado del servicio' FROM tblservicio INNER JOIN tblcliente ON tblservicio.idcliente = tblcliente.idcliente INNER JOIN tblequipo ON tblservicio.idequipo = tblequipo.idequipo WHERE tblservicio.fechasalida > '" & fechaI & "' AND tblservicio.fechasalida < '" & fechaF & "'"
-
         'Ejecuta la consulta SQL en la baes de datos con la conexion
         adaptador = New MySqlDataAdapter(sql, conexion)
-
+        'Recibe la data que va mostrar el DataGridView
         datos = New DataSet
-
         'Va llenarse de los datos que tenga la tabla tblservicio
         adaptador.Fill(datos, "tblservicio")
-
         'Va recibir las tuplas de la tabla
         lista = datos.Tables("tblservicio").Rows.Count
-
         'Condicional para ver si se recibe un dato en la lista
         If (lista <> 0) Then
             'Le indica al DataGridView que son datos que vienen de una base de datos
@@ -45,6 +37,4 @@ Public Class frmFechaSalida
             conexion.Close()
         End If
     End Sub
-
-    
 End Class

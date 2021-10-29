@@ -27,6 +27,8 @@ Partial Class frmReportes
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -43,7 +45,7 @@ Partial Class frmReportes
         '
         Me.Button3.Image = Global.workshopware.My.Resources.Resources.cal
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(16, 164)
+        Me.Button3.Location = New System.Drawing.Point(16, 111)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(139, 47)
         Me.Button3.TabIndex = 44
@@ -55,7 +57,7 @@ Partial Class frmReportes
         '
         Me.Button2.Image = Global.workshopware.My.Resources.Resources.cal
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(16, 111)
+        Me.Button2.Location = New System.Drawing.Point(140, 58)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(118, 47)
         Me.Button2.TabIndex = 43
@@ -75,12 +77,23 @@ Partial Class frmReportes
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.workshopware.My.Resources.Resources.LogoIPI
+        Me.PictureBox1.Location = New System.Drawing.Point(235, 157)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(147, 68)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 45
+        Me.PictureBox1.TabStop = False
+        '
         'frmReportes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.MenuHighlight
         Me.ClientSize = New System.Drawing.Size(394, 237)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
@@ -90,6 +103,7 @@ Partial Class frmReportes
         Me.Name = "frmReportes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Workshopware - Reportes"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -98,4 +112,5 @@ Partial Class frmReportes
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
 End Class

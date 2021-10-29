@@ -61,9 +61,9 @@ Partial Class frmMenu
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.workshopware.My.Resources.Resources.LogoIPI
-        Me.PictureBox1.Location = New System.Drawing.Point(416, 234)
+        Me.PictureBox1.Location = New System.Drawing.Point(325, 236)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(182, 92)
+        Me.PictureBox1.Size = New System.Drawing.Size(164, 90)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 6
         Me.PictureBox1.TabStop = False
@@ -138,7 +138,7 @@ Partial Class frmMenu
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.MenuHighlight
-        Me.ClientSize = New System.Drawing.Size(623, 338)
+        Me.ClientSize = New System.Drawing.Size(514, 338)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.Button6)
