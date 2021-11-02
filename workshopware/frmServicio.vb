@@ -195,60 +195,46 @@ Public Class frmServicio
     End Sub
 
     Private Sub Button3_Click(sender As System.Object, e As System.EventArgs) Handles Button3.Click
-        'Llama al procedimiento que guarda el servicio ingresado
-        Call GuardarServicio()
-    End Sub
-
-    'Procedimiento para guardar la orden de servicio
-    Sub GuardarServicio()
-
         'Variables para procedimiento de guardado de servicio
         Dim idservicio, idequipo As Integer
         Dim falla, repa As String
         Dim fechaentrada, fechasalida, fechaprograma As Date
         Dim pago, saldo, total As Double
         Dim est As String
-
         Try
             'Codigo del servicio
             idservicio = MaskedTextBox1.Text
-
             'Guarda el codigo del servicio para aplicarlo en la tabla de asignacion de productos
             codServicio = idservicio
-
             'Se extrae el codigo del equipo que se selecciono en el combobox
             idequipo = CodEquipo
-
-            'Falla del equipo
+            'se guarda la Falla del equipo
             falla = RichTextBox2.Text
-            'Reparacion que se le hara al equipo
+            'se guarda la Reparacion que se le hara al equipo
             repa = RichTextBox3.Text
-            'Fecha de entrada del equipo
+            'se guarda la Fecha de entrada del equipo
             fechaentrada = Format(DateTimePicker1.Value, "Short Date")
-            'Fecha de salida o entrega del equipo
+            'se guarda la Fecha de salida o entrega del equipo
             fechasalida = Format(DateTimePicker2.Value, "Short Date")
-            'Fecha de mantenimiento programado
+            'se guarda la Fecha de mantenimiento programado
             fechaprograma = Format(DateTimePicker3.Value, "Short Date")
-            'Pago por el servicio
+            'se guarda el Pago por el servicio
             pago = TextBox11.Text
-            'Saldo pendiente de pago del servicio
+            'se guarda el Saldo pendiente de pago del servicio
             saldo = TextBox12.Text
-            'Total a pagar del servicio
+            'se guarda el Total a pagar del servicio
             total = TextBox7.Text
-            'Asignacion temporal para est
+            'Se hace una Asignacion temporal para est
             est = ""
-
-            'Estado del servicio
+            'Estado del servicio, dependiendo de la seleccion de los RadioButtons
             If (RadioButton1.Checked = True) And (RadioButton2.Checked = False) Then
                 est = "Pendiente"
             ElseIf (RadioButton2.Checked = True) And (RadioButton1.Checked = False) Then
                 est = "Entregado"
             End If
-
             Try
                 'Se llama al procedimiento que hace y abre la conexion
                 Call ConectarDB()
-
                 'Linea de codigo que va guardar la insercion en la tabla, pero con referencias
                 comandos = New MySqlCommand("INSERT INTO tblservicio (idservicio, idcliente, idequipo, falla, reparacion, fechaentrada, fechasalida, fechaprogramada, idtecnico, pago, saldo, total, estado)" & Chr(13) &
                                             "VALUES(@idservicio,@idcliente,@idequipo,@falla,@reparacion,@fechaentrada,@fechasalida,@fechaprogramada,@idtecnico,@pago,@saldo,@total,@estado)", conexion)
@@ -278,18 +264,14 @@ Public Class frmServicio
                 comandos.Parameters.AddWithValue("@total", total)
                 'Referencia al estado ingresado en el formulario
                 comandos.Parameters.AddWithValue("@estado", est)
-
                 'Se coloca porque no espero ningun resultado de la consulta
                 comandos.ExecuteNonQuery()
                 'Indico que se realizo exitosamente el guardado
                 MsgBox("Los datos del servicio fueron guardados exitosamente!")
-
                 'Habilitar el boton de agregar productos
                 Button7.Enabled = True
-
                 'Inhabilitar el boton de generacion de comprobante impreso
                 Button11.Enabled = True
-
                 'Se cierra la conexion
                 conexion.Close()
             Catch ex As Exception
@@ -298,12 +280,12 @@ Public Class frmServicio
                 'Se cierra la conexion
                 conexion.Close()
             End Try
-
         Catch ex As Exception
+            'Indica si hubo algun error en la ejecusion
             MsgBox(ex.Message)
         End Try
     End Sub
-    
+
     Private Sub Button5_Click(sender As System.Object, e As System.EventArgs) Handles Button5.Click
         'Variables para el calculo de pago, saldo y total
         Dim pago, saldo, total As Double
@@ -700,5 +682,18 @@ Public Class frmServicio
     Private Sub Button11_Click(sender As System.Object, e As System.EventArgs) Handles Button11.Click
         'Abrir el formulario de la constancia
         frmConstancia.Show()
+    End Sub
+
+    Private Sub MaskedTextBox1_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles MaskedTextBox1.Validating
+        'Validacion para el numero de orden para el servicio
+        If (DirectCast(sender, MaskedTextBox).Text.Length > 0) Then
+            'Si se dejaron con datos el MaskedTextbox1 no muestra nada
+            Me.ErrorProvider1.SetError(sender, "")
+        Else
+            'Si en caso no se ingreso numero de orden en el MaskedTextbox1 se muestra el error en el errorprovider1
+            Me.ErrorProvider1.SetError(sender, "Debe de ingresar un numero de servicio")
+            'Deja listo en MaskedTextbox1 para que escriba el codigo nuevamente
+            MaskedTextBox1.Focus()
+        End If
     End Sub
 End Class
