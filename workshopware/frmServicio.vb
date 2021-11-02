@@ -147,14 +147,11 @@ Public Class frmServicio
     Private Sub Button4_Click(sender As System.Object, e As System.EventArgs) Handles Button4.Click
         'Variable para obtener el dato seleccionado del Combobox
         Dim NombreTecnico As String
-
         Try
             'Se captura el Nombre del tecnico que tiene seleccionado el combobox2
             NombreTecnico = ComboBox2.Text
-
             'Procedimiento de conexion de la baes de datos
             ConectarDB()
-
             'Condicional que va verificar que no hayan dejado en blanco la solicitud del nombre
             If (NombreTecnico <> "") Then
                 'Se guarda la consulta que quiero hacer en la base de datos
@@ -169,27 +166,30 @@ Public Class frmServicio
             Else
                 'Mensaje en caso se haya dejado en blanco la solicitud del codigo
                 MessageBox.Show("No hizo seleccion de tecnico")
+                'Limpieza de controles
+                TextBox14.Clear()
+                TextBox15.Clear()
             End If
-
             'Condicional para ver si se recibe un dato en la lista
             If (lista <> 0) Then
-
                 'Recibir el ID del tecnico seleccionado
                 IdTecnico = datos.Tables("tbltecnico").Rows(0).Item("idtecnico")
-
                 'Si encuentra algo, entonces va mostrar la primera posicion encontrada
                 TextBox14.Text = datos.Tables("tbltecnico").Rows(0).Item("nombres")
                 TextBox15.Text = datos.Tables("tbltecnico").Rows(0).Item("apellidos")
-                
-
                 'Se cierra la conexion
                 conexion.Close()
             Else
+                'Se le indica al usuario que no se encontro ningun tecnico con el nombre o codigo escrito
                 MsgBox("No se encontro ningun tecnico con ese nombre")
+                'Limpieza de controles
+                TextBox14.Clear()
+                TextBox15.Clear()
+                'Se cierra el conexion
                 conexion.Close()
             End If
-
         Catch ex As Exception
+            'Se indica que hay error en la ejecusion
             MsgBox(ex.Message)
         End Try
     End Sub
