@@ -63,6 +63,10 @@ Represents a strongly typed in-memory cache of data.
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:workshopware.My.Resources.Resources.db2">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:workshopware.My.Resources.Resources.delete">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
