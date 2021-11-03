@@ -362,7 +362,7 @@ Partial Class frmAsignacionProductos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.MenuHighlight
-        Me.ClientSize = New System.Drawing.Size(847, 420)
+        Me.ClientSize = New System.Drawing.Size(849, 420)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.TextBox10)
         Me.Controls.Add(Me.Label11)
