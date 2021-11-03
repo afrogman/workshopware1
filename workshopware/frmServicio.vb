@@ -312,16 +312,14 @@ Public Class frmServicio
     Private Sub Button6_Click(sender As System.Object, e As System.EventArgs) Handles Button6.Click
         'Inhabilitar el boton de agregar productos
         Button7.Enabled = False
-
         'Inhabilitar el boton de modificar
         Button10.Enabled = False
-
         'Habilitar el boton de guardado
         Button3.Enabled = True
-
         'Inhabilitar el boton de guardado
         Button11.Enabled = False
-
+        'Se habilita el MaskedTextbox1 
+        MaskedTextBox1.Enabled = True
         'Limpiar los controles
         MaskedTextBox1.Clear()
         TextBox6.Clear()
@@ -356,14 +354,11 @@ Public Class frmServicio
     Private Sub Button8_Click(sender As System.Object, e As System.EventArgs) Handles Button8.Click
         'Variable para obtener el dato seleccionado del MaskedTextbox1
         Dim NoServicio As String
-
         Try
             'Se captura el valor del numero de servicio del MasketTextbox1
             NoServicio = Val(MaskedTextBox1.Text)
-
             'Procedimiento de conexion de la baes de datos
             ConectarDB()
-
             'Condicional que va verificar que no hayan dejado en blanco la solicitud del nit
             If (NoServicio <> "") Then
                 'Se guarda la consulta que quiero hacer en la base de datos
@@ -379,10 +374,8 @@ Public Class frmServicio
                 'Mensaje en caso se haya dejado en blanco la solicitud del codigo
                 MessageBox.Show("No hizo seleccion de ningun servicio")
             End If
-
             'Condicional para ver si se recibe un dato en la lista
             If (lista <> 0) Then
-
                 'Recibir el ID del cliente que tiene el servicio
                 IdCliente = datos.Tables("tblservicio").Rows(0).Item("idcliente")
                 'Recibir el ID del equipo que tiene el servicio
@@ -391,16 +384,17 @@ Public Class frmServicio
                 IdTecnico = datos.Tables("tblservicio").Rows(0).Item("idtecnico")
                 'Recibir el Codigo del servicio
                 codServicio = datos.Tables("tblservicio").Rows(0).Item("idservicio")
-
+                'Carga los datos del equipo al Combobox3 para que el usuario clic y se carguen por medio del boton
                 ComboBox3.Text = datos.Tables("tblservicio").Rows(0).Item("idequipo")
-
+                'Si encuentra algun dato lo carga a los controles correspondientes
                 RichTextBox2.Text = datos.Tables("tblservicio").Rows(0).Item("falla")
                 RichTextBox3.Text = datos.Tables("tblservicio").Rows(0).Item("reparacion")
                 DateTimePicker1.Text = datos.Tables("tblservicio").Rows(0).Item("fechaentrada")
                 DateTimePicker2.Text = datos.Tables("tblservicio").Rows(0).Item("fechasalida")
                 DateTimePicker3.Text = datos.Tables("tblservicio").Rows(0).Item("fechaprogramada")
-
+                'Se define varaible y se cargan los datos del estado del equipo para cargalo luego a los controles Radiobuttons
                 Dim estado = datos.Tables("tblservicio").Rows(0).Item("estado")
+                'Dependiendo el valor que tenga en texto es el estado del Radiobutton
                 If (estado = "Pendiente") Then
                     RadioButton1.Checked = True
                     RadioButton2.Checked = False
@@ -408,18 +402,16 @@ Public Class frmServicio
                     RadioButton1.Checked = False
                     RadioButton2.Checked = True
                 End If
-
+                'Si encontro algun dato lo va presentando en los controles correspondientes
                 TextBox11.Text = datos.Tables("tblservicio").Rows(0).Item("pago")
                 TextBox12.Text = datos.Tables("tblservicio").Rows(0).Item("saldo")
                 TextBox7.Text = datos.Tables("tblservicio").Rows(0).Item("total")
-
                 'Llena los datos del cliente
                 Call ComboCliente2()
                 'Llena los datos del equipo
                 Call DatosEquipo()
                 'Llena los datos del tecnico
                 Call TecnicoDatos()
-
                 'Se habilita la opcion de detallar los productos para el servicio
                 Button7.Enabled = True
                 'Se habilita la opcion de modificar el servicio
@@ -428,21 +420,24 @@ Public Class frmServicio
                 Button11.Enabled = True
                 'Se inhabilita la opcion de guardar productos
                 Button3.Enabled = False
+                'Se inhabilita el MaskedTextbox1 porque el codigo no se puede modificar
+                MaskedTextBox1.Enabled = False
                 'Se cierra la conexion
                 conexion.Close()
             Else
+                'En caso no hay algun servicio con ese numero se le indica al usuario
                 MsgBox("No se encontro ningun servicio con ese numero")
+                'Se cierra la conexion
                 conexion.Close()
             End If
-
         Catch ex As Exception
+            'Si hubo algun error en la ejecusion, se indica en pantalla
             MsgBox(ex.Message)
         End Try
     End Sub
 
     'Procedimiento que llena el Combobox del Cliente para modificar
     Sub ComboCliente2()
-
         Try
             'Condicional que va verificar que no hayan dejado en blanco la solicitud del nit
             If (IdCliente <> 0) Then
@@ -459,11 +454,9 @@ Public Class frmServicio
                 'Mensaje en caso se haya dejado en blanco la solicitud del codigo
                 MessageBox.Show("No hizo seleccion de cliente")
             End If
-
             'Condicional para ver si se recibe un dato en la lista
             If (lista <> 0) Then
-
-                'Si encuentra algo, entonces va mostrar la primera posicion encontrada
+                'Si encuentra dato, lo muestra en los controles correspondientes
                 TextBox6.Text = datos.Tables("tblcliente").Rows(0).Item("nombres")
                 TextBox5.Text = datos.Tables("tblcliente").Rows(0).Item("apellidos")
                 TextBox1.Text = datos.Tables("tblcliente").Rows(0).Item("direccion")
@@ -471,10 +464,11 @@ Public Class frmServicio
                 TextBox3.Text = datos.Tables("tblcliente").Rows(0).Item("telefonocelular")
                 TextBox4.Text = datos.Tables("tblcliente").Rows(0).Item("correoelectronico")
             Else
+                'Si en caso no existe el NIT que se coloco, se lo indica al usuario
                 MsgBox("No se encontro ningun cliente con ese nit")
             End If
-
         Catch ex As Exception
+            'Indica si hubo algun problema con la rutina
             MsgBox(ex.Message)
         End Try
     End Sub
@@ -497,11 +491,9 @@ Public Class frmServicio
                 'Mensaje en caso se haya dejado en blanco la solicitud del codigo
                 MessageBox.Show("No hizo seleccion de equipo")
             End If
-
             'Condicional para ver si se recibe un dato en la lista
             If (lista <> 0) Then
-
-                'Si encuentra algo, entonces va mostrar la primera posicion encontrada
+                'Si encuentra algo, lo muestra en los controles correspondientes
                 ComboBox3.Text = datos.Tables("tblequipo").Rows(0).Item("idequipo")
                 TextBox8.Text = datos.Tables("tblequipo").Rows(0).Item("marca")
                 TextBox9.Text = datos.Tables("tblequipo").Rows(0).Item("modelo")
@@ -509,10 +501,11 @@ Public Class frmServicio
                 RichTextBox4.Text = datos.Tables("tblequipo").Rows(0).Item("accesorios")
                 RichTextBox1.Text = datos.Tables("tblequipo").Rows(0).Item("observaciones")
             Else
+                'Si en caso no encuentra ningun equipo con el codigo ingresado, se le indica al usuario
                 MsgBox("No se encontro ningun equipo con ese codigo")
             End If
-
         Catch ex As Exception
+            'Indica si hubo algun problema de ejecusion
             MsgBox(ex.Message)
         End Try
     End Sub
@@ -594,19 +587,17 @@ Public Class frmServicio
                 'Mensaje en caso se haya dejado en blanco la solicitud del codigo
                 MessageBox.Show("No hizo seleccion de tecnico")
             End If
-
             'Condicional para ver si se recibe un dato en la lista
             If (lista <> 0) Then
-
                 'Si encuentra algo, entonces va mostrar la primera posicion encontrada
                 TextBox14.Text = datos.Tables("tbltecnico").Rows(0).Item("nombres")
                 TextBox15.Text = datos.Tables("tbltecnico").Rows(0).Item("apellidos")
-
             Else
+                'Si en caso el codigo del tecnico no corresponde a ninguno tecnico, se le indica al usuario
                 MsgBox("No se encontro ningun tecnico con ese codigo")
             End If
-
         Catch ex As Exception
+            'Indica si hubo algun error en la ejecusion
             MsgBox(ex.Message)
         End Try
     End Sub
@@ -695,5 +686,9 @@ Public Class frmServicio
             'Deja listo en MaskedTextbox1 para que escriba el codigo nuevamente
             MaskedTextBox1.Focus()
         End If
+    End Sub
+
+    Private Sub Button12_Click(sender As System.Object, e As System.EventArgs) Handles Button12.Click
+
     End Sub
 End Class
