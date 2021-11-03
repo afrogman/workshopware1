@@ -689,6 +689,7 @@ Public Class frmServicio
     End Sub
 
     Private Sub Button12_Click(sender As System.Object, e As System.EventArgs) Handles Button12.Click
-
+        'Abrir el formulario de listado de servicios
+        frmListadoServicios.Show()
     End Sub
 End Class

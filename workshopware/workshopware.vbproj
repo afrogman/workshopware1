@@ -123,6 +123,12 @@
     <Compile Include="frmFechaProgramada.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmListadoServicios.Designer.vb">
+      <DependentUpon>frmListadoServicios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmListadoServicios.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmMenu.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmFechaProgramada.resx">
       <DependentUpon>frmFechaProgramada.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListadoServicios.resx">
+      <DependentUpon>frmListadoServicios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.vb</DependentUpon>

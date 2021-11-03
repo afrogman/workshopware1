@@ -8,6 +8,7 @@ C:\Users\ProfesorX\Documents\Visual Studio 2010\Projects\workshopware\workshopwa
 C:\Users\ProfesorX\Documents\Visual Studio 2010\Projects\workshopware\workshopware\obj\x86\Debug\workshopware.frmEquipos.resources
 C:\Users\ProfesorX\Documents\Visual Studio 2010\Projects\workshopware\workshopware\obj\x86\Debug\workshopware.frmFechaEntrada.resources
 C:\Users\ProfesorX\Documents\Visual Studio 2010\Projects\workshopware\workshopware\obj\x86\Debug\workshopware.frmFechaProgramada.resources
+C:\Users\ProfesorX\Documents\Visual Studio 2010\Projects\workshopware\workshopware\obj\x86\Debug\workshopware.frmListadoServicios.resources
 C:\Users\ProfesorX\Documents\Visual Studio 2010\Projects\workshopware\workshopware\obj\x86\Debug\workshopware.frmMenu.resources
 C:\Users\ProfesorX\Documents\Visual Studio 2010\Projects\workshopware\workshopware\obj\x86\Debug\workshopware.frmProducto.resources
 C:\Users\ProfesorX\Documents\Visual Studio 2010\Projects\workshopware\workshopware\obj\x86\Debug\workshopware.frmProveedores.resources
