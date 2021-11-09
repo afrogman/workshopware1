@@ -13,8 +13,6 @@ Public Class frmServicio
         Me.AutoScroll = True
         'Se llena el ComboBox1 del cliente (nit)
         Call LlenarDatosCliente()
-        'Se llena el Combobox del equipo (idequipo)
-        Call LlenarDatosEquipo()
         'Se llena el ComboBox del tecnico (nombre)
         Call DatosTecnico()
     End Sub
@@ -60,6 +58,8 @@ Public Class frmServicio
                 TextBox2.Text = datos.Tables("tblcliente").Rows(0).Item("telefonocasa")
                 TextBox3.Text = datos.Tables("tblcliente").Rows(0).Item("telefonocelular")
                 TextBox4.Text = datos.Tables("tblcliente").Rows(0).Item("correoelectronico")
+                'Se llena el Combobox del equipo (idequipo)
+                Call LlenarDatosEquipo()
                 'Se cierra la conexion
                 conexion.Close()
             Else
@@ -104,10 +104,8 @@ Public Class frmServicio
 
     'Procedimiento que llena los datos para el equipo del combobox3
     Sub LlenarDatosEquipo()
-        'Se realiza la conexion a la base de datos
-        Call ConectarDB()
         'Se guarda la cadena SQL que se quiere consultar
-        sql = "SELECT * FROM tblequipo"
+        sql = "SELECT tblequipo.idequipo, tblequipo.marca, tblequipo.modelo, tblequipo.serie, tblequipo.accesorios, tblequipo.observaciones FROM tblequipo INNER JOIN tblcliente ON tblequipo.idcliente = tblcliente.idcliente WHERE tblcliente.idcliente = '" & IdCliente & "'"
         'Se envia la consulta y la conexion
         adaptador = New MySqlDataAdapter(sql, conexion)
         datos = New DataSet
@@ -119,8 +117,6 @@ Public Class frmServicio
         ComboBox3.DataSource = datos.Tables("tblequipo")
         'Se indica el campo que va aparecer
         ComboBox3.DisplayMember = "idequipo"
-        'se cierra la conexion
-        conexion.Close()
     End Sub
 
     'Llena los datos para el Combobox2 que tiene los datos del tecnico
