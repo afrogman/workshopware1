@@ -6,7 +6,23 @@ workshopware
 </name>
 </assembly>
 <members>
-<member name="T:workshopware.DataSetConstancia.TablaConsultaDataTable">
+<member name="T:workshopware.DataSetFechaEntrada.TablaConsultaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:workshopware.DataSetFechaEntrada.TablaConsultaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:workshopware.DataSetFechaEntrada.TablaConsultaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:workshopware.DataSetFechaEntrada">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:workshopware.DataSetConstancia.TablaConsultaDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -100,6 +116,10 @@ Represents a strongly typed in-memory cache of data.
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member><member name="P:workshopware.My.Resources.Resources.paste">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:workshopware.My.Resources.Resources.print">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

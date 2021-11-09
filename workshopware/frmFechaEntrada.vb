@@ -37,4 +37,9 @@ Public Class frmFechaEntrada
             conexion.Close()
         End If
     End Sub
+
+    Private Sub Button2_Click(sender As System.Object, e As System.EventArgs) Handles Button2.Click
+        'Abrir el fomrulario de Fechas de entrada para imprimir
+        frmFechaEntradaReporte.Show()
+    End Sub
 End Class
