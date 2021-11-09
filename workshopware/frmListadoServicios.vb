@@ -8,7 +8,7 @@ Public Class frmListadoServicios
         Call ConectarDB()
 
         'Se guarda la consulta general mostrando nombres alternos para los campos
-        sql = "SELECT idservicio as 'Codigo servicio', falla as 'Falla equipo', reparacion as 'Reparacion equipo', fechaentrada as 'Fecha entrada', fechasalida as 'Fecha salida', pago as 'Pago', saldo as 'Saldo', total as 'Total', estado as 'Estado' FROM tblservicio"
+        sql = "SELECT tblservicio.idservicio as 'Id Servicio', tblcliente.nombres as 'Nombre cliente', tblcliente.apellidos as 'Apellidos cliente', tblservicio.falla as 'Falla equipo', tblservicio.reparacion as 'Reparacion', tblservicio.fechaentrada as 'Fecha entrada', tblservicio.fechasalida as 'Fecha salida', tblservicio.fechaprogramada as 'Fecha programada', tblservicio.pago as 'Pago', tblservicio.saldo as 'Saldo', tblservicio.total as 'Total', tblservicio.estado as 'Estado' FROM tblcliente  INNER JOIN tblservicio  ON tblcliente.idcliente = tblservicio.idcliente"
 
         'Ejecuta la consulta SQL en la baes de datos con la conexion
         adaptador = New MySqlDataAdapter(sql, conexion)
