@@ -7,7 +7,7 @@ Module mConexionBD
     Public Sub ConectarDB()
         Try
             'Se guardan los datos de conexion: servidor, base de datos, usuario y el password
-            conexion.ConnectionString = "server=localhost; database=basedatosipi; user= root; password=;"
+            conexion.ConnectionString = "server=localhost; database=basedatosipi; user=root; password=;"
             'Se abre la conexion a las base de datos
             conexion.Open()
         Catch ex As Exception
