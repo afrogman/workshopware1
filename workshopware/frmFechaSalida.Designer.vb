@@ -32,6 +32,7 @@ Partial Class frmFechaSalida
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -49,6 +50,7 @@ Partial Class frmFechaSalida
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Button2)
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.DateTimePicker2)
         Me.GroupBox1.Controls.Add(Me.Label3)
@@ -56,7 +58,7 @@ Partial Class frmFechaSalida
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Location = New System.Drawing.Point(16, 45)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(527, 83)
+        Me.GroupBox1.Size = New System.Drawing.Size(615, 83)
         Me.GroupBox1.TabIndex = 47
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Rango de fechas:"
@@ -123,6 +125,18 @@ Partial Class frmFechaSalida
         Me.PictureBox1.TabIndex = 53
         Me.PictureBox1.TabStop = False
         '
+        'Button2
+        '
+        Me.Button2.Image = Global.workshopware.My.Resources.Resources.print
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(512, 27)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(88, 41)
+        Me.Button2.TabIndex = 53
+        Me.Button2.Text = "Imprimir"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'frmFechaSalida
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -155,4 +169,5 @@ Partial Class frmFechaSalida
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents Button2 As System.Windows.Forms.Button
 End Class

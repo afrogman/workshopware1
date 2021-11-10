@@ -86,6 +86,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetFechaEntrada.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetFechaSalida.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetFechaSalida.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetFechaSalida.vb">
+      <DependentUpon>DataSetFechaSalida.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmAsignacionProductos.Designer.vb">
       <DependentUpon>frmAsignacionProductos.vb</DependentUpon>
     </Compile>
@@ -132,6 +140,12 @@
       <DependentUpon>frmFechaProgramada.vb</DependentUpon>
     </Compile>
     <Compile Include="frmFechaProgramada.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFechaSalidaReporte.Designer.vb">
+      <DependentUpon>frmFechaSalidaReporte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFechaSalidaReporte.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmListadoServicios.Designer.vb">
@@ -226,6 +240,9 @@
     <EmbeddedResource Include="frmFechaProgramada.resx">
       <DependentUpon>frmFechaProgramada.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmFechaSalidaReporte.resx">
+      <DependentUpon>frmFechaSalidaReporte.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmListadoServicios.resx">
       <DependentUpon>frmListadoServicios.vb</DependentUpon>
     </EmbeddedResource>
@@ -258,6 +275,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report3.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataSetConstancia.xsc">
@@ -281,6 +299,17 @@
     </None>
     <None Include="DataSetFechaEntrada.xss">
       <DependentUpon>DataSetFechaEntrada.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetFechaSalida.xsc">
+      <DependentUpon>DataSetFechaSalida.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetFechaSalida.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetFechaSalida.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSetFechaSalida.xss">
+      <DependentUpon>DataSetFechaSalida.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

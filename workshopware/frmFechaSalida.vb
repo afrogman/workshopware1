@@ -37,4 +37,9 @@ Public Class frmFechaSalida
             conexion.Close()
         End If
     End Sub
+
+    Private Sub Button2_Click(sender As System.Object, e As System.EventArgs) Handles Button2.Click
+        'Abrir el reporte de fechas de salida para su impresion
+        frmFechaSalidaReporte.Show()
+    End Sub
 End Class
