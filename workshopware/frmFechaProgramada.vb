@@ -37,4 +37,9 @@ Public Class frmFechaProgramada
             conexion.Close()
         End If
     End Sub
+
+    Private Sub Button2_Click(sender As System.Object, e As System.EventArgs) Handles Button2.Click
+        'Abrir formulario que tiene el reporte de fechas programadas
+        frmFechaProgramadaReporte.Show()
+    End Sub
 End Class

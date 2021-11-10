@@ -32,6 +32,7 @@ Partial Class frmFechaProgramada
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -47,6 +48,7 @@ Partial Class frmFechaProgramada
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Button2)
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.DateTimePicker2)
         Me.GroupBox1.Controls.Add(Me.Label3)
@@ -54,7 +56,7 @@ Partial Class frmFechaProgramada
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Location = New System.Drawing.Point(17, 47)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(527, 83)
+        Me.GroupBox1.Size = New System.Drawing.Size(613, 83)
         Me.GroupBox1.TabIndex = 53
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Rango de fechas:"
@@ -123,6 +125,18 @@ Partial Class frmFechaProgramada
         Me.PictureBox1.TabIndex = 55
         Me.PictureBox1.TabStop = False
         '
+        'Button2
+        '
+        Me.Button2.Image = Global.workshopware.My.Resources.Resources.print
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(512, 27)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(88, 41)
+        Me.Button2.TabIndex = 54
+        Me.Button2.Text = "Imprimir"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'frmFechaProgramada
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -155,4 +169,5 @@ Partial Class frmFechaProgramada
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents Button2 As System.Windows.Forms.Button
 End Class

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetFechaProgramada" targetNamespace="http://tempuri.org/DataSetFechaProgramada.xsd" xmlns:mstns="http://tempuri.org/DataSetFechaProgramada.xsd" xmlns="http://tempuri.org/DataSetFechaProgramada.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetFechaProgramada" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetFechaProgramada" msprop:Generator_UserDSName="DataSetFechaProgramada">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ConsultaTabla" msprop:Generator_TableClassName="ConsultaTablaDataTable" msprop:Generator_TableVarName="tableConsultaTabla" msprop:Generator_TablePropName="ConsultaTabla" msprop:Generator_RowDeletingName="ConsultaTablaRowDeleting" msprop:Generator_RowChangingName="ConsultaTablaRowChanging" msprop:Generator_RowEvHandlerName="ConsultaTablaRowChangeEventHandler" msprop:Generator_RowDeletedName="ConsultaTablaRowDeleted" msprop:Generator_UserTableName="ConsultaTabla" msprop:Generator_RowChangedName="ConsultaTablaRowChanged" msprop:Generator_RowEvArgName="ConsultaTablaRowChangeEvent" msprop:Generator_RowClassName="ConsultaTablaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="fechaprogramada" msprop:Generator_ColumnVarNameInTable="columnfechaprogramada" msprop:Generator_ColumnPropNameInRow="fechaprogramada" msprop:Generator_ColumnPropNameInTable="fechaprogramadaColumn" msprop:Generator_UserColumnName="fechaprogramada" type="xs:string" minOccurs="0" />
+              <xs:element name="nombres" msprop:Generator_ColumnVarNameInTable="columnnombres" msprop:Generator_ColumnPropNameInRow="nombres" msprop:Generator_ColumnPropNameInTable="nombresColumn" msprop:Generator_UserColumnName="nombres" type="xs:string" minOccurs="0" />
+              <xs:element name="apellidos" msprop:Generator_ColumnVarNameInTable="columnapellidos" msprop:Generator_ColumnPropNameInRow="apellidos" msprop:Generator_ColumnPropNameInTable="apellidosColumn" msprop:Generator_UserColumnName="apellidos" type="xs:string" minOccurs="0" />
+              <xs:element name="marca" msprop:Generator_ColumnVarNameInTable="columnmarca" msprop:Generator_ColumnPropNameInRow="marca" msprop:Generator_ColumnPropNameInTable="marcaColumn" msprop:Generator_UserColumnName="marca" type="xs:string" minOccurs="0" />
+              <xs:element name="modelo" msprop:Generator_ColumnVarNameInTable="columnmodelo" msprop:Generator_ColumnPropNameInRow="modelo" msprop:Generator_ColumnPropNameInTable="modeloColumn" msprop:Generator_UserColumnName="modelo" type="xs:string" minOccurs="0" />
+              <xs:element name="serie" msprop:Generator_ColumnVarNameInTable="columnserie" msprop:Generator_ColumnPropNameInRow="serie" msprop:Generator_ColumnPropNameInTable="serieColumn" msprop:Generator_UserColumnName="serie" type="xs:string" minOccurs="0" />
+              <xs:element name="total" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:string" minOccurs="0" />
+              <xs:element name="estado" msprop:Generator_ColumnVarNameInTable="columnestado" msprop:Generator_ColumnPropNameInRow="estado" msprop:Generator_ColumnPropNameInTable="estadoColumn" msprop:Generator_UserColumnName="estado" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

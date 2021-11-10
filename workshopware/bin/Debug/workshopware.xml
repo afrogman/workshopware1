@@ -6,7 +6,23 @@ workshopware
 </name>
 </assembly>
 <members>
-<member name="T:workshopware.DataSetFechaSalida.TablaConsultaDataTable">
+<member name="T:workshopware.DataSetFechaProgramada.ConsultaTablaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:workshopware.DataSetFechaProgramada.ConsultaTablaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:workshopware.DataSetFechaProgramada.ConsultaTablaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:workshopware.DataSetFechaProgramada">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:workshopware.DataSetFechaSalida.TablaConsultaDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
