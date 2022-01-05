@@ -952,7 +952,7 @@
         <DataSetName>dsconstancia</DataSetName>
         <Top>5.67201cm</Top>
         <Left>0.81714cm</Left>
-        <Height>2.07314cm</Height>
+        <Height>2.07315cm</Height>
         <Width>13.87704cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
@@ -1258,6 +1258,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
+                              <Value>Q. </Value>
+                              <Style />
+                            </TextRun>
+                            <TextRun>
                               <Value>=Fields!pago.Value</Value>
                               <Style />
                             </TextRun>
@@ -1288,6 +1292,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
+                              <Value>Q. </Value>
+                              <Style />
+                            </TextRun>
+                            <TextRun>
                               <Value>=Fields!saldo.Value</Value>
                               <Style />
                             </TextRun>
@@ -1317,6 +1325,10 @@
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
+                            <TextRun>
+                              <Value>Q. </Value>
+                              <Style />
+                            </TextRun>
                             <TextRun>
                               <Value>=Fields!total.Value</Value>
                               <Style />
